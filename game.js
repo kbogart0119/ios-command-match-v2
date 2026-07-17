@@ -1,11 +1,11 @@
-const GAME_SECONDS = 600;
+const DEFAULT_GAME_MINUTES = 10;
 const PAIRS_PER_ROUND = 5;
 
 const DIFFICULTY_STAGES = [
-  { minimumElapsed: 0, label: 'Foundational' },
-  { minimumElapsed: 120, label: 'Developing' },
-  { minimumElapsed: 300, label: 'Intermediate' },
-  { minimumElapsed: 480, label: 'Advanced' }
+  { minimumProgress: 0, label: 'Foundational' },
+  { minimumProgress: 0.20, label: 'Developing' },
+  { minimumProgress: 0.50, label: 'Intermediate' },
+  { minimumProgress: 0.80, label: 'Advanced' }
 ];
 
 const elements = {
@@ -14,6 +14,7 @@ const elements = {
   resultsScreen: document.getElementById('results-screen'),
   startButton: document.getElementById('start-button'),
   restartButton: document.getElementById('restart-button'),
+  durationSelect: document.getElementById('game-duration'),
   objectiveColumn: document.getElementById('objective-column'),
   commandColumn: document.getElementById('command-column'),
   timer: document.getElementById('timer'),
@@ -33,7 +34,8 @@ let commandBank = [];
 let questionBank = [];
 let score = 0;
 let incorrectAttempts = 0;
-let timeRemaining = GAME_SECONDS;
+let selectedGameSeconds = DEFAULT_GAME_MINUTES * 60;
+let timeRemaining = selectedGameSeconds;
 let timerId = null;
 let activeRound = [];
 let usedIdsByDifficulty = new Map();
@@ -118,10 +120,12 @@ function shuffle(items) {
 }
 
 function getCurrentStage() {
-  const elapsed = GAME_SECONDS - timeRemaining;
+  const elapsed = selectedGameSeconds - timeRemaining;
+  const progress = selectedGameSeconds > 0 ? elapsed / selectedGameSeconds : 1;
+
   return [...DIFFICULTY_STAGES]
     .reverse()
-    .find(stage => elapsed >= stage.minimumElapsed) || DIFFICULTY_STAGES[0];
+    .find(stage => progress >= stage.minimumProgress) || DIFFICULTY_STAGES[0];
 }
 
 function getUsedIds(label) {
@@ -452,7 +456,8 @@ function startTimer() {
 function resetGameState() {
   score = 0;
   incorrectAttempts = 0;
-  timeRemaining = GAME_SECONDS;
+  selectedGameSeconds = Number(elements.durationSelect.value) * 60;
+  timeRemaining = selectedGameSeconds;
   roundNumber = 0;
   usedIdsByDifficulty.clear();
   updateStatistics();

@@ -39,14 +39,24 @@
     <section id="start-screen" class="screen panel start-panel">
       <div class="start-copy">
         <p class="section-label">Challenge Mode</p>
-        <h2>How many IOS commands can you identify in ten minutes?</h2>
+        <h2>How many IOS commands can you identify before time expires?</h2>
         <p>Each round contains five networking objectives and five shuffled IOS commands. Correct pairs disappear; incorrect objectives return to their original position.</p>
         <ul class="feature-list">
           <li>Questions become progressively more challenging.</li>
           <li>Your correct matches, mistakes, and accuracy are tracked.</li>
           <li>Each objective has one intended best answer.</li>
         </ul>
-        <button id="start-button" class="primary-button">Start 10-Minute Game</button>
+        <div class="game-options">
+          <label for="game-duration">Game Duration</label>
+          <select id="game-duration" name="game-duration">
+            <option value="4">4 minutes</option>
+            <option value="6">6 minutes</option>
+            <option value="8">8 minutes</option>
+            <option value="10" selected>10 minutes</option>
+            <option value="12">12 minutes</option>
+          </select>
+        </div>
+        <button id="start-button" class="primary-button">Start Game</button>
       </div>
     </section>
 
