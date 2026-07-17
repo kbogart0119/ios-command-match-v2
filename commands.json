@@ -412,5 +412,212 @@
     "difficulty": "Foundational",
     "category": "Interfaces",
     "examWeight": 5
+  },
+  {
+    "id": "CMD047",
+    "command": "show lldp neighbors",
+    "purpose": "Displays a concise list of directly connected devices discovered through LLDP.",
+    "syntax": "show lldp neighbors",
+    "difficulty": "Foundational",
+    "category": "Neighbor Discovery",
+    "examWeight": 4
+  },
+  {
+    "id": "CMD048",
+    "command": "show lldp neighbors detail",
+    "purpose": "Displays detailed LLDP information learned from directly connected neighboring devices.",
+    "syntax": "show lldp neighbors detail",
+    "difficulty": "Developing",
+    "category": "Neighbor Discovery",
+    "examWeight": 4
+  },
+  {
+    "id": "CMD049",
+    "command": "ip address <ipv4-address> <subnet-mask>",
+    "purpose": "Assigns an IPv4 address and subnet mask to a Layer 3 interface.",
+    "syntax": "ip address <ipv4-address> <subnet-mask>",
+    "difficulty": "Foundational",
+    "category": "IPv4",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD050",
+    "command": "ipv6 address <ipv6-address>/<prefix-length>",
+    "purpose": "Assigns an IPv6 address and prefix length to an interface.",
+    "syntax": "ipv6 address <ipv6-address>/<prefix-length>",
+    "difficulty": "Developing",
+    "category": "IPv6",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD051",
+    "command": "show ipv6 interface brief",
+    "purpose": "Displays a concise summary of interfaces, IPv6 addresses, and operational state.",
+    "syntax": "show ipv6 interface brief",
+    "difficulty": "Developing",
+    "category": "IPv6",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD052",
+    "command": "show ipv6 route",
+    "purpose": "Displays the IPv6 routing table and installed paths to destination prefixes.",
+    "syntax": "show ipv6 route [prefix/prefix-length]",
+    "difficulty": "Developing",
+    "category": "IPv6 Routing",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD053",
+    "command": "ip route <prefix> <mask> <next-hop>",
+    "purpose": "Creates an IPv4 static route to a destination network.",
+    "syntax": "ip route <prefix> <mask> <next-hop | exit-interface> [administrative-distance]",
+    "difficulty": "Developing",
+    "category": "Static Routing",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD054",
+    "command": "ipv6 route <prefix>/<prefix-length> <next-hop>",
+    "purpose": "Creates an IPv6 static route to a destination prefix.",
+    "syntax": "ipv6 route <prefix>/<prefix-length> <next-hop | exit-interface> [administrative-distance]",
+    "difficulty": "Intermediate",
+    "category": "IPv6 Routing",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD055",
+    "command": "router ospf <process-id>",
+    "purpose": "Creates or enters an OSPFv2 routing process.",
+    "syntax": "router ospf <process-id>",
+    "difficulty": "Developing",
+    "category": "OSPF",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD056",
+    "command": "network <network-address> <wildcard-mask> area <area-id>",
+    "purpose": "Selects interfaces for OSPFv2 participation and assigns them to an area.",
+    "syntax": "network <network-address> <wildcard-mask> area <area-id>",
+    "difficulty": "Intermediate",
+    "category": "OSPF",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD057",
+    "command": "ip ospf <process-id> area <area-id>",
+    "purpose": "Enables OSPFv2 directly on an interface and assigns it to an area.",
+    "syntax": "ip ospf <process-id> area <area-id>",
+    "difficulty": "Intermediate",
+    "category": "OSPF",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD058",
+    "command": "passive-interface <interface-id>",
+    "purpose": "Suppresses routing-protocol neighbor messages on an interface while still advertising its network.",
+    "syntax": "passive-interface <interface-id>",
+    "difficulty": "Intermediate",
+    "category": "OSPF",
+    "examWeight": 4
+  },
+  {
+    "id": "CMD059",
+    "command": "show ip protocols",
+    "purpose": "Displays active IPv4 routing protocols, parameters, passive interfaces, and advertised networks.",
+    "syntax": "show ip protocols",
+    "difficulty": "Developing",
+    "category": "Routing",
+    "examWeight": 4
+  },
+  {
+    "id": "CMD060",
+    "command": "show ip ospf interface brief",
+    "purpose": "Displays a concise summary of interfaces participating in OSPF, including process, area, cost, and state.",
+    "syntax": "show ip ospf interface brief",
+    "difficulty": "Developing",
+    "category": "OSPF",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD061",
+    "command": "spanning-tree portfast",
+    "purpose": "Allows an edge access port to transition rapidly to the forwarding state.",
+    "syntax": "spanning-tree portfast",
+    "difficulty": "Developing",
+    "category": "Spanning Tree",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD062",
+    "command": "spanning-tree bpduguard enable",
+    "purpose": "Error-disables an edge port if the port receives a spanning-tree BPDU.",
+    "syntax": "spanning-tree bpduguard enable",
+    "difficulty": "Intermediate",
+    "category": "Layer 2 Security",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD063",
+    "command": "ip helper-address <server-address>",
+    "purpose": "Relays selected UDP broadcasts, including DHCPv4 messages, to a remote server.",
+    "syntax": "ip helper-address <server-address>",
+    "difficulty": "Developing",
+    "category": "DHCP",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD064",
+    "command": "access-list <number> permit|deny <source> <wildcard-mask>",
+    "purpose": "Creates a numbered standard IPv4 access-control entry based on source address.",
+    "syntax": "access-list <1-99 | 1300-1999> {permit | deny} <source> <wildcard-mask>",
+    "difficulty": "Intermediate",
+    "category": "Access Control Lists",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD065",
+    "command": "ip access-group <acl> in|out",
+    "purpose": "Applies an IPv4 access control list to an interface in the inbound or outbound direction.",
+    "syntax": "ip access-group <acl-number | acl-name> {in | out}",
+    "difficulty": "Intermediate",
+    "category": "Access Control Lists",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD066",
+    "command": "show access-lists",
+    "purpose": "Displays configured access control lists and match counters.",
+    "syntax": "show access-lists [acl-number | acl-name]",
+    "difficulty": "Developing",
+    "category": "Access Control Lists",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD067",
+    "command": "ip nat inside",
+    "purpose": "Identifies an interface as being on the inside of a NAT boundary.",
+    "syntax": "ip nat inside",
+    "difficulty": "Developing",
+    "category": "NAT",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD068",
+    "command": "ip nat outside",
+    "purpose": "Identifies an interface as being on the outside of a NAT boundary.",
+    "syntax": "ip nat outside",
+    "difficulty": "Developing",
+    "category": "NAT",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD069",
+    "command": "ip nat inside source list <acl> interface <interface-id> overload",
+    "purpose": "Configures PAT so multiple inside local addresses share the address of an outside interface.",
+    "syntax": "ip nat inside source list <acl> interface <interface-id> overload",
+    "difficulty": "Intermediate",
+    "category": "NAT",
+    "examWeight": 5
   }
 ]

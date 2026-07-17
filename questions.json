@@ -1155,7 +1155,7 @@
     "difficulty": "Foundational",
     "cognitiveLevel": "Application",
     "scenario": "A workstation was moved to a different access port and can no longer reach its local gateway.",
-    "objective": "Identify the switch interface on which the workstation’s Ethernet address was learned.",
+    "objective": "Identify the switch interface on which the workstation\u2019s Ethernet address was learned.",
     "explanation": "The forwarding table associates learned MAC addresses with VLANs and switch interfaces.",
     "answerCommand": "show mac address-table address 00aa.11bb.22cc"
   },
@@ -1175,7 +1175,7 @@
     "difficulty": "Developing",
     "cognitiveLevel": "Troubleshooting",
     "scenario": "Traffic is reaching the wrong access switch after a cabling change.",
-    "objective": "Determine where the destination device’s hardware address is currently being learned.",
+    "objective": "Determine where the destination device\u2019s hardware address is currently being learned.",
     "explanation": "Looking up the destination MAC reveals the outgoing interface selected by Layer 2 forwarding.",
     "answerCommand": "show mac address-table address 0050.56aa.1001"
   },
@@ -1195,7 +1195,7 @@
     "difficulty": "Intermediate",
     "cognitiveLevel": "Troubleshooting",
     "scenario": "Users report intermittent connectivity and you suspect the same endpoint address is moving between ports.",
-    "objective": "Inspect the switch’s current Layer 2 forwarding entries before checking logs for address movement.",
+    "objective": "Inspect the switch\u2019s current Layer 2 forwarding entries before checking logs for address movement.",
     "explanation": "The MAC address table shows the interface currently associated with each learned address.",
     "answerCommand": "show mac address-table dynamic"
   },
@@ -1205,7 +1205,7 @@
     "difficulty": "Developing",
     "cognitiveLevel": "Verification",
     "scenario": "An interface was intended to be an access port, but its current behavior does not match the design.",
-    "objective": "Compare the port’s configured Layer 2 mode with the mode it is actually operating in.",
+    "objective": "Compare the port\u2019s configured Layer 2 mode with the mode it is actually operating in.",
     "explanation": "This output includes administrative mode, operational mode, access VLAN, trunking state, and negotiation details.",
     "answerCommand": "show interfaces GigabitEthernet0/8 switchport"
   },
@@ -1215,7 +1215,7 @@
     "difficulty": "Developing",
     "cognitiveLevel": "Troubleshooting",
     "scenario": "A phone and workstation connected to the same port are not being placed into their expected networks.",
-    "objective": "Inspect the port’s data VLAN and voice VLAN assignments.",
+    "objective": "Inspect the port\u2019s data VLAN and voice VLAN assignments.",
     "explanation": "Detailed switchport output identifies both access and voice VLAN configuration.",
     "answerCommand": "show interfaces GigabitEthernet0/15 switchport"
   },
@@ -1225,7 +1225,7 @@
     "difficulty": "Intermediate",
     "cognitiveLevel": "Troubleshooting",
     "scenario": "Two switches should form a trunk, but only one side reports that the link is trunking.",
-    "objective": "Check the local port’s configured mode, operational mode, and negotiation settings.",
+    "objective": "Check the local port\u2019s configured mode, operational mode, and negotiation settings.",
     "explanation": "This command reveals whether a port is administratively trunking, dynamically negotiating, or operating as access.",
     "answerCommand": "show interfaces GigabitEthernet0/1 switchport"
   },
@@ -1235,7 +1235,7 @@
     "difficulty": "Developing",
     "cognitiveLevel": "Verification",
     "scenario": "You need to verify whether untagged frames on a particular uplink are assigned to VLAN 99.",
-    "objective": "Inspect the port’s native VLAN setting and current trunking status.",
+    "objective": "Inspect the port\u2019s native VLAN setting and current trunking status.",
     "explanation": "The switchport details show the administrative and operational native VLAN values.",
     "answerCommand": "show interfaces GigabitEthernet0/24 switchport"
   },
@@ -1245,7 +1245,7 @@
     "difficulty": "Intermediate",
     "cognitiveLevel": "Application",
     "scenario": "A security review requires confirmation that a user-facing port cannot negotiate a trunk.",
-    "objective": "Examine the port’s administrative mode and whether negotiation frames are enabled.",
+    "objective": "Examine the port\u2019s administrative mode and whether negotiation frames are enabled.",
     "explanation": "Detailed switchport state shows the configured mode and DTP negotiation setting.",
     "answerCommand": "show interfaces GigabitEthernet0/6 switchport"
   },
@@ -1315,7 +1315,7 @@
     "difficulty": "Developing",
     "cognitiveLevel": "Application",
     "scenario": "A change window requires confirmation that rapid convergence is enabled across the switch.",
-    "objective": "Check the switch’s current Spanning Tree operating mode without reviewing every VLAN individually.",
+    "objective": "Check the switch\u2019s current Spanning Tree operating mode without reviewing every VLAN individually.",
     "explanation": "The summary identifies the configured protocol mode and global Spanning Tree status.",
     "answerCommand": "show spanning-tree summary"
   },
@@ -1355,7 +1355,7 @@
     "difficulty": "Intermediate",
     "cognitiveLevel": "Troubleshooting",
     "scenario": "A single uplink repeatedly changes between forwarding and blocking.",
-    "objective": "Examine that interface’s role, state, timers, and number of topology-change transitions.",
+    "objective": "Examine that interface\u2019s role, state, timers, and number of topology-change transitions.",
     "explanation": "Detailed interface-specific Spanning Tree output exposes transition counters and per-port state.",
     "answerCommand": "show spanning-tree interface GigabitEthernet0/1 detail"
   },
@@ -1365,7 +1365,7 @@
     "difficulty": "Intermediate",
     "cognitiveLevel": "Verification",
     "scenario": "An access port should immediately enter forwarding when a workstation connects.",
-    "objective": "Confirm the port’s edge behavior and inspect whether it has received any control frames from another switch.",
+    "objective": "Confirm the port\u2019s edge behavior and inspect whether it has received any control frames from another switch.",
     "explanation": "Detailed per-interface output reveals edge status and received or sent BPDU counters.",
     "answerCommand": "show spanning-tree interface GigabitEthernet0/10 detail"
   },
@@ -1445,7 +1445,7 @@
     "difficulty": "Developing",
     "cognitiveLevel": "Configuration",
     "scenario": "A security standard prohibits dynamic trunk formation on infrastructure links.",
-    "objective": "Set the interface’s Layer 2 mode explicitly before disabling negotiation.",
+    "objective": "Set the interface\u2019s Layer 2 mode explicitly before disabling negotiation.",
     "explanation": "The port must first be configured as a static trunk.",
     "answerCommand": "switchport mode trunk"
   },
@@ -1525,7 +1525,7 @@
     "difficulty": "Intermediate",
     "cognitiveLevel": "Configuration",
     "scenario": "Management traffic must traverse an uplink without an 802.1Q tag and belongs to VLAN 999.",
-    "objective": "Assign the required VLAN as the trunk’s untagged VLAN.",
+    "objective": "Assign the required VLAN as the trunk\u2019s untagged VLAN.",
     "explanation": "Changing the native VLAN determines where untagged frames are classified.",
     "answerCommand": "switchport trunk native vlan 999"
   },
@@ -1536,7 +1536,7 @@
     "cognitiveLevel": "Application",
     "scenario": "A switch-to-access-point trunk uses VLAN 10 for untagged management traffic.",
     "objective": "Configure the switchport accordingly.",
-    "explanation": "The native VLAN must match the access point’s untagged management network.",
+    "explanation": "The native VLAN must match the access point\u2019s untagged management network.",
     "answerCommand": "switchport trunk native vlan 10"
   },
   {
@@ -1575,7 +1575,7 @@
     "difficulty": "Intermediate",
     "cognitiveLevel": "Troubleshooting",
     "scenario": "Packet captures show unexpected Cisco negotiation frames leaving an otherwise static trunk.",
-    "objective": "Stop those frames without changing the trunk’s forwarding function.",
+    "objective": "Stop those frames without changing the trunk\u2019s forwarding function.",
     "explanation": "Disabling negotiation prevents DTP frames while preserving static trunk operation.",
     "answerCommand": "switchport nonegotiate"
   },
@@ -1644,7 +1644,7 @@
     "commandId": "CMD033",
     "difficulty": "Intermediate",
     "cognitiveLevel": "Configuration",
-    "scenario": "A replacement phone should continue using the organization’s dedicated real-time traffic network, VLAN 40.",
+    "scenario": "A replacement phone should continue using the organization\u2019s dedicated real-time traffic network, VLAN 40.",
     "objective": "Configure the switchport to identify that network to the phone.",
     "explanation": "The voice VLAN setting is used by supported IP phones for tagged voice traffic.",
     "answerCommand": "switchport voice vlan 40"
@@ -1745,7 +1745,7 @@
     "difficulty": "Intermediate",
     "cognitiveLevel": "Configuration",
     "scenario": "A printer aggregation port is approved for three fixed devices and should reject a fourth.",
-    "objective": "Set the interface’s secure-address capacity accordingly.",
+    "objective": "Set the interface\u2019s secure-address capacity accordingly.",
     "explanation": "The configured maximum caps the number of accepted secure addresses.",
     "answerCommand": "switchport port-security maximum 3"
   },
@@ -1864,7 +1864,7 @@
     "commandId": "CMD038",
     "difficulty": "Intermediate",
     "cognitiveLevel": "Application",
-    "scenario": "Hundreds of access ports need secure addresses without manually entering each endpoint’s MAC address.",
+    "scenario": "Hundreds of access ports need secure addresses without manually entering each endpoint\u2019s MAC address.",
     "objective": "Configure the ports to learn and record connected devices automatically.",
     "explanation": "Sticky learning reduces manual entry while creating visible secure-address configuration.",
     "answerCommand": "switchport port-security mac-address sticky"
@@ -1955,7 +1955,7 @@
     "difficulty": "Developing",
     "cognitiveLevel": "Troubleshooting",
     "scenario": "One access port is error-disabled and you suspect a secure-address violation.",
-    "objective": "Inspect that interface’s security status, violation mode, maximum, learned count, and last offending address.",
+    "objective": "Inspect that interface\u2019s security status, violation mode, maximum, learned count, and last offending address.",
     "explanation": "The interface-specific display provides detailed port-security state and violation data.",
     "answerCommand": "show port-security interface GigabitEthernet0/7"
   },
@@ -2184,7 +2184,7 @@
     "commandId": "CMD044",
     "difficulty": "Intermediate",
     "cognitiveLevel": "Configuration",
-    "scenario": "A replacement interface should match other members that wait for the distribution switch’s PAgP requests.",
+    "scenario": "A replacement interface should match other members that wait for the distribution switch\u2019s PAgP requests.",
     "objective": "Add it to group 6 using the passive proprietary role.",
     "explanation": "Auto is the responding role for PAgP.",
     "answerCommand": "channel-group 6 mode auto"
@@ -2298,5 +2298,1155 @@
     "objective": "Remove its administrative shutdown state.",
     "explanation": "No shutdown makes the port eligible to transition to connected.",
     "answerCommand": "no shutdown"
+  },
+  {
+    "id": 331,
+    "commandId": "CMD047",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Application",
+    "scenario": "A new multivendor switch has been added to a wiring closet.",
+    "objective": "List the directly connected devices learned through the vendor-neutral discovery protocol, including local and remote port identifiers.",
+    "explanation": "The concise LLDP neighbor table maps local interfaces to neighboring systems and remote ports.",
+    "answerCommand": "show lldp neighbors"
+  },
+  {
+    "id": 332,
+    "commandId": "CMD047",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "A cable may connect GigabitEthernet0/2 to the wrong non-Cisco switch.",
+    "objective": "Identify the neighboring system and remote port attached to the local interface.",
+    "explanation": "LLDP provides vendor-neutral Layer 2 neighbor discovery information.",
+    "answerCommand": "show lldp neighbors"
+  },
+  {
+    "id": 333,
+    "commandId": "CMD047",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Verification",
+    "scenario": "A new wireless access point supports LLDP and has been connected to an access switch.",
+    "objective": "Confirm that the switch detects the device as a directly connected neighbor.",
+    "explanation": "The LLDP neighbor table confirms receipt of advertisements from an attached device.",
+    "answerCommand": "show lldp neighbors"
+  },
+  {
+    "id": 334,
+    "commandId": "CMD047",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Application",
+    "scenario": "Network documentation is missing for a mixed-vendor access layer.",
+    "objective": "Create a concise map of directly attached infrastructure devices and their connection ports.",
+    "explanation": "The brief LLDP display is useful for reconstructing local physical connectivity.",
+    "answerCommand": "show lldp neighbors"
+  },
+  {
+    "id": 335,
+    "commandId": "CMD047",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "An interface is operational, but the expected adjacent device may not be connected.",
+    "objective": "Check whether any LLDP-speaking neighbor is being discovered on the link.",
+    "explanation": "The neighbor table reveals whether LLDP advertisements are arriving on that interface.",
+    "answerCommand": "show lldp neighbors"
+  },
+  {
+    "id": 336,
+    "commandId": "CMD048",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Application",
+    "scenario": "You can see an LLDP neighbor but need its management address and system description.",
+    "objective": "Display the complete information advertised by directly connected LLDP devices.",
+    "explanation": "Detailed LLDP output includes management addresses, system names, capabilities, and descriptions.",
+    "answerCommand": "show lldp neighbors detail"
+  },
+  {
+    "id": 337,
+    "commandId": "CMD048",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Verification",
+    "scenario": "An inventory audit requires the platform description of a neighboring third-party switch.",
+    "objective": "Retrieve the expanded LLDP record for the attached device.",
+    "explanation": "The detailed display contains system-description and capability information.",
+    "answerCommand": "show lldp neighbors detail"
+  },
+  {
+    "id": 338,
+    "commandId": "CMD048",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "A neighbor is advertising an unexpected management address.",
+    "objective": "Inspect the full LLDP information received from that device.",
+    "explanation": "Detailed output exposes all advertised management-address information.",
+    "answerCommand": "show lldp neighbors detail"
+  },
+  {
+    "id": 339,
+    "commandId": "CMD048",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Application",
+    "scenario": "A remote engineer needs the system name and management address of every adjacent LLDP device.",
+    "objective": "Collect the expanded neighbor information in one display.",
+    "explanation": "The detailed LLDP table contains the requested identifiers and addresses.",
+    "answerCommand": "show lldp neighbors detail"
+  },
+  {
+    "id": 340,
+    "commandId": "CMD048",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "A VoIP endpoint is not receiving the expected network-policy information.",
+    "objective": "Review the complete LLDP advertisement associated with the device.",
+    "explanation": "Detailed LLDP output provides the advertised attributes needed for analysis.",
+    "answerCommand": "show lldp neighbors detail"
+  },
+  {
+    "id": 341,
+    "commandId": "CMD049",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Configuration",
+    "scenario": "GigabitEthernet0/1 connects to the 192.168.10.0/24 LAN.",
+    "objective": "Assign 192.168.10.1 with the correct subnet mask to the interface.",
+    "explanation": "The interface requires an IPv4 address and mask before it can route traffic for the subnet.",
+    "answerCommand": "ip address 192.168.10.1 255.255.255.0"
+  },
+  {
+    "id": 342,
+    "commandId": "CMD049",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Configuration",
+    "scenario": "A point-to-point link uses subnet 10.1.1.0/30.",
+    "objective": "Configure the local interface with address 10.1.1.1/30.",
+    "explanation": "A /30 prefix uses mask 255.255.255.252.",
+    "answerCommand": "ip address 10.1.1.1 255.255.255.252"
+  },
+  {
+    "id": 343,
+    "commandId": "CMD049",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "A router interface was assigned an address from the wrong subnet.",
+    "objective": "Replace it with 172.16.20.1 using a /24 mask.",
+    "explanation": "The correct IPv4 address and mask must be configured under the interface.",
+    "answerCommand": "ip address 172.16.20.1 255.255.255.0"
+  },
+  {
+    "id": 344,
+    "commandId": "CMD049",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Application",
+    "scenario": "A new branch LAN uses gateway address 10.20.30.1/25.",
+    "objective": "Apply the required Layer 3 addressing to the LAN-facing interface.",
+    "explanation": "A /25 prefix corresponds to mask 255.255.255.128.",
+    "answerCommand": "ip address 10.20.30.1 255.255.255.128"
+  },
+  {
+    "id": 345,
+    "commandId": "CMD049",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Configuration",
+    "scenario": "The WAN provider assigned 198.51.100.2/30 to the customer router.",
+    "objective": "Configure that address on the provider-facing interface.",
+    "explanation": "The WAN interface must use the assigned address and /30 mask.",
+    "answerCommand": "ip address 198.51.100.2 255.255.255.252"
+  },
+  {
+    "id": 346,
+    "commandId": "CMD050",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Configuration",
+    "scenario": "A LAN interface must serve prefix 2001:db8:10::/64.",
+    "objective": "Assign the router address 2001:db8:10::1/64.",
+    "explanation": "IPv6 interface configuration includes the address and prefix length.",
+    "answerCommand": "ipv6 address 2001:db8:10::1/64"
+  },
+  {
+    "id": 347,
+    "commandId": "CMD050",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Configuration",
+    "scenario": "A point-to-point IPv6 link uses 2001:db8:0:1::/64.",
+    "objective": "Configure the local endpoint as 2001:db8:0:1::1/64.",
+    "explanation": "The interface requires the specified global unicast address and prefix length.",
+    "answerCommand": "ipv6 address 2001:db8:0:1::1/64"
+  },
+  {
+    "id": 348,
+    "commandId": "CMD050",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "An interface has an IPv6 address from the wrong prefix.",
+    "objective": "Correct it to 2001:db8:20::1/64.",
+    "explanation": "The correct IPv6 prefix must be assigned under interface configuration.",
+    "answerCommand": "ipv6 address 2001:db8:20::1/64"
+  },
+  {
+    "id": 349,
+    "commandId": "CMD050",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Application",
+    "scenario": "A server VLAN uses IPv6 gateway 2001:db8:30::1 with a 64-bit prefix.",
+    "objective": "Apply the gateway address to the SVI.",
+    "explanation": "The SVI needs the designated IPv6 address and prefix length.",
+    "answerCommand": "ipv6 address 2001:db8:30::1/64"
+  },
+  {
+    "id": 350,
+    "commandId": "CMD050",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Configuration",
+    "scenario": "A lab requires a loopback address of 2001:db8:ffff::1/128.",
+    "objective": "Configure the exact host prefix on the loopback interface.",
+    "explanation": "A loopback host address can be configured with a /128 prefix.",
+    "answerCommand": "ipv6 address 2001:db8:ffff::1/128"
+  },
+  {
+    "id": 351,
+    "commandId": "CMD051",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Verification",
+    "scenario": "Several router interfaces were recently assigned IPv6 addresses.",
+    "objective": "Quickly confirm each interface address and whether the interface is operational.",
+    "explanation": "The brief IPv6 interface display summarizes addressing and line state.",
+    "answerCommand": "show ipv6 interface brief"
+  },
+  {
+    "id": 352,
+    "commandId": "CMD051",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "A host cannot reach its IPv6 default gateway.",
+    "objective": "Check whether the LAN interface has the intended IPv6 address and is up.",
+    "explanation": "The concise output maps IPv6 addresses to interface operational state.",
+    "answerCommand": "show ipv6 interface brief"
+  },
+  {
+    "id": 353,
+    "commandId": "CMD051",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Application",
+    "scenario": "Documentation lists 2001:db8:20::1 on one router interface.",
+    "objective": "Identify which interface currently owns the address.",
+    "explanation": "The brief table lists IPv6 addresses beneath their interfaces.",
+    "answerCommand": "show ipv6 interface brief"
+  },
+  {
+    "id": 354,
+    "commandId": "CMD051",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "IPv6 routing is enabled, but one link appears administratively disabled.",
+    "objective": "Review all IPv6-capable interfaces and their current status.",
+    "explanation": "The summary distinguishes operational and administratively disabled interfaces.",
+    "answerCommand": "show ipv6 interface brief"
+  },
+  {
+    "id": 355,
+    "commandId": "CMD051",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Verification",
+    "scenario": "A new IPv6 router configuration has just been completed.",
+    "objective": "Perform a quick addressing and interface-state check before testing routes.",
+    "explanation": "This is the fastest overview of IPv6 interface addresses and status.",
+    "answerCommand": "show ipv6 interface brief"
+  },
+  {
+    "id": 356,
+    "commandId": "CMD052",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "Users cannot reach an IPv6 prefix at a remote site.",
+    "objective": "Determine whether the router has an installed path to 2001:db8:50::/64.",
+    "explanation": "The IPv6 routing table shows installed prefixes, next hops, and exit interfaces.",
+    "answerCommand": "show ipv6 route 2001:db8:50::/64"
+  },
+  {
+    "id": 357,
+    "commandId": "CMD052",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Verification",
+    "scenario": "An IPv6 default route should be present on an edge router.",
+    "objective": "Confirm that a route for ::/0 is installed.",
+    "explanation": "The IPv6 route table identifies the default path for unmatched destinations.",
+    "answerCommand": "show ipv6 route ::/0"
+  },
+  {
+    "id": 358,
+    "commandId": "CMD052",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "An OSPFv3 neighbor is present, but a remote IPv6 network remains unreachable.",
+    "objective": "Verify whether the expected prefix was actually installed for forwarding.",
+    "explanation": "Neighbor formation alone does not prove that the route is present.",
+    "answerCommand": "show ipv6 route"
+  },
+  {
+    "id": 359,
+    "commandId": "CMD052",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Application",
+    "scenario": "Two possible paths exist to 2001:db8:100::/64.",
+    "objective": "Inspect the active next hop and route source selected by the router.",
+    "explanation": "A prefix-specific lookup reveals the installed forwarding path.",
+    "answerCommand": "show ipv6 route 2001:db8:100::/64"
+  },
+  {
+    "id": 360,
+    "commandId": "CMD052",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "IPv6 traffic is leaving through an unexpected interface.",
+    "objective": "Examine the route-table decision for the affected destination prefix.",
+    "explanation": "The routing table identifies the chosen next hop and outgoing interface.",
+    "answerCommand": "show ipv6 route 2001:db8:200::/64"
+  },
+  {
+    "id": 361,
+    "commandId": "CMD053",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Configuration",
+    "scenario": "A branch router must reach network 10.20.0.0/16 through next hop 192.0.2.1.",
+    "objective": "Create the required IPv4 static route.",
+    "explanation": "A network static route specifies the destination, mask, and next hop.",
+    "answerCommand": "ip route 10.20.0.0 255.255.0.0 192.0.2.1"
+  },
+  {
+    "id": 362,
+    "commandId": "CMD053",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Configuration",
+    "scenario": "All unknown IPv4 destinations should be sent to ISP next hop 203.0.113.1.",
+    "objective": "Configure a default route.",
+    "explanation": "A destination and mask of all zeros create the IPv4 default route.",
+    "answerCommand": "ip route 0.0.0.0 0.0.0.0 203.0.113.1"
+  },
+  {
+    "id": 363,
+    "commandId": "CMD053",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Configuration",
+    "scenario": "A specific server at 172.16.50.10 must be reached through 10.1.1.2.",
+    "objective": "Create a host route for only that address.",
+    "explanation": "A /32 mask creates a route for one IPv4 host.",
+    "answerCommand": "ip route 172.16.50.10 255.255.255.255 10.1.1.2"
+  },
+  {
+    "id": 364,
+    "commandId": "CMD053",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "A backup static path should be used only after an OSPF route disappears.",
+    "objective": "Configure a route to 10.40.0.0/16 through 192.0.2.5 with administrative distance 200.",
+    "explanation": "A higher administrative distance creates a floating static route.",
+    "answerCommand": "ip route 10.40.0.0 255.255.0.0 192.0.2.5 200"
+  },
+  {
+    "id": 365,
+    "commandId": "CMD053",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Application",
+    "scenario": "A remote LAN 192.168.50.0/24 is reachable through neighbor 10.0.0.2.",
+    "objective": "Install a static route for that destination.",
+    "explanation": "The static route directs matching packets to the specified next hop.",
+    "answerCommand": "ip route 192.168.50.0 255.255.255.0 10.0.0.2"
+  },
+  {
+    "id": 366,
+    "commandId": "CMD054",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Configuration",
+    "scenario": "A router must reach 2001:db8:50::/64 through next hop 2001:db8:0:1::2.",
+    "objective": "Create the required IPv6 static route.",
+    "explanation": "An IPv6 static route specifies the destination prefix and next hop.",
+    "answerCommand": "ipv6 route 2001:db8:50::/64 2001:db8:0:1::2"
+  },
+  {
+    "id": 367,
+    "commandId": "CMD054",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Configuration",
+    "scenario": "All unknown IPv6 destinations should use next hop 2001:db8:0:2::1.",
+    "objective": "Configure an IPv6 default route.",
+    "explanation": "The ::/0 prefix matches destinations not covered by more specific routes.",
+    "answerCommand": "ipv6 route ::/0 2001:db8:0:2::1"
+  },
+  {
+    "id": 368,
+    "commandId": "CMD054",
+    "difficulty": "Advanced",
+    "cognitiveLevel": "Configuration",
+    "scenario": "A single IPv6 server at 2001:db8:99::10 must be reached through 2001:db8:0:3::2.",
+    "objective": "Create a host route for that address.",
+    "explanation": "A /128 route identifies one IPv6 host.",
+    "answerCommand": "ipv6 route 2001:db8:99::10/128 2001:db8:0:3::2"
+  },
+  {
+    "id": 369,
+    "commandId": "CMD054",
+    "difficulty": "Advanced",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "A backup IPv6 path should be used only when the primary dynamic route is lost.",
+    "objective": "Configure 2001:db8:70::/64 through 2001:db8:0:4::2 with administrative distance 200.",
+    "explanation": "The elevated administrative distance makes the static route float behind preferred routes.",
+    "answerCommand": "ipv6 route 2001:db8:70::/64 2001:db8:0:4::2 200"
+  },
+  {
+    "id": 370,
+    "commandId": "CMD054",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Application",
+    "scenario": "The branch prefix 2001:db8:30::/64 is reachable through neighboring router 2001:db8:0:5::2.",
+    "objective": "Install the appropriate IPv6 static path.",
+    "explanation": "The route forwards matching traffic to the stated next hop.",
+    "answerCommand": "ipv6 route 2001:db8:30::/64 2001:db8:0:5::2"
+  },
+  {
+    "id": 371,
+    "commandId": "CMD055",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Configuration",
+    "scenario": "A router must begin participating in OSPFv2 process 10.",
+    "objective": "Create or enter the required routing process.",
+    "explanation": "The router ospf command starts or enters an OSPFv2 process.",
+    "answerCommand": "router ospf 10"
+  },
+  {
+    "id": 372,
+    "commandId": "CMD055",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Application",
+    "scenario": "The design standard assigns process ID 1 to the local OSPF configuration.",
+    "objective": "Enter the correct process configuration mode.",
+    "explanation": "The process ID is locally significant and identifies the configuration context.",
+    "answerCommand": "router ospf 1"
+  },
+  {
+    "id": 373,
+    "commandId": "CMD055",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "OSPF network statements were entered under the wrong process.",
+    "objective": "Enter process 20 so the correct configuration can be applied.",
+    "explanation": "The desired OSPF settings must be placed under the intended process.",
+    "answerCommand": "router ospf 20"
+  },
+  {
+    "id": 374,
+    "commandId": "CMD055",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Configuration",
+    "scenario": "A lab router must run a second independent OSPFv2 process numbered 100.",
+    "objective": "Create that process.",
+    "explanation": "IOS supports entering the requested process by its local identifier.",
+    "answerCommand": "router ospf 100"
+  },
+  {
+    "id": 375,
+    "commandId": "CMD055",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Verification",
+    "scenario": "You are about to configure the router ID and passive interfaces for OSPF process 5.",
+    "objective": "Enter the configuration context where those settings belong.",
+    "explanation": "Router ID and passive-interface settings are applied under router OSPF configuration.",
+    "answerCommand": "router ospf 5"
+  },
+  {
+    "id": 376,
+    "commandId": "CMD056",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Configuration",
+    "scenario": "Interfaces in 10.10.10.0/24 must participate in OSPF process configuration and belong to area 0.",
+    "objective": "Use one statement to match that subnet and assign it to the backbone.",
+    "explanation": "The network statement uses a wildcard mask to select interfaces and associate them with an area.",
+    "answerCommand": "network 10.10.10.0 0.0.0.255 area 0"
+  },
+  {
+    "id": 377,
+    "commandId": "CMD056",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Configuration",
+    "scenario": "Only the interface with address 192.0.2.1 should be enabled for OSPF area 0.",
+    "objective": "Use the most specific wildcard match possible.",
+    "explanation": "A wildcard of 0.0.0.0 matches one exact interface address.",
+    "answerCommand": "network 192.0.2.1 0.0.0.0 area 0"
+  },
+  {
+    "id": 378,
+    "commandId": "CMD056",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "The 172.16.20.0/24 interface is not participating in OSPF area 20.",
+    "objective": "Add the missing router-process statement.",
+    "explanation": "The network statement selects the interface by its address and assigns it to area 20.",
+    "answerCommand": "network 172.16.20.0 0.0.0.255 area 20"
+  },
+  {
+    "id": 379,
+    "commandId": "CMD056",
+    "difficulty": "Advanced",
+    "cognitiveLevel": "Configuration",
+    "scenario": "All interfaces with addresses from 10.0.0.0/8 must be placed into area 0.",
+    "objective": "Configure the broad wildcard match required by the design.",
+    "explanation": "The inverse mask 0.255.255.255 matches the entire /8 address range.",
+    "answerCommand": "network 10.0.0.0 0.255.255.255 area 0"
+  },
+  {
+    "id": 380,
+    "commandId": "CMD056",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Application",
+    "scenario": "A point-to-point interface uses address 192.168.12.1/30 and must join area 12.",
+    "objective": "Match the /30 subnet in the OSPF process.",
+    "explanation": "A /30 mask corresponds to wildcard 0.0.0.3.",
+    "answerCommand": "network 192.168.12.0 0.0.0.3 area 12"
+  },
+  {
+    "id": 381,
+    "commandId": "CMD057",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Configuration",
+    "scenario": "GigabitEthernet0/1 must run OSPF process 1 in area 0 without using a network statement.",
+    "objective": "Enable OSPF directly on the interface.",
+    "explanation": "The interface-level command explicitly binds the interface to a process and area.",
+    "answerCommand": "ip ospf 1 area 0"
+  },
+  {
+    "id": 382,
+    "commandId": "CMD057",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Configuration",
+    "scenario": "A WAN interface must participate in process 10, area 20.",
+    "objective": "Apply the required interface-level OSPF setting.",
+    "explanation": "The command enables OSPF on that interface and assigns its area.",
+    "answerCommand": "ip ospf 10 area 20"
+  },
+  {
+    "id": 383,
+    "commandId": "CMD057",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "An interface address changed and no longer matches the process network statement.",
+    "objective": "Enable OSPF process 5 directly on the interface in area 0.",
+    "explanation": "Interface-based activation does not depend on address wildcard matching.",
+    "answerCommand": "ip ospf 5 area 0"
+  },
+  {
+    "id": 384,
+    "commandId": "CMD057",
+    "difficulty": "Advanced",
+    "cognitiveLevel": "Application",
+    "scenario": "A point-to-point link must be assigned to OSPF area 30 using interface configuration.",
+    "objective": "Configure the local interface for process 2.",
+    "explanation": "The direct interface command identifies both process and area.",
+    "answerCommand": "ip ospf 2 area 30"
+  },
+  {
+    "id": 385,
+    "commandId": "CMD057",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Verification",
+    "scenario": "A lab requires OSPF activation to be visible beneath each participating interface.",
+    "objective": "Enable process 100, area 0 on the selected link.",
+    "explanation": "Interface-specific OSPF configuration satisfies the requirement.",
+    "answerCommand": "ip ospf 100 area 0"
+  },
+  {
+    "id": 386,
+    "commandId": "CMD058",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Configuration",
+    "scenario": "A user LAN should be advertised by OSPF, but no neighbor relationship should ever form on that interface.",
+    "objective": "Suppress OSPF hello packets on GigabitEthernet0/2.",
+    "explanation": "A passive interface advertises its connected network without sending neighbor-forming messages.",
+    "answerCommand": "passive-interface GigabitEthernet0/2"
+  },
+  {
+    "id": 387,
+    "commandId": "CMD058",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Configuration",
+    "scenario": "Loopback0 must be included in OSPF advertisements but should not send OSPF packets.",
+    "objective": "Mark the loopback as passive.",
+    "explanation": "Loopbacks normally have no routing neighbor and are appropriate passive interfaces.",
+    "answerCommand": "passive-interface Loopback0"
+  },
+  {
+    "id": 388,
+    "commandId": "CMD058",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "OSPF hello packets are being sent toward end-user devices on VLAN 20.",
+    "objective": "Stop neighbor discovery on interface Vlan20 while retaining route advertisement.",
+    "explanation": "Passive-interface suppresses OSPF protocol traffic on the interface.",
+    "answerCommand": "passive-interface Vlan20"
+  },
+  {
+    "id": 389,
+    "commandId": "CMD058",
+    "difficulty": "Advanced",
+    "cognitiveLevel": "Application",
+    "scenario": "A security policy prohibits routing-protocol messages on the server LAN connected to GigabitEthernet0/3.",
+    "objective": "Apply the process-level control that preserves advertisement of the subnet.",
+    "explanation": "Making the interface passive meets both requirements.",
+    "answerCommand": "passive-interface GigabitEthernet0/3"
+  },
+  {
+    "id": 390,
+    "commandId": "CMD058",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Verification",
+    "scenario": "An access-facing interface should never establish an OSPF adjacency.",
+    "objective": "Configure the interface as passive under the routing process.",
+    "explanation": "The passive setting prevents OSPF neighbor formation.",
+    "answerCommand": "passive-interface GigabitEthernet0/4"
+  },
+  {
+    "id": 391,
+    "commandId": "CMD059",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Verification",
+    "scenario": "You need to identify which IPv4 routing protocols are active on a router.",
+    "objective": "Display their process parameters, advertised networks, and routing sources.",
+    "explanation": "The routing-protocol summary consolidates active protocol configuration and behavior.",
+    "answerCommand": "show ip protocols"
+  },
+  {
+    "id": 392,
+    "commandId": "CMD059",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "A connected LAN is not being advertised by OSPF.",
+    "objective": "Check which networks the routing process is configured to advertise.",
+    "explanation": "The output lists routing-for networks and process information.",
+    "answerCommand": "show ip protocols"
+  },
+  {
+    "id": 393,
+    "commandId": "CMD059",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "An expected OSPF neighbor cannot form on one interface.",
+    "objective": "Determine whether that interface has been configured as passive.",
+    "explanation": "The protocol summary lists passive interfaces.",
+    "answerCommand": "show ip protocols"
+  },
+  {
+    "id": 394,
+    "commandId": "CMD059",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Application",
+    "scenario": "An audit requires the administrative distances used by active routing protocols.",
+    "objective": "Collect the protocol-level routing information in one display.",
+    "explanation": "The output includes distance values and routing information sources.",
+    "answerCommand": "show ip protocols"
+  },
+  {
+    "id": 395,
+    "commandId": "CMD059",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Verification",
+    "scenario": "A router may be running more than one dynamic IPv4 routing process.",
+    "objective": "Identify each active process and the networks associated with it.",
+    "explanation": "The command summarizes all configured IPv4 routing protocols.",
+    "answerCommand": "show ip protocols"
+  },
+  {
+    "id": 396,
+    "commandId": "CMD060",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Verification",
+    "scenario": "Several interfaces should participate in OSPF area 0.",
+    "objective": "Display a concise list showing process ID, area, cost, state, and neighbor count for each interface.",
+    "explanation": "The brief OSPF interface table summarizes participation and operational state.",
+    "answerCommand": "show ip ospf interface brief"
+  },
+  {
+    "id": 397,
+    "commandId": "CMD060",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "One routed interface is missing from OSPF.",
+    "objective": "Quickly identify which interfaces are currently enabled for the protocol.",
+    "explanation": "The brief display lists every OSPF-enabled interface.",
+    "answerCommand": "show ip ospf interface brief"
+  },
+  {
+    "id": 398,
+    "commandId": "CMD060",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "Traffic uses an unexpected path and interface costs may differ from the design.",
+    "objective": "Compare OSPF costs across all participating interfaces.",
+    "explanation": "The summary includes the configured or calculated cost for each interface.",
+    "answerCommand": "show ip ospf interface brief"
+  },
+  {
+    "id": 399,
+    "commandId": "CMD060",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Application",
+    "scenario": "A router participates in areas 0 and 10.",
+    "objective": "Map each OSPF-enabled interface to its assigned area.",
+    "explanation": "The brief table reports the area associated with each interface.",
+    "answerCommand": "show ip ospf interface brief"
+  },
+  {
+    "id": 400,
+    "commandId": "CMD060",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Verification",
+    "scenario": "A broadcast interface should show the expected OSPF state and neighbor count.",
+    "objective": "Review its concise protocol-specific interface status.",
+    "explanation": "The command provides state and neighbor information without full detailed output.",
+    "answerCommand": "show ip ospf interface brief"
+  },
+  {
+    "id": 401,
+    "commandId": "CMD061",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Configuration",
+    "scenario": "A workstation-facing access port should begin forwarding immediately when the link comes up.",
+    "objective": "Enable the spanning-tree edge feature on that interface.",
+    "explanation": "PortFast bypasses normal listening and learning delays on an edge port.",
+    "answerCommand": "spanning-tree portfast"
+  },
+  {
+    "id": 402,
+    "commandId": "CMD061",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Application",
+    "scenario": "A printer frequently powers down and users wait for the switchport to begin forwarding after it reconnects.",
+    "objective": "Configure the endpoint port for rapid transition to forwarding.",
+    "explanation": "PortFast is intended for ports connected to end devices rather than other switches.",
+    "answerCommand": "spanning-tree portfast"
+  },
+  {
+    "id": 403,
+    "commandId": "CMD061",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "A DHCP client times out because its access port spends too long in transitional spanning-tree states.",
+    "objective": "Reduce the startup delay on the verified edge port.",
+    "explanation": "PortFast allows the port to enter forwarding rapidly.",
+    "answerCommand": "spanning-tree portfast"
+  },
+  {
+    "id": 404,
+    "commandId": "CMD061",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Configuration",
+    "scenario": "An IP phone and PC connect to a user-facing access interface.",
+    "objective": "Apply the appropriate edge-port spanning-tree behavior.",
+    "explanation": "The endpoint-facing port can safely use PortFast when no switch is attached.",
+    "answerCommand": "spanning-tree portfast"
+  },
+  {
+    "id": 405,
+    "commandId": "CMD061",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Verification",
+    "scenario": "A server-facing port must recover quickly after a server reboot.",
+    "objective": "Configure immediate forwarding while retaining spanning-tree participation.",
+    "explanation": "PortFast accelerates forwarding but does not disable spanning tree.",
+    "answerCommand": "spanning-tree portfast"
+  },
+  {
+    "id": 406,
+    "commandId": "CMD062",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Configuration",
+    "scenario": "A user-facing port must be disabled automatically if someone connects a switch that sends BPDUs.",
+    "objective": "Enable the interface protection that reacts to received spanning-tree control frames.",
+    "explanation": "BPDU Guard error-disables a protected edge port when a BPDU arrives.",
+    "answerCommand": "spanning-tree bpduguard enable"
+  },
+  {
+    "id": 407,
+    "commandId": "CMD062",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Application",
+    "scenario": "A conference-room jack uses PortFast and must not permit an unauthorized downstream switch.",
+    "objective": "Add the appropriate spanning-tree safety feature.",
+    "explanation": "BPDU Guard protects edge ports from unexpected switch connections.",
+    "answerCommand": "spanning-tree bpduguard enable"
+  },
+  {
+    "id": 408,
+    "commandId": "CMD062",
+    "difficulty": "Advanced",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "An access port should immediately leave service when a BPDU is detected.",
+    "objective": "Configure the per-interface enforcement action.",
+    "explanation": "The interface-level BPDU Guard command causes an error-disabled condition.",
+    "answerCommand": "spanning-tree bpduguard enable"
+  },
+  {
+    "id": 409,
+    "commandId": "CMD062",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Configuration",
+    "scenario": "A security template pairs rapid edge forwarding with automatic shutdown on BPDU receipt.",
+    "objective": "Apply the required protection after enabling PortFast.",
+    "explanation": "BPDU Guard is the companion protection for PortFast edge ports.",
+    "answerCommand": "spanning-tree bpduguard enable"
+  },
+  {
+    "id": 410,
+    "commandId": "CMD062",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Verification",
+    "scenario": "An endpoint port must never become part of an unintended Layer 2 topology.",
+    "objective": "Configure it to fail closed if spanning-tree messages arrive.",
+    "explanation": "Receiving a BPDU triggers BPDU Guard and disables the port.",
+    "answerCommand": "spanning-tree bpduguard enable"
+  },
+  {
+    "id": 411,
+    "commandId": "CMD063",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Configuration",
+    "scenario": "DHCP clients in VLAN 20 cannot reach the server at 10.1.1.50 because it resides on another subnet.",
+    "objective": "Configure the VLAN interface to relay client broadcasts to that server.",
+    "explanation": "The helper address converts and forwards supported UDP broadcasts, including DHCP.",
+    "answerCommand": "ip helper-address 10.1.1.50"
+  },
+  {
+    "id": 412,
+    "commandId": "CMD063",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "Local DHCP clients send Discover messages, but the remote server never receives them.",
+    "objective": "Add the missing relay destination 172.16.1.10 on the client-facing Layer 3 interface.",
+    "explanation": "DHCP broadcasts do not cross routers unless a relay address is configured.",
+    "answerCommand": "ip helper-address 172.16.1.10"
+  },
+  {
+    "id": 413,
+    "commandId": "CMD063",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Application",
+    "scenario": "A branch user subnet must obtain addresses from centralized server 192.0.2.25.",
+    "objective": "Direct the subnet's DHCP requests to the remote server.",
+    "explanation": "The helper address identifies the unicast relay destination.",
+    "answerCommand": "ip helper-address 192.0.2.25"
+  },
+  {
+    "id": 414,
+    "commandId": "CMD063",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Configuration",
+    "scenario": "VLAN 30 has no local DHCP server and must use 10.10.10.5.",
+    "objective": "Apply the relay setting to interface Vlan30.",
+    "explanation": "The helper command belongs on the interface receiving client broadcasts.",
+    "answerCommand": "ip helper-address 10.10.10.5"
+  },
+  {
+    "id": 415,
+    "commandId": "CMD063",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Verification",
+    "scenario": "A redundant design uses DHCP servers 10.20.1.10 and 10.20.1.11.",
+    "objective": "Add the second relay destination without removing the first.",
+    "explanation": "Multiple helper addresses may be configured to relay requests to multiple servers.",
+    "answerCommand": "ip helper-address 10.20.1.11"
+  },
+  {
+    "id": 416,
+    "commandId": "CMD064",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Configuration",
+    "scenario": "Only hosts from 192.168.10.0/24 should be permitted by numbered standard ACL 10.",
+    "objective": "Create the permit entry using the correct wildcard mask.",
+    "explanation": "A standard ACL matches only the source IPv4 address.",
+    "answerCommand": "access-list 10 permit 192.168.10.0 0.0.0.255"
+  },
+  {
+    "id": 417,
+    "commandId": "CMD064",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Configuration",
+    "scenario": "Standard ACL 20 must deny traffic sourced from host 10.1.1.50.",
+    "objective": "Create a host-specific deny entry.",
+    "explanation": "The host keyword matches one source address in a standard ACL.",
+    "answerCommand": "access-list 20 deny host 10.1.1.50"
+  },
+  {
+    "id": 418,
+    "commandId": "CMD064",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Application",
+    "scenario": "ACL 15 should permit any source address after earlier specific deny entries.",
+    "objective": "Add the explicit catch-all permit statement.",
+    "explanation": "A final permit any prevents all remaining traffic from matching the implicit deny.",
+    "answerCommand": "access-list 15 permit any"
+  },
+  {
+    "id": 419,
+    "commandId": "CMD064",
+    "difficulty": "Advanced",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "A standard ACL should block source subnet 172.16.32.0/20.",
+    "objective": "Add the correct deny entry to ACL 25.",
+    "explanation": "A /20 mask corresponds to wildcard 0.0.15.255.",
+    "answerCommand": "access-list 25 deny 172.16.32.0 0.0.15.255"
+  },
+  {
+    "id": 420,
+    "commandId": "CMD064",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Configuration",
+    "scenario": "Management access should be allowed only from host 192.0.2.100 using ACL 5.",
+    "objective": "Create the source-based permit entry.",
+    "explanation": "A numbered standard ACL can identify a single permitted management host.",
+    "answerCommand": "access-list 5 permit host 192.0.2.100"
+  },
+  {
+    "id": 421,
+    "commandId": "CMD065",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Configuration",
+    "scenario": "Standard ACL 10 should filter packets as they leave GigabitEthernet0/1.",
+    "objective": "Apply the ACL in the outbound direction.",
+    "explanation": "An ACL has no filtering effect until it is attached to an interface and direction.",
+    "answerCommand": "ip access-group 10 out"
+  },
+  {
+    "id": 422,
+    "commandId": "CMD065",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Configuration",
+    "scenario": "Named ACL BLOCK_GUEST must inspect packets entering interface Vlan50.",
+    "objective": "Attach the ACL inbound.",
+    "explanation": "Inbound filtering evaluates packets as they arrive on the interface.",
+    "answerCommand": "ip access-group BLOCK_GUEST in"
+  },
+  {
+    "id": 423,
+    "commandId": "CMD065",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "ACL 101 is correctly defined, but unwanted traffic still passes because it is not active on the WAN interface.",
+    "objective": "Apply it to inbound traffic.",
+    "explanation": "The interface access-group command activates the ACL.",
+    "answerCommand": "ip access-group 101 in"
+  },
+  {
+    "id": 424,
+    "commandId": "CMD065",
+    "difficulty": "Advanced",
+    "cognitiveLevel": "Application",
+    "scenario": "A standard ACL restricting source addresses should filter traffic close to the destination as it exits GigabitEthernet0/2.",
+    "objective": "Apply ACL 20 using the required direction.",
+    "explanation": "Standard ACLs are commonly placed near the destination and may be applied outbound there.",
+    "answerCommand": "ip access-group 20 out"
+  },
+  {
+    "id": 425,
+    "commandId": "CMD065",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Verification",
+    "scenario": "The security policy requires named ACL SERVER_FILTER on packets entering Vlan100.",
+    "objective": "Configure the interface association.",
+    "explanation": "The ACL name and inbound direction are specified with ip access-group.",
+    "answerCommand": "ip access-group SERVER_FILTER in"
+  },
+  {
+    "id": 426,
+    "commandId": "CMD066",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Verification",
+    "scenario": "You need to review every IPv4 access list configured on a router.",
+    "objective": "Display the ACL entries and their match counters.",
+    "explanation": "The access-list display shows configured statements and packet-match counts.",
+    "answerCommand": "show access-lists"
+  },
+  {
+    "id": 427,
+    "commandId": "CMD066",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "Traffic is unexpectedly denied and ACL 101 may be matching more packets than intended.",
+    "objective": "Inspect that ACL and its counters.",
+    "explanation": "Match counts help identify which entries are processing traffic.",
+    "answerCommand": "show access-lists 101"
+  },
+  {
+    "id": 428,
+    "commandId": "CMD066",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Application",
+    "scenario": "A named ACL called GUEST_FILTER must be audited.",
+    "objective": "Display only that access list.",
+    "explanation": "The command can be limited to one named ACL.",
+    "answerCommand": "show access-lists GUEST_FILTER"
+  },
+  {
+    "id": 429,
+    "commandId": "CMD066",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "A permit statement may never be reached because an earlier entry matches first.",
+    "objective": "Review the ACL order and counters.",
+    "explanation": "ACL output preserves processing order and shows which entries receive matches.",
+    "answerCommand": "show access-lists"
+  },
+  {
+    "id": 430,
+    "commandId": "CMD066",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Verification",
+    "scenario": "After applying an ACL, confirm that packet counters increase on the intended entries.",
+    "objective": "Display the current ACL statistics.",
+    "explanation": "The output includes counters that verify live policy matches.",
+    "answerCommand": "show access-lists"
+  },
+  {
+    "id": 431,
+    "commandId": "CMD067",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Configuration",
+    "scenario": "GigabitEthernet0/0 connects toward the private user network in a NAT design.",
+    "objective": "Mark the interface as the inside side of the translation boundary.",
+    "explanation": "NAT requires interfaces to be identified as inside or outside.",
+    "answerCommand": "ip nat inside"
+  },
+  {
+    "id": 432,
+    "commandId": "CMD067",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Application",
+    "scenario": "Interface Vlan10 carries addresses that will be translated before reaching the Internet.",
+    "objective": "Assign the appropriate NAT role to the SVI.",
+    "explanation": "Private source addresses originate on the NAT inside interface.",
+    "answerCommand": "ip nat inside"
+  },
+  {
+    "id": 433,
+    "commandId": "CMD067",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "PAT is configured, but translations never form because the LAN interface lacks a NAT designation.",
+    "objective": "Apply the missing role to the client-facing interface.",
+    "explanation": "The translation rule depends on correct inside and outside interface classification.",
+    "answerCommand": "ip nat inside"
+  },
+  {
+    "id": 434,
+    "commandId": "CMD067",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Configuration",
+    "scenario": "A branch router's GigabitEthernet0/1 faces internal RFC 1918 subnets.",
+    "objective": "Identify it as the internal side for NAT processing.",
+    "explanation": "The interface receiving inside-local traffic must be marked inside.",
+    "answerCommand": "ip nat inside"
+  },
+  {
+    "id": 435,
+    "commandId": "CMD067",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Verification",
+    "scenario": "A new subinterface carries private addresses that should use the existing NAT policy.",
+    "objective": "Add it to the internal NAT domain.",
+    "explanation": "The subinterface must be configured as an inside interface.",
+    "answerCommand": "ip nat inside"
+  },
+  {
+    "id": 436,
+    "commandId": "CMD068",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Configuration",
+    "scenario": "GigabitEthernet0/1 connects from the edge router to the ISP.",
+    "objective": "Mark the interface as the external side of the NAT boundary.",
+    "explanation": "The provider-facing interface is classified as NAT outside.",
+    "answerCommand": "ip nat outside"
+  },
+  {
+    "id": 437,
+    "commandId": "CMD068",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Application",
+    "scenario": "A public WAN interface carries translated traffic toward the Internet.",
+    "objective": "Assign the appropriate NAT role.",
+    "explanation": "Translated packets leave through the outside interface.",
+    "answerCommand": "ip nat outside"
+  },
+  {
+    "id": 438,
+    "commandId": "CMD068",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "NAT rules exist, but no translations occur because the provider-facing interface has no NAT designation.",
+    "objective": "Apply the missing external role.",
+    "explanation": "Both sides of the NAT boundary must be identified.",
+    "answerCommand": "ip nat outside"
+  },
+  {
+    "id": 439,
+    "commandId": "CMD068",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Configuration",
+    "scenario": "Serial0/0/0 connects to a service provider and holds the public address.",
+    "objective": "Identify it as the NAT external interface.",
+    "explanation": "The public-facing link belongs to the outside NAT domain.",
+    "answerCommand": "ip nat outside"
+  },
+  {
+    "id": 440,
+    "commandId": "CMD068",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Verification",
+    "scenario": "A backup ISP interface should support the router's translation design when activated.",
+    "objective": "Configure its NAT boundary role as external.",
+    "explanation": "The backup provider link must be marked outside for translation processing.",
+    "answerCommand": "ip nat outside"
+  },
+  {
+    "id": 441,
+    "commandId": "CMD069",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Configuration",
+    "scenario": "Hosts permitted by ACL 1 must share the public address assigned to GigabitEthernet0/1.",
+    "objective": "Configure interface-based PAT for those sources.",
+    "explanation": "The overload keyword allows many inside addresses to use one interface address.",
+    "answerCommand": "ip nat inside source list 1 interface GigabitEthernet0/1 overload"
+  },
+  {
+    "id": 442,
+    "commandId": "CMD069",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "Only one inside host can access the Internet at a time because address overloading is missing.",
+    "objective": "Configure PAT for ACL 10 using the address on GigabitEthernet0/0.",
+    "explanation": "PAT distinguishes simultaneous translations with transport-layer port numbers.",
+    "answerCommand": "ip nat inside source list 10 interface GigabitEthernet0/0 overload"
+  },
+  {
+    "id": 443,
+    "commandId": "CMD069",
+    "difficulty": "Advanced",
+    "cognitiveLevel": "Application",
+    "scenario": "Branch subnet sources matched by ACL NAT_INSIDE should use the WAN interface address for Internet access.",
+    "objective": "Create the required named-ACL PAT rule on Serial0/0/0.",
+    "explanation": "The command links the source ACL to the outside interface address and enables overload.",
+    "answerCommand": "ip nat inside source list NAT_INSIDE interface Serial0/0/0 overload"
+  },
+  {
+    "id": 444,
+    "commandId": "CMD069",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Configuration",
+    "scenario": "Private addresses selected by ACL 5 must be translated to the address of Dialer1.",
+    "objective": "Configure dynamic PAT using that interface.",
+    "explanation": "Interface overload is appropriate when the public address is assigned dynamically.",
+    "answerCommand": "ip nat inside source list 5 interface Dialer1 overload"
+  },
+  {
+    "id": 445,
+    "commandId": "CMD069",
+    "difficulty": "Advanced",
+    "cognitiveLevel": "Verification",
+    "scenario": "A replacement edge router must reproduce the existing policy: ACL 20 identifies inside users, GigabitEthernet0/2 supplies the public address, and many users must connect simultaneously.",
+    "objective": "Enter the complete PAT rule.",
+    "explanation": "The source list, outside interface, and overload keyword define the required behavior.",
+    "answerCommand": "ip nat inside source list 20 interface GigabitEthernet0/2 overload"
   }
 ]
