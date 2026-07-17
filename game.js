@@ -39,6 +39,8 @@ let activeRound = [];
 let usedIdsByDifficulty = new Map();
 let roundLocked = false;
 let roundNumber = 0;
+let touchDrag = null;
+let touchSelectedObjective = null;
 
 async function loadGameData() {
   const [commandsResponse, questionsResponse] = await Promise.all([
@@ -196,6 +198,7 @@ function buildObjectiveTile(item) {
   tile.setAttribute('aria-label', `Objective: ${tile.textContent}`);
   tile.addEventListener('dragstart', handleDragStart);
   tile.addEventListener('dragend', handleDragEnd);
+  tile.addEventListener('pointerdown', handlePointerDown);
   return tile;
 }
 
@@ -208,11 +211,13 @@ function buildCommandTile(item) {
   tile.addEventListener('dragover', handleDragOver);
   tile.addEventListener('dragleave', handleDragLeave);
   tile.addEventListener('drop', handleDrop);
+  tile.addEventListener('click', handleTouchCommandTap);
   return tile;
 }
 
 function renderRound() {
   roundLocked = false;
+  clearTouchSelection();
   elements.feedback.textContent = '';
   roundNumber += 1;
   elements.roundNumber.textContent = roundNumber;
@@ -229,6 +234,114 @@ function renderRound() {
 
   elements.objectiveColumn.replaceChildren(...objectives.map(buildObjectiveTile));
   elements.commandColumn.replaceChildren(...commands.map(buildCommandTile));
+}
+
+
+function clearTouchSelection() {
+  if (touchSelectedObjective) touchSelectedObjective.classList.remove('touch-selected');
+  touchSelectedObjective = null;
+}
+
+function handlePointerDown(event) {
+  if (roundLocked || event.pointerType === 'mouse') return;
+
+  const objectiveTile = event.currentTarget;
+  objectiveTile.setPointerCapture(event.pointerId);
+  touchDrag = {
+    pointerId: event.pointerId,
+    objectiveTile,
+    startX: event.clientX,
+    startY: event.clientY,
+    moved: false,
+    ghost: null,
+    overCommand: null
+  };
+
+  objectiveTile.addEventListener('pointermove', handlePointerMove);
+  objectiveTile.addEventListener('pointerup', handlePointerUp);
+  objectiveTile.addEventListener('pointercancel', handlePointerCancel);
+}
+
+function handlePointerMove(event) {
+  if (!touchDrag || event.pointerId !== touchDrag.pointerId) return;
+  const distance = Math.hypot(event.clientX - touchDrag.startX, event.clientY - touchDrag.startY);
+  if (!touchDrag.moved && distance < 8) return;
+
+  event.preventDefault();
+  touchDrag.moved = true;
+
+  if (!touchDrag.ghost) {
+    const rect = touchDrag.objectiveTile.getBoundingClientRect();
+    const ghost = touchDrag.objectiveTile.cloneNode(true);
+    ghost.classList.add('touch-drag-ghost');
+    ghost.style.width = `${rect.width}px`;
+    document.body.appendChild(ghost);
+    touchDrag.ghost = ghost;
+    touchDrag.objectiveTile.classList.add('dragging');
+  }
+
+  touchDrag.ghost.style.left = `${event.clientX}px`;
+  touchDrag.ghost.style.top = `${event.clientY}px`;
+
+  const underneath = document.elementFromPoint(event.clientX, event.clientY);
+  const commandTile = underneath ? underneath.closest('.command') : null;
+  if (touchDrag.overCommand && touchDrag.overCommand !== commandTile) {
+    touchDrag.overCommand.classList.remove('drag-over');
+  }
+  if (commandTile) commandTile.classList.add('drag-over');
+  touchDrag.overCommand = commandTile;
+}
+
+function finishPointerInteraction(event, cancelled = false) {
+  if (!touchDrag || event.pointerId !== touchDrag.pointerId) return;
+  const { objectiveTile, moved, ghost, overCommand } = touchDrag;
+
+  objectiveTile.removeEventListener('pointermove', handlePointerMove);
+  objectiveTile.removeEventListener('pointerup', handlePointerUp);
+  objectiveTile.removeEventListener('pointercancel', handlePointerCancel);
+  objectiveTile.classList.remove('dragging');
+  if (ghost) ghost.remove();
+  if (overCommand) overCommand.classList.remove('drag-over');
+
+  touchDrag = null;
+  if (cancelled || roundLocked) return;
+
+  if (moved) {
+    clearTouchSelection();
+    if (!overCommand) return;
+    if (objectiveTile.dataset.pairId === overCommand.dataset.pairId) {
+      processCorrectMatch(objectiveTile, overCommand);
+    } else {
+      processIncorrectMatch(objectiveTile, overCommand);
+    }
+    return;
+  }
+
+  clearTouchSelection();
+  touchSelectedObjective = objectiveTile;
+  objectiveTile.classList.add('touch-selected');
+  elements.feedback.textContent = 'Objective selected. Tap the matching IOS command.';
+}
+
+function handlePointerUp(event) {
+  finishPointerInteraction(event, false);
+}
+
+function handlePointerCancel(event) {
+  finishPointerInteraction(event, true);
+}
+
+function handleTouchCommandTap(event) {
+  if (!touchSelectedObjective || roundLocked) return;
+  const commandTile = event.currentTarget;
+  const objectiveTile = touchSelectedObjective;
+  clearTouchSelection();
+
+  if (objectiveTile.dataset.pairId === commandTile.dataset.pairId) {
+    processCorrectMatch(objectiveTile, commandTile);
+  } else {
+    processIncorrectMatch(objectiveTile, commandTile);
+  }
 }
 
 function handleDragStart(event) {

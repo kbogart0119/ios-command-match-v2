@@ -359,3 +359,25 @@ h1 {
   .command { padding-left: 18px; }
   .results-grid { grid-template-columns: 1fr; }
 }
+
+
+/* Touch and stylus interaction */
+.objective {
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.objective.touch-selected {
+  border-color: #2b63ad;
+  box-shadow: 0 0 0 4px rgba(43, 99, 173, .18), 0 8px 18px rgba(30, 48, 78, .15);
+}
+
+.touch-drag-ghost {
+  position: fixed;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: .92;
+  transform: translate(-50%, -50%) scale(.97);
+  box-shadow: 0 16px 32px rgba(20, 36, 60, .28);
+}
