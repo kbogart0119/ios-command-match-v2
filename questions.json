@@ -1,0 +1,2302 @@
+[
+  {
+    "id": 101,
+    "commandId": "CMD001",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Application",
+    "scenario": "A newly installed router is not forwarding traffic for users.",
+    "objective": "Before investigating routing, confirm that every active interface has an IPv4 address assigned and is operational.",
+    "explanation": "This command provides the quickest summary of interface addressing and line/protocol state.",
+    "answerCommand": "show ip interface brief"
+  },
+  {
+    "id": 102,
+    "commandId": "CMD001",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Application",
+    "scenario": "Several interfaces recently received addresses from a DHCP server.",
+    "objective": "Identify which interfaces successfully obtained an IPv4 address.",
+    "explanation": "This command lists every interface together with its current IPv4 address.",
+    "answerCommand": "show ip interface brief"
+  },
+  {
+    "id": 103,
+    "commandId": "CMD001",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "A branch office lost connectivity after maintenance.",
+    "objective": "Check whether the WAN-facing interface is administratively disabled or whether its line protocol has failed.",
+    "explanation": "The Status and Protocol columns distinguish administrative shutdown from other operational failures.",
+    "answerCommand": "show ip interface brief"
+  },
+  {
+    "id": 104,
+    "commandId": "CMD001",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Application",
+    "scenario": "Documentation states that 10.20.30.1 should be configured on one of the router interfaces.",
+    "objective": "Identify which interface currently owns that address.",
+    "explanation": "The concise interface summary maps each interface to its assigned IPv4 address.",
+    "answerCommand": "show ip interface brief"
+  },
+  {
+    "id": 105,
+    "commandId": "CMD001",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Verification",
+    "scenario": "A new router has just been configured.",
+    "objective": "Perform a quick health check of all Layer 3 interfaces before testing end-to-end connectivity.",
+    "explanation": "This is the fastest command for reviewing interface addressing and basic operational state together.",
+    "answerCommand": "show ip interface brief"
+  },
+  {
+    "id": 106,
+    "commandId": "CMD002",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "Users report intermittent connectivity across an Ethernet link.",
+    "objective": "Look for error counters and other evidence of a physical-layer or duplex problem.",
+    "explanation": "Detailed interface output includes CRC errors, collisions, drops, speed, duplex, and traffic counters.",
+    "answerCommand": "show interfaces"
+  },
+  {
+    "id": 107,
+    "commandId": "CMD002",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Application",
+    "scenario": "A recently installed switch port appears to be operating much slower than expected.",
+    "objective": "Check the negotiated speed and duplex settings.",
+    "explanation": "Detailed interface information includes current speed and duplex operation.",
+    "answerCommand": "show interfaces"
+  },
+  {
+    "id": 108,
+    "commandId": "CMD002",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "A service provider asks whether jumbo frames are supported on a WAN-facing interface.",
+    "objective": "Find the interface's current maximum transmission unit.",
+    "explanation": "The detailed operational output includes the MTU value.",
+    "answerCommand": "show interfaces"
+  },
+  {
+    "id": 109,
+    "commandId": "CMD002",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "Voice traffic occasionally experiences poor quality.",
+    "objective": "Check whether packets are being discarded or error counters are increasing on the relevant link.",
+    "explanation": "Detailed counters reveal input errors, output errors, drops, and traffic totals.",
+    "answerCommand": "show interfaces"
+  },
+  {
+    "id": 110,
+    "commandId": "CMD002",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Verification",
+    "scenario": "A technician suspects an Ethernet cable was connected to the wrong port.",
+    "objective": "Determine which candidate interface is actively receiving traffic.",
+    "explanation": "Packet and byte counters help identify the interface currently carrying traffic.",
+    "answerCommand": "show interfaces"
+  },
+  {
+    "id": 111,
+    "commandId": "CMD003",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Verification",
+    "scenario": "Another engineer believes an interface description was configured earlier today.",
+    "objective": "Confirm that the setting currently exists on the device.",
+    "explanation": "The active configuration contains the commands presently in effect.",
+    "answerCommand": "show running-config"
+  },
+  {
+    "id": 112,
+    "commandId": "CMD003",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Verification",
+    "scenario": "You suspect secure remote management has already been configured.",
+    "objective": "Check whether the required configuration statements are present.",
+    "explanation": "The active configuration reveals the device's current management settings.",
+    "answerCommand": "show running-config"
+  },
+  {
+    "id": 113,
+    "commandId": "CMD003",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Application",
+    "scenario": "A static path should have been configured during the previous maintenance window.",
+    "objective": "Confirm that the intended configuration is currently active.",
+    "explanation": "This command displays all configuration commands currently applied in RAM.",
+    "answerCommand": "show running-config"
+  },
+  {
+    "id": 114,
+    "commandId": "CMD003",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Verification",
+    "scenario": "You need to review the commands applied under GigabitEthernet0/1.",
+    "objective": "Inspect the device's active settings for that interface.",
+    "explanation": "Interface-specific settings are included in the active configuration.",
+    "answerCommand": "show running-config"
+  },
+  {
+    "id": 115,
+    "commandId": "CMD003",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Application",
+    "scenario": "You are documenting the router before making additional changes.",
+    "objective": "Capture the current active settings so they can be compared with the post-change state.",
+    "explanation": "This command provides the complete active configuration.",
+    "answerCommand": "show running-config"
+  },
+  {
+    "id": 116,
+    "commandId": "CMD004",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "Hosts on the same Ethernet network cannot consistently communicate.",
+    "objective": "Inspect the IPv4-to-hardware-address mappings currently known by the router.",
+    "explanation": "The ARP table maps local IPv4 addresses to Ethernet MAC addresses.",
+    "answerCommand": "show arp"
+  },
+  {
+    "id": 117,
+    "commandId": "CMD004",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "A duplicate IPv4 address has been reported.",
+    "objective": "Determine which hardware addresses are currently associated with the affected addresses.",
+    "explanation": "Current ARP entries help reveal conflicting mappings.",
+    "answerCommand": "show arp"
+  },
+  {
+    "id": 118,
+    "commandId": "CMD004",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Application",
+    "scenario": "Connectivity to a recently installed server has become unreliable.",
+    "objective": "Confirm that the router has resolved the server's Ethernet address.",
+    "explanation": "A resolved entry should appear in the ARP table.",
+    "answerCommand": "show arp"
+  },
+  {
+    "id": 119,
+    "commandId": "CMD004",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Verification",
+    "scenario": "A technician believes an incorrect MAC address has been learned.",
+    "objective": "Inspect the router's current Layer 3-to-Layer 2 mappings.",
+    "explanation": "The ARP cache contains the learned IPv4-to-MAC associations.",
+    "answerCommand": "show arp"
+  },
+  {
+    "id": 120,
+    "commandId": "CMD004",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "A workstation reaches its default gateway but communication with another local device is unreliable.",
+    "objective": "Check whether the router has learned the destination device's Ethernet address.",
+    "explanation": "ARP resolution is required for local Ethernet delivery.",
+    "answerCommand": "show arp"
+  },
+  {
+    "id": 121,
+    "commandId": "CMD005",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "Users at a branch office cannot reach a network located at headquarters.",
+    "objective": "Check whether the local router knows a forwarding path for the destination prefix.",
+    "explanation": "The IPv4 routing table shows whether a matching destination prefix is installed and how it will be reached.",
+    "answerCommand": "show ip route"
+  },
+  {
+    "id": 122,
+    "commandId": "CMD005",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Verification",
+    "scenario": "A default path should have been installed on a newly configured edge router.",
+    "objective": "Confirm that traffic for unknown destinations has a next-hop entry.",
+    "explanation": "The routing table identifies whether a gateway of last resort and default entry are present.",
+    "answerCommand": "show ip route"
+  },
+  {
+    "id": 123,
+    "commandId": "CMD005",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "An OSPF adjacency is established, but a remote subnet is still unreachable.",
+    "objective": "Determine whether the expected prefix was actually installed for forwarding.",
+    "explanation": "An established neighbor relationship does not guarantee that a specific route is present; the routing table verifies installation.",
+    "answerCommand": "show ip route"
+  },
+  {
+    "id": 124,
+    "commandId": "CMD005",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Application",
+    "scenario": "Two paths exist to 172.16.40.0/24, and you need to know which one the router selected.",
+    "objective": "Inspect the active next hop, outgoing interface, and source of the selected path.",
+    "explanation": "The routing table reports the installed path and the protocol that supplied it.",
+    "answerCommand": "show ip route 172.16.40.0 255.255.255.0"
+  },
+  {
+    "id": 125,
+    "commandId": "CMD005",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "Traffic is leaving through an unexpected WAN link.",
+    "objective": "Examine the forwarding decision for the affected destination network.",
+    "explanation": "A destination-specific routing-table lookup reveals the selected next hop and exit interface.",
+    "answerCommand": "show ip route 10.50.0.0 255.255.0.0"
+  },
+  {
+    "id": 126,
+    "commandId": "CMD006",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Verification",
+    "scenario": "A workstation cannot open an application hosted at 10.10.20.25.",
+    "objective": "First determine whether basic IP communication succeeds between the router and that host.",
+    "explanation": "An ICMP echo test quickly confirms whether packets can reach the destination and return.",
+    "answerCommand": "ping 10.10.20.25"
+  },
+  {
+    "id": 127,
+    "commandId": "CMD006",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "Users cannot access resources beyond their default gateway.",
+    "objective": "Test whether the branch router can communicate with the next-hop address 192.0.2.1.",
+    "explanation": "Testing the immediate next hop helps separate a local WAN problem from a more distant failure.",
+    "answerCommand": "ping 192.0.2.1"
+  },
+  {
+    "id": 128,
+    "commandId": "CMD006",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Verification",
+    "scenario": "A new loopback interface was configured on a neighboring router with address 10.255.1.1.",
+    "objective": "Confirm that it is reachable before testing higher-layer services.",
+    "explanation": "An echo test verifies basic Layer 3 reachability to the new address.",
+    "answerCommand": "ping 10.255.1.1"
+  },
+  {
+    "id": 129,
+    "commandId": "CMD006",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "Name resolution appears to be failing, but users may also have an underlying network problem.",
+    "objective": "Test communication directly to the server's known address, 203.0.113.10, without relying on DNS.",
+    "explanation": "Using the numeric destination isolates basic IP reachability from name-resolution problems.",
+    "answerCommand": "ping 203.0.113.10"
+  },
+  {
+    "id": 130,
+    "commandId": "CMD006",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Application",
+    "scenario": "A remote router only accepts traffic sourced from the branch LAN interface during testing.",
+    "objective": "Run an extended reachability test toward 10.30.30.1 using 10.10.10.1 as the source address.",
+    "explanation": "An extended ping allows the source address to be specified so the return path can be validated.",
+    "answerCommand": "ping"
+  },
+  {
+    "id": 131,
+    "commandId": "CMD007",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "Packets can reach a remote site, but application response is slow and the suspected problem may be somewhere along the path.",
+    "objective": "Identify each Layer 3 device traversed on the way to 198.51.100.20.",
+    "explanation": "This command reveals successive hops toward the destination and helps localize where delay or failure begins.",
+    "answerCommand": "traceroute 198.51.100.20"
+  },
+  {
+    "id": 132,
+    "commandId": "CMD007",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "A destination is unreachable, but the local default gateway responds normally.",
+    "objective": "Find the last responding hop before traffic stops progressing toward 10.80.0.10.",
+    "explanation": "The hop-by-hop path can show where forwarding ceases.",
+    "answerCommand": "traceroute 10.80.0.10"
+  },
+  {
+    "id": 133,
+    "commandId": "CMD007",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Application",
+    "scenario": "Traffic is suspected of taking an unexpected service-provider path.",
+    "objective": "List the sequence of routers used to reach 203.0.113.50.",
+    "explanation": "A hop-by-hop trace exposes the Layer 3 path used toward the destination.",
+    "answerCommand": "traceroute 203.0.113.50"
+  },
+  {
+    "id": 134,
+    "commandId": "CMD007",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "Users in two offices report different performance when reaching the same server.",
+    "objective": "From the affected router, map the intervening hops to 172.20.50.25 for comparison with the working site.",
+    "explanation": "Comparing hop sequences can reveal divergent routing paths.",
+    "answerCommand": "traceroute 172.20.50.25"
+  },
+  {
+    "id": 135,
+    "commandId": "CMD007",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "Basic reachability succeeds, but you suspect packets are traversing more routers than expected.",
+    "objective": "Count and identify the hops used to reach 10.99.99.99.",
+    "explanation": "The output identifies each responding hop and makes an unexpectedly long path visible.",
+    "answerCommand": "traceroute 10.99.99.99"
+  },
+  {
+    "id": 136,
+    "commandId": "CMD008",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "Two routers connected on the same Ethernet segment are not exchanging routes.",
+    "objective": "Check whether they have formed an adjacency and identify the current relationship state.",
+    "explanation": "The neighbor table shows adjacent router IDs, states, dead timers, and local interfaces.",
+    "answerCommand": "show ip ospf neighbor"
+  },
+  {
+    "id": 137,
+    "commandId": "CMD008",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Verification",
+    "scenario": "A new OSPF-enabled link was added between R1 and R2.",
+    "objective": "Confirm that the routers have reached the expected fully adjacent state.",
+    "explanation": "A FULL state confirms completion of the adjacency process on a normal point-to-point relationship.",
+    "answerCommand": "show ip ospf neighbor"
+  },
+  {
+    "id": 138,
+    "commandId": "CMD008",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "A route disappeared shortly after a WAN link began flapping.",
+    "objective": "Determine whether the peer on that link is still recognized and whether its dead timer is counting down normally.",
+    "explanation": "The neighbor table provides adjacency status and dead-timer information.",
+    "answerCommand": "show ip ospf neighbor"
+  },
+  {
+    "id": 139,
+    "commandId": "CMD008",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "One router on a multiaccess network is stuck partway through adjacency formation.",
+    "objective": "Identify the peer's current state and the interface on which the relationship is failing.",
+    "explanation": "Neighbor-state output helps distinguish INIT, 2-WAY, EXSTART, EXCHANGE, LOADING, and FULL conditions.",
+    "answerCommand": "show ip ospf neighbor"
+  },
+  {
+    "id": 140,
+    "commandId": "CMD008",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Application",
+    "scenario": "You know the adjacent router should be using identifier 2.2.2.2.",
+    "objective": "Verify that the local router currently recognizes that peer.",
+    "explanation": "The neighbor table lists each adjacent router by its OSPF router ID.",
+    "answerCommand": "show ip ospf neighbor"
+  },
+  {
+    "id": 141,
+    "commandId": "CMD009",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Verification",
+    "scenario": "You need to confirm which identifier the local router selected for its OSPF process.",
+    "objective": "Inspect the local process-level information rather than information about adjacent peers.",
+    "explanation": "The process summary displays the local OSPF router ID and process details.",
+    "answerCommand": "show ip ospf"
+  },
+  {
+    "id": 142,
+    "commandId": "CMD009",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Verification",
+    "scenario": "A router participates in multiple OSPF areas, and the documented design may not match the device.",
+    "objective": "Review the areas associated with the local routing process.",
+    "explanation": "The process output summarizes configured areas and related statistics.",
+    "answerCommand": "show ip ospf"
+  },
+  {
+    "id": 143,
+    "commandId": "CMD009",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "A route calculation appears to be occurring more frequently than expected.",
+    "objective": "Inspect process timers and SPF execution information on the local router.",
+    "explanation": "The detailed process summary includes SPF timing and execution data.",
+    "answerCommand": "show ip ospf"
+  },
+  {
+    "id": 144,
+    "commandId": "CMD009",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "An engineer suspects the local process is not originating the expected external information.",
+    "objective": "Review the local routing process's operating parameters and redistribution-related status.",
+    "explanation": "Process-level output provides details not found in the neighbor table.",
+    "answerCommand": "show ip ospf"
+  },
+  {
+    "id": 145,
+    "commandId": "CMD009",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Application",
+    "scenario": "You must document the process ID, local identifier, and area participation for a router.",
+    "objective": "Collect those local OSPF process details in a single display.",
+    "explanation": "This command summarizes the local OSPF process and its areas.",
+    "answerCommand": "show ip ospf"
+  },
+  {
+    "id": 146,
+    "commandId": "CMD010",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Configuration",
+    "scenario": "A router must use 1.1.1.1 as its stable OSPF identifier, regardless of interface-address changes.",
+    "objective": "Apply the required value within routing-process configuration mode.",
+    "explanation": "A manually configured router ID provides a predictable identifier for the OSPF process.",
+    "answerCommand": "router-id 1.1.1.1"
+  },
+  {
+    "id": 147,
+    "commandId": "CMD010",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Configuration",
+    "scenario": "The design document requires the headquarters router to be recognized as 10.255.255.1 by OSPF peers.",
+    "objective": "Configure that exact process identifier.",
+    "explanation": "The router-id command manually defines the identifier advertised by the OSPF process.",
+    "answerCommand": "router-id 10.255.255.1"
+  },
+  {
+    "id": 148,
+    "commandId": "CMD010",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "A replacement router selected an unexpected identifier from one of its interfaces, causing monitoring confusion.",
+    "objective": "Set the process to use 3.3.3.3 consistently.",
+    "explanation": "A manual router ID prevents automatic selection from changing when interface addresses change.",
+    "answerCommand": "router-id 3.3.3.3"
+  },
+  {
+    "id": 149,
+    "commandId": "CMD010",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Configuration",
+    "scenario": "A lab requires R4 to appear in the OSPF topology database as 4.4.4.4.",
+    "objective": "Enter the process-level setting that establishes this identity.",
+    "explanation": "The configured router ID becomes the device's OSPF identity after the process uses the new value.",
+    "answerCommand": "router-id 4.4.4.4"
+  },
+  {
+    "id": 150,
+    "commandId": "CMD010",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Configuration",
+    "scenario": "Two routers accidentally selected the same OSPF identifier.",
+    "objective": "Correct R2 so it uses 2.2.2.2 instead.",
+    "explanation": "Each OSPF router must use a unique router ID; this command assigns the required value.",
+    "answerCommand": "router-id 2.2.2.2"
+  },
+  {
+    "id": 151,
+    "commandId": "CMD011",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Configuration",
+    "scenario": "The primary WAN link should be preferred over a slower backup link, but both currently have equal OSPF metrics.",
+    "objective": "Assign a metric of 10 to the primary interface.",
+    "explanation": "A manually assigned interface cost directly influences OSPF path selection.",
+    "answerCommand": "ip ospf cost 10"
+  },
+  {
+    "id": 152,
+    "commandId": "CMD011",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Configuration",
+    "scenario": "Traffic should use an alternate path unless the preferred link fails.",
+    "objective": "Make the backup interface less attractive by assigning it a metric of 200.",
+    "explanation": "A higher OSPF cost makes a path less preferred when lower-cost alternatives exist.",
+    "answerCommand": "ip ospf cost 200"
+  },
+  {
+    "id": 153,
+    "commandId": "CMD011",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "OSPF is selecting the wrong exit interface because reference-bandwidth calculations produce equal values.",
+    "objective": "Override the affected interface with a metric of 25.",
+    "explanation": "An explicit interface cost overrides the automatically calculated value.",
+    "answerCommand": "ip ospf cost 25"
+  },
+  {
+    "id": 154,
+    "commandId": "CMD011",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Configuration",
+    "scenario": "A network-design exercise requires the link from R1 to R3 to contribute 50 to the total OSPF path metric.",
+    "objective": "Apply the required value on that interface.",
+    "explanation": "The interface-level cost contributes directly to the cumulative OSPF metric.",
+    "answerCommand": "ip ospf cost 50"
+  },
+  {
+    "id": 155,
+    "commandId": "CMD011",
+    "difficulty": "Advanced",
+    "cognitiveLevel": "Configuration",
+    "scenario": "During a maintenance event, traffic must temporarily avoid one OSPF-enabled link without shutting the interface down.",
+    "objective": "Raise its metric to 65535 so alternate paths are preferred.",
+    "explanation": "A very high valid interface cost makes the link unattractive while preserving the adjacency.",
+    "answerCommand": "ip ospf cost 65535"
+  },
+  {
+    "id": 156,
+    "commandId": "CMD012",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "A workstation was connected to the correct switch but cannot communicate with other devices in its department.",
+    "objective": "Check which access ports are assigned to each VLAN.",
+    "explanation": "The VLAN summary lists VLAN identifiers, names, status, and associated access ports.",
+    "answerCommand": "show vlan brief"
+  },
+  {
+    "id": 157,
+    "commandId": "CMD012",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Verification",
+    "scenario": "VLAN 30 was created for the voice team.",
+    "objective": "Confirm that it exists and is active on the switch.",
+    "explanation": "The concise VLAN display shows whether the VLAN is present and active.",
+    "answerCommand": "show vlan brief"
+  },
+  {
+    "id": 158,
+    "commandId": "CMD012",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Application",
+    "scenario": "A technician moved a user from FastEthernet0/10 to FastEthernet0/18.",
+    "objective": "Verify that the new port belongs to the same access VLAN as the old port.",
+    "explanation": "The VLAN-to-port listing makes access-port assignments easy to compare.",
+    "answerCommand": "show vlan brief"
+  },
+  {
+    "id": 159,
+    "commandId": "CMD012",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "Users connected to several ports were placed in the wrong broadcast domain after a change.",
+    "objective": "Identify the current access-port membership for the affected VLANs.",
+    "explanation": "This command shows the access ports assigned under each VLAN.",
+    "answerCommand": "show vlan brief"
+  },
+  {
+    "id": 160,
+    "commandId": "CMD012",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Verification",
+    "scenario": "You are auditing unused VLANs before cleanup.",
+    "objective": "List the VLANs configured locally and the access ports presently associated with them.",
+    "explanation": "The brief VLAN summary provides both configured VLANs and port membership.",
+    "answerCommand": "show vlan brief"
+  },
+  {
+    "id": 161,
+    "commandId": "CMD013",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "Hosts in VLAN 40 communicate within each switch but not across the inter-switch link.",
+    "objective": "Check whether that VLAN is permitted and forwarding across the link between switches.",
+    "explanation": "Trunk status output shows operational trunk ports, encapsulation, native VLAN, and allowed/forwarding VLANs.",
+    "answerCommand": "show interfaces trunk"
+  },
+  {
+    "id": 162,
+    "commandId": "CMD013",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Verification",
+    "scenario": "GigabitEthernet0/1 was intended to carry multiple VLANs to another switch.",
+    "objective": "Confirm that the port is actually operating as a trunk.",
+    "explanation": "The trunk summary lists interfaces currently operating in trunking mode.",
+    "answerCommand": "show interfaces trunk"
+  },
+  {
+    "id": 163,
+    "commandId": "CMD013",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "Native-VLAN mismatch messages appear in the log.",
+    "objective": "Inspect the native VLAN currently used on each trunk interface.",
+    "explanation": "The trunk display reports the native VLAN for operational trunk ports.",
+    "answerCommand": "show interfaces trunk"
+  },
+  {
+    "id": 164,
+    "commandId": "CMD013",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "VLAN 100 was added to the network, but traffic for it does not cross one switch.",
+    "objective": "Determine whether that VLAN is allowed and active on the relevant trunk.",
+    "explanation": "The output separates allowed VLANs from those active and forwarding on each trunk.",
+    "answerCommand": "show interfaces trunk"
+  },
+  {
+    "id": 165,
+    "commandId": "CMD013",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Application",
+    "scenario": "An audit requires a list of every operational trunk and the VLANs carried by each one.",
+    "objective": "Collect that information in a single display.",
+    "explanation": "This command summarizes trunking interfaces and their VLAN forwarding scope.",
+    "answerCommand": "show interfaces trunk"
+  },
+  {
+    "id": 166,
+    "commandId": "CMD014",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Configuration",
+    "scenario": "Two switches should negotiate a trunk, and this local port must actively initiate the negotiation.",
+    "objective": "Configure the local port to send negotiation requests and attempt to become a trunk.",
+    "explanation": "Dynamic desirable actively attempts to form a trunk with a compatible neighbor.",
+    "answerCommand": "switchport mode dynamic desirable"
+  },
+  {
+    "id": 167,
+    "commandId": "CMD014",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Configuration",
+    "scenario": "The neighboring switchport is set to passively wait for trunk negotiation.",
+    "objective": "Configure this side so the two ports can successfully negotiate a trunk.",
+    "explanation": "A desirable port actively negotiates and can form a trunk with a neighbor in auto mode.",
+    "answerCommand": "switchport mode dynamic desirable"
+  },
+  {
+    "id": 168,
+    "commandId": "CMD014",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "Two ports both waiting for the other side to initiate trunking remain as access links.",
+    "objective": "Change the local side so it actively starts negotiation.",
+    "explanation": "Changing one side to dynamic desirable allows a trunk to form with a dynamic-auto neighbor.",
+    "answerCommand": "switchport mode dynamic desirable"
+  },
+  {
+    "id": 169,
+    "commandId": "CMD014",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Configuration",
+    "scenario": "A lab requires GigabitEthernet0/2 to negotiate rather than being statically forced as a trunk.",
+    "objective": "Select the dynamic behavior that actively proposes trunk operation.",
+    "explanation": "Dynamic desirable is the active DTP negotiation mode.",
+    "answerCommand": "switchport mode dynamic desirable"
+  },
+  {
+    "id": 170,
+    "commandId": "CMD014",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Application",
+    "scenario": "The remote switch is managed by another team and is known to accept trunk negotiation but not initiate it.",
+    "objective": "Configure the local link to initiate the trunking exchange.",
+    "explanation": "An actively negotiating local port is required when the peer waits passively.",
+    "answerCommand": "switchport mode dynamic desirable"
+  },
+  {
+    "id": 171,
+    "commandId": "CMD015",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Configuration",
+    "scenario": "A switchport should become a trunk only when the neighboring device actively requests trunking.",
+    "objective": "Configure the local port to wait passively for that negotiation.",
+    "explanation": "Dynamic auto listens for DTP negotiation but does not initiate trunk formation.",
+    "answerCommand": "switchport mode dynamic auto"
+  },
+  {
+    "id": 172,
+    "commandId": "CMD015",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Configuration",
+    "scenario": "The design allows the upstream switch to decide whether the link becomes a trunk.",
+    "objective": "Place the downstream port in the passive negotiation state.",
+    "explanation": "Dynamic auto permits trunking when the neighbor is configured to initiate it.",
+    "answerCommand": "switchport mode dynamic auto"
+  },
+  {
+    "id": 173,
+    "commandId": "CMD015",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "A port must not proactively request trunk operation, but it should accept a compatible request from the neighbor.",
+    "objective": "Apply the passive dynamic mode.",
+    "explanation": "Dynamic auto waits for the peer to initiate trunk negotiation.",
+    "answerCommand": "switchport mode dynamic auto"
+  },
+  {
+    "id": 174,
+    "commandId": "CMD015",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Application",
+    "scenario": "A training exercise requires one side of a link to be desirable and the other side to be passive.",
+    "objective": "Configure the passive side.",
+    "explanation": "The passive DTP state is dynamic auto.",
+    "answerCommand": "switchport mode dynamic auto"
+  },
+  {
+    "id": 175,
+    "commandId": "CMD015",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Configuration",
+    "scenario": "The local switch should defer trunk-formation decisions to a centrally managed distribution switch.",
+    "objective": "Configure the local port to respond to, but not originate, negotiation.",
+    "explanation": "Dynamic auto responds to an active DTP neighbor while remaining passive itself.",
+    "answerCommand": "switchport mode dynamic auto"
+  },
+  {
+    "id": 176,
+    "commandId": "CMD016",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Configuration",
+    "scenario": "A user workstation is connected to FastEthernet0/12 and the link must never negotiate trunking.",
+    "objective": "Force the port to operate as a static access connection.",
+    "explanation": "Static access mode prevents the port from becoming a trunk through negotiation.",
+    "answerCommand": "switchport mode access"
+  },
+  {
+    "id": 177,
+    "commandId": "CMD016",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Configuration",
+    "scenario": "An IP phone and attached PC connect to a user-facing switchport.",
+    "objective": "Place the port in the fixed Layer 2 mode used for endpoint connections.",
+    "explanation": "User-facing ports should be explicitly configured as access ports.",
+    "answerCommand": "switchport mode access"
+  },
+  {
+    "id": 178,
+    "commandId": "CMD016",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "A desktop-facing port unexpectedly attempted to negotiate a trunk after a switch replacement.",
+    "objective": "Prevent future negotiation by fixing the port's operational mode.",
+    "explanation": "Forcing access mode removes dynamic trunk negotiation from the port.",
+    "answerCommand": "switchport mode access"
+  },
+  {
+    "id": 179,
+    "commandId": "CMD016",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Configuration",
+    "scenario": "FastEthernet0/20 connects to a printer and should carry traffic for only one access VLAN.",
+    "objective": "Configure the port's basic operational mode appropriately.",
+    "explanation": "A printer-facing switchport should be statically configured as an access port.",
+    "answerCommand": "switchport mode access"
+  },
+  {
+    "id": 180,
+    "commandId": "CMD016",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Application",
+    "scenario": "A security standard requires all unused or endpoint-facing ports to be explicitly non-trunking.",
+    "objective": "Apply the required fixed mode to GigabitEthernet0/10.",
+    "explanation": "Static access mode ensures the interface does not dynamically become a trunk.",
+    "answerCommand": "switchport mode access"
+  },
+  {
+    "id": 181,
+    "commandId": "CMD017",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Configuration",
+    "scenario": "A finance workstation connected to FastEthernet0/8 must join VLAN 20.",
+    "objective": "Assign that access port to the required VLAN.",
+    "explanation": "The access-VLAN command places untagged traffic from the port into VLAN 20.",
+    "answerCommand": "switchport access vlan 20"
+  },
+  {
+    "id": 182,
+    "commandId": "CMD017",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Configuration",
+    "scenario": "A printer on GigabitEthernet0/6 was moved to the engineering department, which uses VLAN 30.",
+    "objective": "Update the port's VLAN membership.",
+    "explanation": "Changing the access VLAN associates the endpoint port with VLAN 30.",
+    "answerCommand": "switchport access vlan 30"
+  },
+  {
+    "id": 183,
+    "commandId": "CMD017",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "A user can reach devices in the wrong department but not the intended local servers.",
+    "objective": "Correct FastEthernet0/15 so its untagged frames belong to VLAN 40.",
+    "explanation": "The access-VLAN setting determines the VLAN assigned to untagged traffic on an access port.",
+    "answerCommand": "switchport access vlan 40"
+  },
+  {
+    "id": 184,
+    "commandId": "CMD017",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Configuration",
+    "scenario": "A new classroom uses VLAN 100, and its first endpoint is connected to GigabitEthernet0/3.",
+    "objective": "Apply the required VLAN membership to that port.",
+    "explanation": "This command assigns the access port to VLAN 100.",
+    "answerCommand": "switchport access vlan 100"
+  },
+  {
+    "id": 185,
+    "commandId": "CMD017",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Application",
+    "scenario": "An audit found that FastEthernet0/24 remains in the default VLAN even though it supports the guest network.",
+    "objective": "Move the port into VLAN 50.",
+    "explanation": "The access-VLAN command changes the port's untagged VLAN assignment.",
+    "answerCommand": "switchport access vlan 50"
+  },
+  {
+    "id": 186,
+    "commandId": "CMD018",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "One redundant switch link is not forwarding user traffic.",
+    "objective": "Identify the port's spanning-tree role and state for the affected VLAN.",
+    "explanation": "STP output shows root, designated, alternate, and other port roles together with forwarding state.",
+    "answerCommand": "show spanning-tree vlan 10"
+  },
+  {
+    "id": 187,
+    "commandId": "CMD018",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Verification",
+    "scenario": "The distribution switch is expected to be the root bridge for VLAN 20.",
+    "objective": "Confirm which switch currently holds that role and review the local root-path information.",
+    "explanation": "The STP display identifies the root bridge and the local path toward it.",
+    "answerCommand": "show spanning-tree vlan 20"
+  },
+  {
+    "id": 188,
+    "commandId": "CMD018",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "Traffic is following an unexpected Layer 2 path after a topology change.",
+    "objective": "Review port roles, path costs, and the selected root port for VLAN 30.",
+    "explanation": "STP information explains why a particular forwarding topology was selected.",
+    "answerCommand": "show spanning-tree vlan 30"
+  },
+  {
+    "id": 189,
+    "commandId": "CMD018",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Application",
+    "scenario": "A network audit requires the bridge ID and root ID used for VLAN 1.",
+    "objective": "Display the current spanning-tree topology for that VLAN.",
+    "explanation": "The output includes local bridge ID, root ID, timers, and port states.",
+    "answerCommand": "show spanning-tree vlan 1"
+  },
+  {
+    "id": 190,
+    "commandId": "CMD018",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "A redundant link unexpectedly transitioned into forwarding state.",
+    "objective": "Inspect the Layer 2 control-plane decision for VLAN 100 before making changes.",
+    "explanation": "The STP display reveals the current role and state of each participating port.",
+    "answerCommand": "show spanning-tree vlan 100"
+  },
+  {
+    "id": 191,
+    "commandId": "CMD019",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Configuration",
+    "scenario": "The distribution switch should become the root bridge for VLAN 10 by using a lower bridge priority than the current root.",
+    "objective": "Set its priority to 24576 for that VLAN.",
+    "explanation": "Lowering the bridge priority increases the likelihood that the switch will be elected root.",
+    "answerCommand": "spanning-tree vlan 10 priority 24576"
+  },
+  {
+    "id": 192,
+    "commandId": "CMD019",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Configuration",
+    "scenario": "A secondary distribution switch should be less preferred than the primary but more preferred than access switches for VLAN 20.",
+    "objective": "Assign it a bridge priority of 28672.",
+    "explanation": "The configured priority influences root-bridge election for the specified VLAN.",
+    "answerCommand": "spanning-tree vlan 20 priority 28672"
+  },
+  {
+    "id": 193,
+    "commandId": "CMD019",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "An access switch became root for VLAN 30 after a reboot.",
+    "objective": "Configure the intended distribution switch with priority 4096.",
+    "explanation": "A substantially lower valid priority makes the distribution switch the preferred root candidate.",
+    "answerCommand": "spanning-tree vlan 30 priority 4096"
+  },
+  {
+    "id": 194,
+    "commandId": "CMD019",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Configuration",
+    "scenario": "The campus design requires different root bridges per VLAN. This switch must be preferred for VLAN 100.",
+    "objective": "Set its bridge priority for that VLAN to 8192.",
+    "explanation": "Per-VLAN bridge priority allows different switches to become root for different VLANs.",
+    "answerCommand": "spanning-tree vlan 100 priority 8192"
+  },
+  {
+    "id": 195,
+    "commandId": "CMD019",
+    "difficulty": "Advanced",
+    "cognitiveLevel": "Configuration",
+    "scenario": "Traffic engineering requires this switch to be a less-preferred root candidate for VLAN 200 while remaining eligible as a backup.",
+    "objective": "Set its bridge priority to 32768 for that VLAN.",
+    "explanation": "The per-VLAN priority controls this switch's position in the root-election process.",
+    "answerCommand": "spanning-tree vlan 200 priority 32768"
+  },
+  {
+    "id": 196,
+    "commandId": "CMD020",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "Four physical links should operate as one logical connection, but traffic uses only a single link.",
+    "objective": "Check whether all member ports are successfully bundled into the port-channel.",
+    "explanation": "The EtherChannel summary uses flags to show bundle status, protocol, and member-port state.",
+    "answerCommand": "show etherchannel summary"
+  },
+  {
+    "id": 197,
+    "commandId": "CMD020",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Verification",
+    "scenario": "Port-channel 1 was configured using LACP.",
+    "objective": "Confirm the negotiation protocol and identify the interfaces participating in the group.",
+    "explanation": "The summary lists each channel group, protocol, logical interface, and member ports.",
+    "answerCommand": "show etherchannel summary"
+  },
+  {
+    "id": 198,
+    "commandId": "CMD020",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "One member link has incompatible settings and may have been suspended.",
+    "objective": "Identify which physical port is not actively participating in the bundle.",
+    "explanation": "Member-port flags reveal bundled, standalone, suspended, or other conditions.",
+    "answerCommand": "show etherchannel summary"
+  },
+  {
+    "id": 199,
+    "commandId": "CMD020",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Application",
+    "scenario": "An audit requires a concise inventory of all port-channels on the switch.",
+    "objective": "List each logical bundle, its negotiation method, and its member interfaces.",
+    "explanation": "The summary provides a compact view of all EtherChannel groups.",
+    "answerCommand": "show etherchannel summary"
+  },
+  {
+    "id": 200,
+    "commandId": "CMD020",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "A newly added link did not increase the available bandwidth of an existing bundle.",
+    "objective": "Verify whether the new interface joined the correct channel group.",
+    "explanation": "The member list and status flags show whether the interface is actually bundled.",
+    "answerCommand": "show etherchannel summary"
+  },
+  {
+    "id": 201,
+    "commandId": "CMD021",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Application",
+    "scenario": "You are connected to an unfamiliar Cisco switch and need a quick map of directly attached Cisco devices.",
+    "objective": "List each discovered device, the local connection, the remote port, and the device type.",
+    "explanation": "The concise CDP table supplies neighboring device IDs, local interfaces, capabilities, platforms, and remote ports.",
+    "answerCommand": "show cdp neighbors"
+  },
+  {
+    "id": 202,
+    "commandId": "CMD021",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "A cable is believed to connect GigabitEthernet0/1 to the wrong Cisco switch.",
+    "objective": "Identify the neighboring device and remote interface connected to that local port.",
+    "explanation": "The concise neighbor table maps local interfaces to neighboring device IDs and remote ports.",
+    "answerCommand": "show cdp neighbors"
+  },
+  {
+    "id": 203,
+    "commandId": "CMD021",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Verification",
+    "scenario": "A new Cisco access point was connected to the switch.",
+    "objective": "Confirm that the switch detects it as a directly connected Cisco device.",
+    "explanation": "CDP discovery provides a quick confirmation of directly attached Cisco equipment.",
+    "answerCommand": "show cdp neighbors"
+  },
+  {
+    "id": 204,
+    "commandId": "CMD021",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Application",
+    "scenario": "Documentation for a wiring closet is missing.",
+    "objective": "Build a basic list of directly connected Cisco devices and the ports linking them.",
+    "explanation": "The concise neighbor display is well suited for reconstructing local physical connectivity.",
+    "answerCommand": "show cdp neighbors"
+  },
+  {
+    "id": 205,
+    "commandId": "CMD021",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "A router interface is up, but the expected Cisco peer may not be connected.",
+    "objective": "Check whether any Cisco device is being discovered on that link.",
+    "explanation": "The neighbor table shows whether CDP advertisements are being received from a directly attached device.",
+    "answerCommand": "show cdp neighbors"
+  },
+  {
+    "id": 206,
+    "commandId": "CMD022",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "You can identify the neighboring Cisco switch, but you also need its management address for remote access.",
+    "objective": "Display all learned information for directly connected Cisco devices.",
+    "explanation": "The detailed CDP output includes management addresses in addition to platform, software, and port information.",
+    "answerCommand": "show cdp neighbors detail"
+  },
+  {
+    "id": 207,
+    "commandId": "CMD022",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Application",
+    "scenario": "An inventory audit requires the software version and platform model of each directly attached Cisco device.",
+    "objective": "Collect the expanded discovery information from the local device.",
+    "explanation": "Detailed CDP information includes platform and software-version data.",
+    "answerCommand": "show cdp neighbors detail"
+  },
+  {
+    "id": 208,
+    "commandId": "CMD022",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "A neighboring Cisco device advertises an unexpected management address.",
+    "objective": "Inspect the complete advertisement received from that peer.",
+    "explanation": "The detailed neighbor output exposes the management address and other advertised attributes.",
+    "answerCommand": "show cdp neighbors detail"
+  },
+  {
+    "id": 209,
+    "commandId": "CMD022",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Verification",
+    "scenario": "You need to confirm the native VLAN reported by a directly connected Cisco switch.",
+    "objective": "Review the expanded information learned from that neighbor.",
+    "explanation": "Detailed CDP output can include native-VLAN information advertised by the peer.",
+    "answerCommand": "show cdp neighbors detail"
+  },
+  {
+    "id": 210,
+    "commandId": "CMD022",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Application",
+    "scenario": "A remote engineer needs the exact IOS software string of an adjacent Cisco router before planning an upgrade.",
+    "objective": "Retrieve the full discovery record for the neighboring device.",
+    "explanation": "The detailed display includes the neighbor's software version text.",
+    "answerCommand": "show cdp neighbors detail"
+  },
+  {
+    "id": 211,
+    "commandId": "CMD023",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Configuration",
+    "scenario": "You completed several configuration changes and need them to survive a power loss.",
+    "objective": "Save the active settings into the file used during the next boot.",
+    "explanation": "Copying the running configuration to startup configuration preserves the changes in NVRAM.",
+    "answerCommand": "copy running-config startup-config"
+  },
+  {
+    "id": 212,
+    "commandId": "CMD023",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Application",
+    "scenario": "A router will be reloaded during tonight's maintenance window.",
+    "objective": "Ensure today's active changes are restored when the device starts again.",
+    "explanation": "The startup configuration is loaded during boot, so the current running configuration must be copied to it.",
+    "answerCommand": "copy running-config startup-config"
+  },
+  {
+    "id": 213,
+    "commandId": "CMD023",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "After a previous reboot, the router returned to an older configuration.",
+    "objective": "Prevent the same problem after making the current corrections.",
+    "explanation": "Saving the active configuration updates the startup configuration used on the next boot.",
+    "answerCommand": "copy running-config startup-config"
+  },
+  {
+    "id": 214,
+    "commandId": "CMD023",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Verification",
+    "scenario": "You have finished configuring interfaces, routing, and management access.",
+    "objective": "Commit the active configuration to nonvolatile storage before leaving the site.",
+    "explanation": "This command preserves the complete running configuration for future reloads.",
+    "answerCommand": "copy running-config startup-config"
+  },
+  {
+    "id": 215,
+    "commandId": "CMD023",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Application",
+    "scenario": "A lab requires students to verify that their work remains present after a simulated power cycle.",
+    "objective": "Perform the required save operation first.",
+    "explanation": "Without copying the running configuration to startup configuration, unsaved changes are lost during a reload.",
+    "answerCommand": "copy running-config startup-config"
+  },
+  {
+    "id": 216,
+    "commandId": "CMD024",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Application",
+    "scenario": "A workstation was moved to a different access port and can no longer reach its local gateway.",
+    "objective": "Identify the switch interface on which the workstation’s Ethernet address was learned.",
+    "explanation": "The forwarding table associates learned MAC addresses with VLANs and switch interfaces.",
+    "answerCommand": "show mac address-table address 00aa.11bb.22cc"
+  },
+  {
+    "id": 217,
+    "commandId": "CMD024",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Verification",
+    "scenario": "You are documenting which devices are currently active in VLAN 20.",
+    "objective": "List the dynamically learned Ethernet addresses associated with that VLAN.",
+    "explanation": "The switch forwarding table can be filtered by VLAN to show learned MAC entries.",
+    "answerCommand": "show mac address-table dynamic vlan 20"
+  },
+  {
+    "id": 218,
+    "commandId": "CMD024",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "Traffic is reaching the wrong access switch after a cabling change.",
+    "objective": "Determine where the destination device’s hardware address is currently being learned.",
+    "explanation": "Looking up the destination MAC reveals the outgoing interface selected by Layer 2 forwarding.",
+    "answerCommand": "show mac address-table address 0050.56aa.1001"
+  },
+  {
+    "id": 219,
+    "commandId": "CMD024",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Application",
+    "scenario": "A technician needs to see which endpoint addresses have been learned through GigabitEthernet0/12.",
+    "objective": "Display only the forwarding entries associated with that interface.",
+    "explanation": "Filtering the MAC address table by interface identifies devices learned on that port.",
+    "answerCommand": "show mac address-table interface GigabitEthernet0/12"
+  },
+  {
+    "id": 220,
+    "commandId": "CMD024",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "Users report intermittent connectivity and you suspect the same endpoint address is moving between ports.",
+    "objective": "Inspect the switch’s current Layer 2 forwarding entries before checking logs for address movement.",
+    "explanation": "The MAC address table shows the interface currently associated with each learned address.",
+    "answerCommand": "show mac address-table dynamic"
+  },
+  {
+    "id": 221,
+    "commandId": "CMD025",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Verification",
+    "scenario": "An interface was intended to be an access port, but its current behavior does not match the design.",
+    "objective": "Compare the port’s configured Layer 2 mode with the mode it is actually operating in.",
+    "explanation": "This output includes administrative mode, operational mode, access VLAN, trunking state, and negotiation details.",
+    "answerCommand": "show interfaces GigabitEthernet0/8 switchport"
+  },
+  {
+    "id": 222,
+    "commandId": "CMD025",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "A phone and workstation connected to the same port are not being placed into their expected networks.",
+    "objective": "Inspect the port’s data VLAN and voice VLAN assignments.",
+    "explanation": "Detailed switchport output identifies both access and voice VLAN configuration.",
+    "answerCommand": "show interfaces GigabitEthernet0/15 switchport"
+  },
+  {
+    "id": 223,
+    "commandId": "CMD025",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "Two switches should form a trunk, but only one side reports that the link is trunking.",
+    "objective": "Check the local port’s configured mode, operational mode, and negotiation settings.",
+    "explanation": "This command reveals whether a port is administratively trunking, dynamically negotiating, or operating as access.",
+    "answerCommand": "show interfaces GigabitEthernet0/1 switchport"
+  },
+  {
+    "id": 224,
+    "commandId": "CMD025",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Verification",
+    "scenario": "You need to verify whether untagged frames on a particular uplink are assigned to VLAN 99.",
+    "objective": "Inspect the port’s native VLAN setting and current trunking status.",
+    "explanation": "The switchport details show the administrative and operational native VLAN values.",
+    "answerCommand": "show interfaces GigabitEthernet0/24 switchport"
+  },
+  {
+    "id": 225,
+    "commandId": "CMD025",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Application",
+    "scenario": "A security review requires confirmation that a user-facing port cannot negotiate a trunk.",
+    "objective": "Examine the port’s administrative mode and whether negotiation frames are enabled.",
+    "explanation": "Detailed switchport state shows the configured mode and DTP negotiation setting.",
+    "answerCommand": "show interfaces GigabitEthernet0/6 switchport"
+  },
+  {
+    "id": 226,
+    "commandId": "CMD026",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Verification",
+    "scenario": "After replacing several patch cables, you need a quick overview of all switch ports.",
+    "objective": "Identify which ports are connected and compare their VLAN, speed, and duplex state.",
+    "explanation": "The concise port-status table presents link state, VLAN, duplex, speed, and media type.",
+    "answerCommand": "show interfaces status"
+  },
+  {
+    "id": 227,
+    "commandId": "CMD026",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "A user says their desk connection is down, but the wall jack number is unknown.",
+    "objective": "Find disconnected access ports and use their descriptions to identify the likely location.",
+    "explanation": "The status table combines port state with interface descriptions and VLAN assignments.",
+    "answerCommand": "show interfaces status"
+  },
+  {
+    "id": 228,
+    "commandId": "CMD026",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "Several access ports are unexpectedly operating at 100 Mb/s.",
+    "objective": "Quickly identify which interfaces negotiated a lower speed than expected.",
+    "explanation": "The summary lists the current speed and duplex for every physical switchport.",
+    "answerCommand": "show interfaces status"
+  },
+  {
+    "id": 229,
+    "commandId": "CMD026",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Application",
+    "scenario": "You need to locate all ports assigned to VLAN 30 without examining each interface configuration.",
+    "objective": "Review the switchwide port summary and identify the relevant access ports.",
+    "explanation": "The VLAN column in the interface-status table provides a concise port-to-VLAN view.",
+    "answerCommand": "show interfaces status"
+  },
+  {
+    "id": 230,
+    "commandId": "CMD026",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Verification",
+    "scenario": "A newly connected device is not passing traffic.",
+    "objective": "Confirm whether its physical port is connected, disabled, or in another state before deeper troubleshooting.",
+    "explanation": "The interface status summary quickly exposes physical and administrative port state.",
+    "answerCommand": "show interfaces status"
+  },
+  {
+    "id": 231,
+    "commandId": "CMD027",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Verification",
+    "scenario": "You need a switchwide overview before investigating a possible Layer 2 loop.",
+    "objective": "Review the active Spanning Tree mode, root information, and enabled protection features in one summary.",
+    "explanation": "The summary output provides a concise switchwide view of Spanning Tree operation.",
+    "answerCommand": "show spanning-tree summary"
+  },
+  {
+    "id": 232,
+    "commandId": "CMD027",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Application",
+    "scenario": "A change window requires confirmation that rapid convergence is enabled across the switch.",
+    "objective": "Check the switch’s current Spanning Tree operating mode without reviewing every VLAN individually.",
+    "explanation": "The summary identifies the configured protocol mode and global Spanning Tree status.",
+    "answerCommand": "show spanning-tree summary"
+  },
+  {
+    "id": 233,
+    "commandId": "CMD027",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "Multiple ports have unexpectedly entered inconsistent states.",
+    "objective": "Check whether global protections such as Loop Guard or EtherChannel misconfiguration detection are enabled.",
+    "explanation": "The summary includes global Spanning Tree feature status and blocked-port totals.",
+    "answerCommand": "show spanning-tree summary"
+  },
+  {
+    "id": 234,
+    "commandId": "CMD027",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Verification",
+    "scenario": "You are comparing two access switches for configuration consistency.",
+    "objective": "Obtain a concise count of active VLAN instances and ports in forwarding or blocking states.",
+    "explanation": "The summary presents aggregate Spanning Tree instance and port-state information.",
+    "answerCommand": "show spanning-tree summary"
+  },
+  {
+    "id": 235,
+    "commandId": "CMD027",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "A switch appears to have more blocked ports than expected after a topology change.",
+    "objective": "Start with a switchwide overview to determine the total number of blocked ports before drilling into individual interfaces.",
+    "explanation": "The summary is the quickest way to see aggregate blocked-port information.",
+    "answerCommand": "show spanning-tree summary"
+  },
+  {
+    "id": 236,
+    "commandId": "CMD028",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "A single uplink repeatedly changes between forwarding and blocking.",
+    "objective": "Examine that interface’s role, state, timers, and number of topology-change transitions.",
+    "explanation": "Detailed interface-specific Spanning Tree output exposes transition counters and per-port state.",
+    "answerCommand": "show spanning-tree interface GigabitEthernet0/1 detail"
+  },
+  {
+    "id": 237,
+    "commandId": "CMD028",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Verification",
+    "scenario": "An access port should immediately enter forwarding when a workstation connects.",
+    "objective": "Confirm the port’s edge behavior and inspect whether it has received any control frames from another switch.",
+    "explanation": "Detailed per-interface output reveals edge status and received or sent BPDU counters.",
+    "answerCommand": "show spanning-tree interface GigabitEthernet0/10 detail"
+  },
+  {
+    "id": 238,
+    "commandId": "CMD028",
+    "difficulty": "Advanced",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "A port was placed into an inconsistent state after superior control information arrived.",
+    "objective": "Inspect detailed Spanning Tree information for that interface to identify its current role and protection-related state.",
+    "explanation": "The detailed interface view provides the specific state and event counters needed for diagnosis.",
+    "answerCommand": "show spanning-tree interface GigabitEthernet0/18 detail"
+  },
+  {
+    "id": 239,
+    "commandId": "CMD028",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Application",
+    "scenario": "You need to determine how often a trunk port has transitioned into forwarding since the last reload.",
+    "objective": "Display the per-interface transition counters for the uplink.",
+    "explanation": "The detailed output includes forwarding transition counts for the selected port.",
+    "answerCommand": "show spanning-tree interface GigabitEthernet0/24 detail"
+  },
+  {
+    "id": 240,
+    "commandId": "CMD028",
+    "difficulty": "Advanced",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "One member link in a redundant topology appears stable physically but still disrupts Layer 2 convergence.",
+    "objective": "Review its designated bridge information, path cost, port priority, and event counters.",
+    "explanation": "Detailed interface output exposes all of these per-port Spanning Tree attributes.",
+    "answerCommand": "show spanning-tree interface GigabitEthernet0/2 detail"
+  },
+  {
+    "id": 241,
+    "commandId": "CMD029",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Configuration",
+    "scenario": "A link between two switches must carry traffic for multiple VLANs and should not rely on negotiation.",
+    "objective": "Statically place the local interface into the required Layer 2 operating mode.",
+    "explanation": "A static trunk transports traffic for multiple VLANs without depending on dynamic mode selection.",
+    "answerCommand": "switchport mode trunk"
+  },
+  {
+    "id": 242,
+    "commandId": "CMD029",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Configuration",
+    "scenario": "A router-on-a-stick design is being connected to a switch.",
+    "objective": "Configure the switch interface so tagged frames for several VLANs can reach the router.",
+    "explanation": "The router-facing link must operate as a trunk.",
+    "answerCommand": "switchport mode trunk"
+  },
+  {
+    "id": 243,
+    "commandId": "CMD029",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "An uplink remains an access port because the neighboring device does not participate in DTP.",
+    "objective": "Force the local switchport to carry multiple VLANs.",
+    "explanation": "Static trunk mode removes dependence on the neighbor initiating negotiation.",
+    "answerCommand": "switchport mode trunk"
+  },
+  {
+    "id": 244,
+    "commandId": "CMD029",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Application",
+    "scenario": "A wireless access point uses separate tagged networks for employee and guest traffic.",
+    "objective": "Configure its switch connection to transport both VLANs.",
+    "explanation": "A trunk is required when one physical link carries multiple VLANs.",
+    "answerCommand": "switchport mode trunk"
+  },
+  {
+    "id": 245,
+    "commandId": "CMD029",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Configuration",
+    "scenario": "A security standard prohibits dynamic trunk formation on infrastructure links.",
+    "objective": "Set the interface’s Layer 2 mode explicitly before disabling negotiation.",
+    "explanation": "The port must first be configured as a static trunk.",
+    "answerCommand": "switchport mode trunk"
+  },
+  {
+    "id": 246,
+    "commandId": "CMD030",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Configuration",
+    "scenario": "An uplink should carry only VLANs 10, 20, and 30.",
+    "objective": "Limit the VLANs permitted across the trunk to the approved set.",
+    "explanation": "The allowed-VLAN list controls which tagged VLANs may traverse a trunk.",
+    "answerCommand": "switchport trunk allowed vlan 10,20,30"
+  },
+  {
+    "id": 247,
+    "commandId": "CMD030",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Configuration",
+    "scenario": "A new server VLAN 40 must be added to a trunk without removing the VLANs already permitted.",
+    "objective": "Append the new VLAN to the existing allowed list.",
+    "explanation": "The add keyword extends the current list rather than replacing it.",
+    "answerCommand": "switchport trunk allowed vlan add 40"
+  },
+  {
+    "id": 248,
+    "commandId": "CMD030",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "Broadcast traffic from VLAN 99 should no longer cross a particular uplink.",
+    "objective": "Remove that VLAN from the trunk while leaving all other allowed VLANs unchanged.",
+    "explanation": "The remove keyword deletes one VLAN from the existing allowed list.",
+    "answerCommand": "switchport trunk allowed vlan remove 99"
+  },
+  {
+    "id": 249,
+    "commandId": "CMD030",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Application",
+    "scenario": "A lab trunk must temporarily carry only VLANs 100 through 110.",
+    "objective": "Replace its permitted set with the specified contiguous range.",
+    "explanation": "The command accepts a VLAN range and replaces the current allowed list.",
+    "answerCommand": "switchport trunk allowed vlan 100-110"
+  },
+  {
+    "id": 250,
+    "commandId": "CMD030",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Configuration",
+    "scenario": "A newly built trunk was restricted during testing and now needs to transport every normal-range VLAN.",
+    "objective": "Restore the allowed list so all VLANs are permitted.",
+    "explanation": "Specifying all restores the complete allowed-VLAN set.",
+    "answerCommand": "switchport trunk allowed vlan all"
+  },
+  {
+    "id": 251,
+    "commandId": "CMD031",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Configuration",
+    "scenario": "A trunk between two switches must use VLAN 99 for all untagged frames.",
+    "objective": "Change the local interface to match the agreed untagged VLAN.",
+    "explanation": "The native VLAN identifies which VLAN carries untagged traffic on an 802.1Q trunk.",
+    "answerCommand": "switchport trunk native vlan 99"
+  },
+  {
+    "id": 252,
+    "commandId": "CMD031",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "The two ends of a trunk report an untagged-VLAN mismatch.",
+    "objective": "Set the local side to VLAN 20 to match the neighboring switch.",
+    "explanation": "Both trunk endpoints should use the same native VLAN.",
+    "answerCommand": "switchport trunk native vlan 20"
+  },
+  {
+    "id": 253,
+    "commandId": "CMD031",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Configuration",
+    "scenario": "Management traffic must traverse an uplink without an 802.1Q tag and belongs to VLAN 999.",
+    "objective": "Assign the required VLAN as the trunk’s untagged VLAN.",
+    "explanation": "Changing the native VLAN determines where untagged frames are classified.",
+    "answerCommand": "switchport trunk native vlan 999"
+  },
+  {
+    "id": 254,
+    "commandId": "CMD031",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Application",
+    "scenario": "A switch-to-access-point trunk uses VLAN 10 for untagged management traffic.",
+    "objective": "Configure the switchport accordingly.",
+    "explanation": "The native VLAN must match the access point’s untagged management network.",
+    "answerCommand": "switchport trunk native vlan 10"
+  },
+  {
+    "id": 255,
+    "commandId": "CMD031",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "Untagged frames arriving on a trunk are being placed into the wrong broadcast domain.",
+    "objective": "Correct the local untagged VLAN assignment to VLAN 50.",
+    "explanation": "The native VLAN controls classification of untagged trunk traffic.",
+    "answerCommand": "switchport trunk native vlan 50"
+  },
+  {
+    "id": 256,
+    "commandId": "CMD032",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Configuration",
+    "scenario": "A trunk is statically configured and the security policy forbids dynamic negotiation frames.",
+    "objective": "Prevent the interface from transmitting negotiation messages.",
+    "explanation": "This command suppresses DTP transmission on the port.",
+    "answerCommand": "switchport nonegotiate"
+  },
+  {
+    "id": 257,
+    "commandId": "CMD032",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Application",
+    "scenario": "A switch connects to a third-party firewall that does not use Cisco trunk negotiation.",
+    "objective": "Disable negotiation traffic after statically configuring the trunk.",
+    "explanation": "DTP is unnecessary on a statically defined link to a nonparticipating device.",
+    "answerCommand": "switchport nonegotiate"
+  },
+  {
+    "id": 258,
+    "commandId": "CMD032",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "Packet captures show unexpected Cisco negotiation frames leaving an otherwise static trunk.",
+    "objective": "Stop those frames without changing the trunk’s forwarding function.",
+    "explanation": "Disabling negotiation prevents DTP frames while preserving static trunk operation.",
+    "answerCommand": "switchport nonegotiate"
+  },
+  {
+    "id": 259,
+    "commandId": "CMD032",
+    "difficulty": "Advanced",
+    "cognitiveLevel": "Configuration",
+    "scenario": "A hardened access port must never attempt to negotiate a trunk with an attached endpoint.",
+    "objective": "Disable Layer 2 mode negotiation on the interface.",
+    "explanation": "Suppressing DTP helps prevent unintended dynamic trunk formation.",
+    "answerCommand": "switchport nonegotiate"
+  },
+  {
+    "id": 260,
+    "commandId": "CMD032",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Verification",
+    "scenario": "A static infrastructure link is being standardized so both sides use manually defined Layer 2 modes.",
+    "objective": "Apply the command that removes reliance on DTP.",
+    "explanation": "The nonegotiate setting prevents dynamic trunk protocol exchanges.",
+    "answerCommand": "switchport nonegotiate"
+  },
+  {
+    "id": 261,
+    "commandId": "CMD033",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Configuration",
+    "scenario": "An IP phone and a workstation share one switchport. Voice traffic must use VLAN 20 while data traffic remains in the access VLAN.",
+    "objective": "Assign the auxiliary network used by the phone.",
+    "explanation": "A voice VLAN lets the phone tag voice traffic separately from workstation data.",
+    "answerCommand": "switchport voice vlan 20"
+  },
+  {
+    "id": 262,
+    "commandId": "CMD033",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Configuration",
+    "scenario": "New desk phones should place their voice packets into VLAN 150.",
+    "objective": "Configure the user-facing interfaces with the required voice network.",
+    "explanation": "The voice VLAN command advertises and assigns the dedicated VLAN to attached phones.",
+    "answerCommand": "switchport voice vlan 150"
+  },
+  {
+    "id": 263,
+    "commandId": "CMD033",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "A phone powers on but receives an address from the workstation data network.",
+    "objective": "Correct the port so phone traffic uses VLAN 30.",
+    "explanation": "The port needs an explicit voice VLAN assignment for the attached phone.",
+    "answerCommand": "switchport voice vlan 30"
+  },
+  {
+    "id": 264,
+    "commandId": "CMD033",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Application",
+    "scenario": "A branch standard specifies VLAN 210 for voice on every phone-and-PC port.",
+    "objective": "Apply the appropriate interface-level VLAN setting.",
+    "explanation": "This setting separates voice traffic while preserving the access VLAN for data.",
+    "answerCommand": "switchport voice vlan 210"
+  },
+  {
+    "id": 265,
+    "commandId": "CMD033",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Configuration",
+    "scenario": "A replacement phone should continue using the organization’s dedicated real-time traffic network, VLAN 40.",
+    "objective": "Configure the switchport to identify that network to the phone.",
+    "explanation": "The voice VLAN setting is used by supported IP phones for tagged voice traffic.",
+    "answerCommand": "switchport voice vlan 40"
+  },
+  {
+    "id": 266,
+    "commandId": "CMD034",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Configuration",
+    "scenario": "A user-facing access port must limit which endpoint hardware addresses may send traffic.",
+    "objective": "Activate the Layer 2 access-control feature on that interface.",
+    "explanation": "Port security must be enabled before its limits and violation actions take effect.",
+    "answerCommand": "switchport port-security"
+  },
+  {
+    "id": 267,
+    "commandId": "CMD034",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Application",
+    "scenario": "A conference-room jack should permit only approved endpoint addresses.",
+    "objective": "Enable the interface feature that enforces secure MAC address rules.",
+    "explanation": "Enabling port security activates secure-address enforcement on the access port.",
+    "answerCommand": "switchport port-security"
+  },
+  {
+    "id": 268,
+    "commandId": "CMD034",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "Maximum-address and violation-action commands are present, but the switch is not enforcing them.",
+    "objective": "Enable the parent feature required for those settings to operate.",
+    "explanation": "The supporting port-security feature must be explicitly enabled.",
+    "answerCommand": "switchport port-security"
+  },
+  {
+    "id": 269,
+    "commandId": "CMD034",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Configuration",
+    "scenario": "An access switch is being hardened against unauthorized device replacement.",
+    "objective": "Turn on secure-address enforcement for the selected port.",
+    "explanation": "Port security controls which source MAC addresses are accepted.",
+    "answerCommand": "switchport port-security"
+  },
+  {
+    "id": 270,
+    "commandId": "CMD034",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Verification",
+    "scenario": "A lab requires configuration of sticky learning and a two-device limit on an access interface.",
+    "objective": "Begin by enabling the feature on which those additional commands depend.",
+    "explanation": "The base port-security command is required before related options are effective.",
+    "answerCommand": "switchport port-security"
+  },
+  {
+    "id": 271,
+    "commandId": "CMD035",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Configuration",
+    "scenario": "A desk port connects to one IP phone and one workstation, and no additional devices should be accepted.",
+    "objective": "Set the secure-address limit to two.",
+    "explanation": "The maximum setting determines how many secure MAC addresses may be active on the port.",
+    "answerCommand": "switchport port-security maximum 2"
+  },
+  {
+    "id": 272,
+    "commandId": "CMD035",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Configuration",
+    "scenario": "A kiosk port must accept only one endpoint address.",
+    "objective": "Configure the lowest normal secure-address limit.",
+    "explanation": "A maximum of one permits only a single secure MAC address.",
+    "answerCommand": "switchport port-security maximum 1"
+  },
+  {
+    "id": 273,
+    "commandId": "CMD035",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Application",
+    "scenario": "A small lab hub behind an access port is approved for four devices.",
+    "objective": "Adjust the port-security limit to match the authorized endpoint count.",
+    "explanation": "The maximum value should reflect the number of permitted source MAC addresses.",
+    "answerCommand": "switchport port-security maximum 4"
+  },
+  {
+    "id": 274,
+    "commandId": "CMD035",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "A phone-and-PC port begins reporting violations when the second device appears.",
+    "objective": "Increase the permitted secure-address count to two.",
+    "explanation": "The default limit may be insufficient for two legitimate endpoint addresses.",
+    "answerCommand": "switchport port-security maximum 2"
+  },
+  {
+    "id": 275,
+    "commandId": "CMD035",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Configuration",
+    "scenario": "A printer aggregation port is approved for three fixed devices and should reject a fourth.",
+    "objective": "Set the interface’s secure-address capacity accordingly.",
+    "explanation": "The configured maximum caps the number of accepted secure addresses.",
+    "answerCommand": "switchport port-security maximum 3"
+  },
+  {
+    "id": 276,
+    "commandId": "CMD036",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Configuration",
+    "scenario": "A security policy requires an access port to stop forwarding completely after an unauthorized address appears.",
+    "objective": "Configure the violation action that places the interface into an error-disabled state.",
+    "explanation": "Shutdown mode disables the port when the secure-address policy is violated.",
+    "answerCommand": "switchport port-security violation shutdown"
+  },
+  {
+    "id": 277,
+    "commandId": "CMD036",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Application",
+    "scenario": "A high-security workstation port must require administrator intervention after a violation.",
+    "objective": "Select the most disruptive port-security response.",
+    "explanation": "The shutdown action error-disables the interface and normally requires recovery.",
+    "answerCommand": "switchport port-security violation shutdown"
+  },
+  {
+    "id": 278,
+    "commandId": "CMD036",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "An unauthorized device should cause the entire port to go down rather than merely dropping its frames.",
+    "objective": "Set the violation policy to disable the interface.",
+    "explanation": "Shutdown mode stops all forwarding on the violated port.",
+    "answerCommand": "switchport port-security violation shutdown"
+  },
+  {
+    "id": 279,
+    "commandId": "CMD036",
+    "difficulty": "Advanced",
+    "cognitiveLevel": "Configuration",
+    "scenario": "A compliance control requires a violation to generate alerts and remove the port from service.",
+    "objective": "Configure the default high-impact response explicitly.",
+    "explanation": "The shutdown response records the violation and error-disables the port.",
+    "answerCommand": "switchport port-security violation shutdown"
+  },
+  {
+    "id": 280,
+    "commandId": "CMD036",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Verification",
+    "scenario": "A switch template must ensure that a secure-address violation cannot pass any subsequent legitimate traffic until recovery.",
+    "objective": "Apply the violation mode that disables the interface.",
+    "explanation": "Error-disabled shutdown behavior blocks all traffic after the event.",
+    "answerCommand": "switchport port-security violation shutdown"
+  },
+  {
+    "id": 281,
+    "commandId": "CMD037",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Configuration",
+    "scenario": "Unauthorized source addresses must be discarded, but approved devices should continue communicating and violations must be counted.",
+    "objective": "Configure the non-disruptive response that records and reports the event.",
+    "explanation": "Restrict mode drops offending frames while incrementing counters and generating notifications.",
+    "answerCommand": "switchport port-security violation restrict"
+  },
+  {
+    "id": 282,
+    "commandId": "CMD037",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Application",
+    "scenario": "A phone-and-PC port should remain usable by authorized devices even if a third device is attached. The security team still needs evidence of the attempt.",
+    "objective": "Select the violation action that preserves the port and tracks the violation.",
+    "explanation": "Restrict mode continues forwarding permitted traffic and records violations.",
+    "answerCommand": "switchport port-security violation restrict"
+  },
+  {
+    "id": 283,
+    "commandId": "CMD037",
+    "difficulty": "Advanced",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "The interface must not become error-disabled when an unapproved address appears, but SNMP and log visibility are required.",
+    "objective": "Use the violation mode that drops, counts, and reports offending traffic.",
+    "explanation": "Restrict mode provides visibility without shutting down the interface.",
+    "answerCommand": "switchport port-security violation restrict"
+  },
+  {
+    "id": 284,
+    "commandId": "CMD037",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Configuration",
+    "scenario": "A public-area jack should reject extra devices while leaving the authorized endpoint online.",
+    "objective": "Configure a violation response that increments the counter instead of disabling the port.",
+    "explanation": "Restrict mode drops only frames sourced from insecure addresses.",
+    "answerCommand": "switchport port-security violation restrict"
+  },
+  {
+    "id": 285,
+    "commandId": "CMD037",
+    "difficulty": "Advanced",
+    "cognitiveLevel": "Verification",
+    "scenario": "Operations wants a violation counter for monitoring but cannot tolerate an interface outage.",
+    "objective": "Apply the port-security response that satisfies both requirements.",
+    "explanation": "Restrict mode maintains service for secure addresses and records violations.",
+    "answerCommand": "switchport port-security violation restrict"
+  },
+  {
+    "id": 286,
+    "commandId": "CMD038",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Configuration",
+    "scenario": "An access port should automatically learn the first connected device and retain that address in the active configuration.",
+    "objective": "Enable automatic secure-address learning on the port.",
+    "explanation": "Sticky learning converts dynamically learned secure addresses into sticky configuration entries.",
+    "answerCommand": "switchport port-security mac-address sticky"
+  },
+  {
+    "id": 287,
+    "commandId": "CMD038",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Application",
+    "scenario": "Hundreds of access ports need secure addresses without manually entering each endpoint’s MAC address.",
+    "objective": "Configure the ports to learn and record connected devices automatically.",
+    "explanation": "Sticky learning reduces manual entry while creating visible secure-address configuration.",
+    "answerCommand": "switchport port-security mac-address sticky"
+  },
+  {
+    "id": 288,
+    "commandId": "CMD038",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "Port security is enabled, but no learned addresses appear as configuration lines.",
+    "objective": "Enable the learning mode that writes discovered secure addresses into the running configuration.",
+    "explanation": "Sticky mode causes learned secure MAC addresses to appear in the configuration.",
+    "answerCommand": "switchport port-security mac-address sticky"
+  },
+  {
+    "id": 289,
+    "commandId": "CMD038",
+    "difficulty": "Advanced",
+    "cognitiveLevel": "Configuration",
+    "scenario": "A staging process connects the approved endpoint first and then saves the switch configuration for deployment.",
+    "objective": "Use the feature that captures the first learned address as a secure entry.",
+    "explanation": "Sticky learning is designed for this learn-then-save workflow.",
+    "answerCommand": "switchport port-security mac-address sticky"
+  },
+  {
+    "id": 290,
+    "commandId": "CMD038",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Verification",
+    "scenario": "A replacement access switch should learn authorized endpoints during installation without static address entry.",
+    "objective": "Enable dynamic secure learning that can later be preserved by saving the configuration.",
+    "explanation": "Sticky entries remain in the running configuration and can be copied to startup configuration.",
+    "answerCommand": "switchport port-security mac-address sticky"
+  },
+  {
+    "id": 291,
+    "commandId": "CMD039",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Verification",
+    "scenario": "You need a switchwide view of which interfaces have port security enabled.",
+    "objective": "Display the summary showing secure-address limits and violation counts across ports.",
+    "explanation": "The global port-security display summarizes all participating interfaces.",
+    "answerCommand": "show port-security"
+  },
+  {
+    "id": 292,
+    "commandId": "CMD039",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "The security team asks whether violations are occurring anywhere on the access switch.",
+    "objective": "Review violation counters for all secured ports in one output.",
+    "explanation": "The summary provides per-port violation counts across the switch.",
+    "answerCommand": "show port-security"
+  },
+  {
+    "id": 293,
+    "commandId": "CMD039",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Application",
+    "scenario": "Before a maintenance window, capture the overall state of secure access-port enforcement.",
+    "objective": "Obtain a concise switchwide port-security summary.",
+    "explanation": "The global command is more efficient than checking each interface individually.",
+    "answerCommand": "show port-security"
+  },
+  {
+    "id": 294,
+    "commandId": "CMD039",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Verification",
+    "scenario": "You want to compare the configured maximum and current secure-address counts on every protected port.",
+    "objective": "Display the aggregate port-security table.",
+    "explanation": "The table includes maximum, total, and violation values for secured interfaces.",
+    "answerCommand": "show port-security"
+  },
+  {
+    "id": 295,
+    "commandId": "CMD039",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "Several users report disconnected ports after unauthorized hubs were installed.",
+    "objective": "Start by identifying which secured interfaces show violations across the switch.",
+    "explanation": "The switchwide summary highlights ports with nonzero violation counts.",
+    "answerCommand": "show port-security"
+  },
+  {
+    "id": 296,
+    "commandId": "CMD040",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "One access port is error-disabled and you suspect a secure-address violation.",
+    "objective": "Inspect that interface’s security status, violation mode, maximum, learned count, and last offending address.",
+    "explanation": "The interface-specific display provides detailed port-security state and violation data.",
+    "answerCommand": "show port-security interface GigabitEthernet0/7"
+  },
+  {
+    "id": 297,
+    "commandId": "CMD040",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Verification",
+    "scenario": "A phone-and-PC port should permit two secure addresses.",
+    "objective": "Confirm the configured maximum and the number currently learned on that interface.",
+    "explanation": "Detailed per-port output includes both maximum and current secure-address counts.",
+    "answerCommand": "show port-security interface GigabitEthernet0/12"
+  },
+  {
+    "id": 298,
+    "commandId": "CMD040",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "Authorized traffic still works, but logs show repeated security events on one port.",
+    "objective": "Check its violation mode and counter to determine whether restrict behavior is active.",
+    "explanation": "The per-interface output identifies violation action and accumulated violations.",
+    "answerCommand": "show port-security interface GigabitEthernet0/18"
+  },
+  {
+    "id": 299,
+    "commandId": "CMD040",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Application",
+    "scenario": "A newly configured port should be using sticky learning.",
+    "objective": "Verify its secure-address learning type and currently associated addresses.",
+    "explanation": "The detailed interface view shows sticky and other secure-address information.",
+    "answerCommand": "show port-security interface GigabitEthernet0/3"
+  },
+  {
+    "id": 300,
+    "commandId": "CMD040",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "A user replaced a workstation and the port no longer accepts traffic.",
+    "objective": "Examine the secure addresses and last source address associated with that specific port.",
+    "explanation": "Interface-specific output helps identify whether the new device conflicts with learned secure addresses.",
+    "answerCommand": "show port-security interface GigabitEthernet0/20"
+  },
+  {
+    "id": 301,
+    "commandId": "CMD041",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Configuration",
+    "scenario": "Two switches should form EtherChannel 1 using LACP, and this side must initiate negotiation.",
+    "objective": "Configure each member interface with the active LACP role.",
+    "explanation": "Active mode sends LACP packets and can form a bundle with an active or passive peer.",
+    "answerCommand": "channel-group 1 mode active"
+  },
+  {
+    "id": 302,
+    "commandId": "CMD041",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "A peer is configured for the responding LACP role, but the bundle has not formed because this side is also waiting.",
+    "objective": "Change the local member interfaces so they initiate negotiation.",
+    "explanation": "At least one LACP side must be active.",
+    "answerCommand": "channel-group 2 mode active"
+  },
+  {
+    "id": 303,
+    "commandId": "CMD041",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Application",
+    "scenario": "An EtherChannel to a server uses standards-based negotiation and the server waits for the switch to begin.",
+    "objective": "Configure the switch members to initiate the protocol exchange.",
+    "explanation": "LACP active mode initiates negotiation with a passive partner.",
+    "answerCommand": "channel-group 5 mode active"
+  },
+  {
+    "id": 304,
+    "commandId": "CMD041",
+    "difficulty": "Advanced",
+    "cognitiveLevel": "Configuration",
+    "scenario": "A design requires both sides of a standards-based bundle to transmit negotiation packets proactively.",
+    "objective": "Place the local links into the initiating mode for port-channel 10.",
+    "explanation": "Active-active is a valid LACP pairing.",
+    "answerCommand": "channel-group 10 mode active"
+  },
+  {
+    "id": 305,
+    "commandId": "CMD041",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Verification",
+    "scenario": "You are replacing a failed member interface in an LACP bundle whose local side initiates negotiations.",
+    "objective": "Add the replacement link to group 3 using the same operational role.",
+    "explanation": "The member must use active mode to match the bundle design.",
+    "answerCommand": "channel-group 3 mode active"
+  },
+  {
+    "id": 306,
+    "commandId": "CMD042",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Configuration",
+    "scenario": "A peer actively initiates LACP for port-channel 1, while this switch should respond without initiating.",
+    "objective": "Configure the local member interfaces in the responding LACP role.",
+    "explanation": "Passive mode forms an LACP bundle when the remote side is active.",
+    "answerCommand": "channel-group 1 mode passive"
+  },
+  {
+    "id": 307,
+    "commandId": "CMD042",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Application",
+    "scenario": "A server is configured to initiate standards-based link aggregation.",
+    "objective": "Add the switch interfaces to group 4 so they listen and respond to the server.",
+    "explanation": "LACP passive mode waits for active negotiation from the peer.",
+    "answerCommand": "channel-group 4 mode passive"
+  },
+  {
+    "id": 308,
+    "commandId": "CMD042",
+    "difficulty": "Advanced",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "Both sides of an intended LACP EtherChannel are waiting and no bundle forms. The remote side will be changed to initiate.",
+    "objective": "Keep the local side in the mode that responds once the peer becomes active.",
+    "explanation": "Passive mode does not initiate but can form with an active peer.",
+    "answerCommand": "channel-group 2 mode passive"
+  },
+  {
+    "id": 309,
+    "commandId": "CMD042",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Configuration",
+    "scenario": "A policy permits only the distribution switch to initiate LACP.",
+    "objective": "Configure the access-switch member links as responders in group 6.",
+    "explanation": "Passive mode satisfies a design where only the peer initiates.",
+    "answerCommand": "channel-group 6 mode passive"
+  },
+  {
+    "id": 310,
+    "commandId": "CMD042",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Verification",
+    "scenario": "A replacement link must join an existing bundle whose local members wait for the upstream switch.",
+    "objective": "Add the interface to group 8 with the matching LACP role.",
+    "explanation": "The replacement should use passive mode to remain consistent.",
+    "answerCommand": "channel-group 8 mode passive"
+  },
+  {
+    "id": 311,
+    "commandId": "CMD043",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Configuration",
+    "scenario": "Two Cisco switches should form EtherChannel 1 using PAgP, and this side must actively request bundling.",
+    "objective": "Configure the member interfaces with the initiating PAgP mode.",
+    "explanation": "Desirable mode sends PAgP messages and can form with desirable or auto.",
+    "answerCommand": "channel-group 1 mode desirable"
+  },
+  {
+    "id": 312,
+    "commandId": "CMD043",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "The remote Cisco switch waits in PAgP auto mode, and the bundle is not forming because the local side also waits.",
+    "objective": "Make the local side initiate PAgP negotiation.",
+    "explanation": "At least one PAgP endpoint must use desirable mode.",
+    "answerCommand": "channel-group 2 mode desirable"
+  },
+  {
+    "id": 313,
+    "commandId": "CMD043",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Application",
+    "scenario": "A Cisco-only EtherChannel design requires both switches to actively negotiate the bundle.",
+    "objective": "Configure group 7 with the initiating proprietary mode.",
+    "explanation": "PAgP desirable-desirable is a valid active pairing.",
+    "answerCommand": "channel-group 7 mode desirable"
+  },
+  {
+    "id": 314,
+    "commandId": "CMD043",
+    "difficulty": "Advanced",
+    "cognitiveLevel": "Configuration",
+    "scenario": "A replacement member link must join an existing PAgP bundle whose local switch actively negotiates.",
+    "objective": "Apply the same initiating mode for group 3.",
+    "explanation": "Consistency of channel protocol and mode is required across members.",
+    "answerCommand": "channel-group 3 mode desirable"
+  },
+  {
+    "id": 315,
+    "commandId": "CMD043",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Verification",
+    "scenario": "An access switch should begin proprietary negotiation toward an upstream switch configured to respond.",
+    "objective": "Place the local uplinks into group 9 using the correct role.",
+    "explanation": "Desirable initiates PAgP toward an auto peer.",
+    "answerCommand": "channel-group 9 mode desirable"
+  },
+  {
+    "id": 316,
+    "commandId": "CMD044",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Configuration",
+    "scenario": "The upstream Cisco switch actively negotiates PAgP, while this access switch should only respond.",
+    "objective": "Configure the local member links in the responding PAgP mode.",
+    "explanation": "Auto mode forms a PAgP channel when the peer is desirable.",
+    "answerCommand": "channel-group 1 mode auto"
+  },
+  {
+    "id": 317,
+    "commandId": "CMD044",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Application",
+    "scenario": "A Cisco distribution switch is designated to initiate proprietary EtherChannel negotiation.",
+    "objective": "Add the access-switch uplinks to group 4 as responders.",
+    "explanation": "PAgP auto listens for desirable messages from the peer.",
+    "answerCommand": "channel-group 4 mode auto"
+  },
+  {
+    "id": 318,
+    "commandId": "CMD044",
+    "difficulty": "Advanced",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "An intended PAgP channel does not form because both ends are waiting. The far side will be changed to initiate.",
+    "objective": "Leave the local members in the appropriate responding mode.",
+    "explanation": "Auto-auto does not form, but auto can pair with desirable.",
+    "answerCommand": "channel-group 2 mode auto"
+  },
+  {
+    "id": 319,
+    "commandId": "CMD044",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Configuration",
+    "scenario": "A replacement interface should match other members that wait for the distribution switch’s PAgP requests.",
+    "objective": "Add it to group 6 using the passive proprietary role.",
+    "explanation": "Auto is the responding role for PAgP.",
+    "answerCommand": "channel-group 6 mode auto"
+  },
+  {
+    "id": 320,
+    "commandId": "CMD044",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Verification",
+    "scenario": "The local switch must not initiate PAgP but should join group 10 when the peer requests it.",
+    "objective": "Configure the local member interfaces accordingly.",
+    "explanation": "Auto mode waits for a desirable peer.",
+    "answerCommand": "channel-group 10 mode auto"
+  },
+  {
+    "id": 321,
+    "commandId": "CMD045",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Configuration",
+    "scenario": "A damaged access link is causing repeated errors and must be taken out of service administratively.",
+    "objective": "Disable the interface without removing its configuration.",
+    "explanation": "The shutdown command places an interface into the administratively down state.",
+    "answerCommand": "shutdown"
+  },
+  {
+    "id": 322,
+    "commandId": "CMD045",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Application",
+    "scenario": "A switchport connected to an unused office jack must be disabled as a security precaution.",
+    "objective": "Place the port into an administratively disabled state.",
+    "explanation": "Unused interfaces are commonly shut down to prevent unauthorized access.",
+    "answerCommand": "shutdown"
+  },
+  {
+    "id": 323,
+    "commandId": "CMD045",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "A suspected Layer 2 loop must be interrupted immediately while the cabling is investigated.",
+    "objective": "Administratively disable the affected interface.",
+    "explanation": "Shutting the port stops forwarding without deleting its settings.",
+    "answerCommand": "shutdown"
+  },
+  {
+    "id": 324,
+    "commandId": "CMD045",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Configuration",
+    "scenario": "A WAN circuit is being removed from service for maintenance.",
+    "objective": "Take the router interface offline while preserving its configuration.",
+    "explanation": "Shutdown administratively disables the interface.",
+    "answerCommand": "shutdown"
+  },
+  {
+    "id": 325,
+    "commandId": "CMD045",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Application",
+    "scenario": "A newly configured trunk should remain unavailable until the far-end change window begins.",
+    "objective": "Keep the interface disabled until activation is authorized.",
+    "explanation": "The shutdown state prevents the link from becoming operational.",
+    "answerCommand": "shutdown"
+  },
+  {
+    "id": 326,
+    "commandId": "CMD046",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Configuration",
+    "scenario": "A newly configured interface remains administratively down.",
+    "objective": "Enable it so the link can become operational.",
+    "explanation": "The no form of shutdown removes the administrative disablement.",
+    "answerCommand": "no shutdown"
+  },
+  {
+    "id": 327,
+    "commandId": "CMD046",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "Cabling and addressing are correct, but the interface status indicates it was manually disabled.",
+    "objective": "Return the interface to service.",
+    "explanation": "No shutdown administratively enables the interface.",
+    "answerCommand": "no shutdown"
+  },
+  {
+    "id": 328,
+    "commandId": "CMD046",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Application",
+    "scenario": "Maintenance on a switch uplink is complete and traffic should resume.",
+    "objective": "Re-enable the existing interface configuration.",
+    "explanation": "The command allows the physical and line protocols to come up.",
+    "answerCommand": "no shutdown"
+  },
+  {
+    "id": 329,
+    "commandId": "CMD046",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Configuration",
+    "scenario": "A router subinterface configuration is complete, but its parent physical interface is disabled.",
+    "objective": "Enable the parent interface so the subinterfaces can operate.",
+    "explanation": "Subinterfaces depend on the parent physical interface being administratively enabled.",
+    "answerCommand": "no shutdown"
+  },
+  {
+    "id": 330,
+    "commandId": "CMD046",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Verification",
+    "scenario": "An unused port has been reassigned to a new employee and configured with the correct access VLAN.",
+    "objective": "Remove its administrative shutdown state.",
+    "explanation": "No shutdown makes the port eligible to transition to connected.",
+    "answerCommand": "no shutdown"
+  }
+]

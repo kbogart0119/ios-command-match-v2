@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Practice matching Cisco IOS commands to networking objectives." />
+  <title>IOS Command Match</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <header class="game-header">
+      <div class="title-group">
+        <p class="eyebrow">CCNA Command Practice</p>
+        <h1>IOS Command Match</h1>
+        <p class="subtitle">Drag each objective onto the IOS command that best accomplishes the task.</p>
+      </div>
+
+      <section class="scoreboard" aria-label="Current game statistics" aria-live="polite">
+        <div class="stat-card timer-card">
+          <span class="stat-label">Time Remaining</span>
+          <strong id="timer" class="stat-value">10:00</strong>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Correct</span>
+          <strong id="score" class="stat-value">0</strong>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Incorrect</span>
+          <strong id="incorrect" class="stat-value">0</strong>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Accuracy</span>
+          <strong id="accuracy" class="stat-value">—</strong>
+        </div>
+      </section>
+    </header>
+
+    <section id="start-screen" class="screen panel start-panel">
+      <div class="start-copy">
+        <p class="section-label">Challenge Mode</p>
+        <h2>How many IOS commands can you identify in ten minutes?</h2>
+        <p>Each round contains five networking objectives and five shuffled IOS commands. Correct pairs disappear; incorrect objectives return to their original position.</p>
+        <ul class="feature-list">
+          <li>Questions become progressively more challenging.</li>
+          <li>Your correct matches, mistakes, and accuracy are tracked.</li>
+          <li>Each objective has one intended best answer.</li>
+        </ul>
+        <button id="start-button" class="primary-button">Start 10-Minute Game</button>
+      </div>
+    </section>
+
+    <section id="game-screen" class="screen hidden" aria-label="IOS command matching game">
+      <div class="round-bar">
+        <div>
+          <span class="round-label">Current Difficulty</span>
+          <strong id="difficulty-label">Foundational</strong>
+        </div>
+        <div>
+          <span class="round-label">Round</span>
+          <strong id="round-number">1</strong>
+        </div>
+      </div>
+
+      <div class="column headings" aria-hidden="true">
+        <h2>Objectives</h2>
+        <h2>IOS Commands</h2>
+      </div>
+
+      <div class="column game-columns">
+        <div id="objective-column" class="stack" aria-label="Objectives"></div>
+        <div id="command-column" class="stack" aria-label="IOS commands"></div>
+      </div>
+      <p id="feedback" class="feedback" aria-live="polite"></p>
+    </section>
+
+    <section id="results-screen" class="screen panel results-panel hidden">
+      <p class="section-label">Game Complete</p>
+      <h2>Time Expired</h2>
+      <div class="results-grid">
+        <div><span>Correct Pairings</span><strong id="final-score">0</strong></div>
+        <div><span>Incorrect Attempts</span><strong id="final-incorrect">0</strong></div>
+        <div><span>Final Accuracy</span><strong id="final-accuracy">—</strong></div>
+        <div><span>Rounds Reached</span><strong id="final-rounds">0</strong></div>
+      </div>
+      <button id="restart-button" class="primary-button">Play Again</button>
+    </section>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>
