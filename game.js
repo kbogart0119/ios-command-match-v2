@@ -38,7 +38,8 @@ let selectedGameSeconds = DEFAULT_GAME_MINUTES * 60;
 let timeRemaining = selectedGameSeconds;
 let timerId = null;
 let activeRound = [];
-let usedIdsByDifficulty = new Map();
+let shuffledQuestionBank = [];
+let usedQuestionIds = new Set();
 let roundLocked = false;
 let roundNumber = 0;
 let touchDrag = null;
@@ -128,63 +129,69 @@ function getCurrentStage() {
     .find(stage => progress >= stage.minimumProgress) || DIFFICULTY_STAGES[0];
 }
 
-function getUsedIds(label) {
-  if (!usedIdsByDifficulty.has(label)) usedIdsByDifficulty.set(label, new Set());
-  return usedIdsByDifficulty.get(label);
+function buildRoundFromPool(pool) {
+  const selected = [];
+  const seenCommandIds = new Set();
+  const seenDisplayedCommands = new Set();
+
+  for (const question of pool) {
+    const displayedCommand = question.answerCommand || question.command;
+    if (seenCommandIds.has(question.commandId) || seenDisplayedCommands.has(displayedCommand)) continue;
+
+    selected.push(question);
+    seenCommandIds.add(question.commandId);
+    seenDisplayedCommands.add(displayedCommand);
+
+    if (selected.length === PAIRS_PER_ROUND) break;
+  }
+
+  return selected;
 }
 
 function selectRound() {
   const stage = getCurrentStage();
   const stageIndex = DIFFICULTY_STAGES.findIndex(item => item.label === stage.label);
   const allowedLabels = DIFFICULTY_STAGES.slice(0, stageIndex + 1).map(item => item.label);
-  let eligible = questionBank.filter(question => question.difficulty === stage.label);
 
-  if (eligible.length < PAIRS_PER_ROUND) {
-    const fallback = questionBank.filter(question =>
-      allowedLabels.includes(question.difficulty) && question.difficulty !== stage.label
+  // Shuffle once at the beginning of each game, then preserve that random order
+  // while favoring questions from the current difficulty stage.
+  const unusedCurrentStage = shuffledQuestionBank.filter(question =>
+    question.difficulty === stage.label &&
+    !usedQuestionIds.has(question.id)
+  );
+
+  const unusedEarlierStages = shuffledQuestionBank.filter(question =>
+    allowedLabels.includes(question.difficulty) &&
+    question.difficulty !== stage.label &&
+    !usedQuestionIds.has(question.id)
+  );
+
+  let selected = buildRoundFromPool([
+    ...unusedCurrentStage,
+    ...unusedEarlierStages
+  ]);
+
+  // If the usable pool is exhausted, begin a fresh shuffled cycle.
+  if (selected.length < PAIRS_PER_ROUND) {
+    usedQuestionIds.clear();
+    shuffledQuestionBank = shuffle(questionBank);
+
+    const refreshedCurrentStage = shuffledQuestionBank.filter(
+      question => question.difficulty === stage.label
     );
-    eligible = [...eligible, ...shuffle(fallback)].slice(0, Math.max(PAIRS_PER_ROUND, eligible.length));
-  }
-
-  const usedIds = getUsedIds(stage.label);
-  let available = eligible.filter(question => !usedIds.has(question.id));
-
-  if (available.length < PAIRS_PER_ROUND) {
-    usedIds.clear();
-    available = [...eligible];
-  }
-
-  // Prevent visually identical or conceptually duplicate command targets in one round.
-  const uniqueByCommand = [];
-  const seenCommandIds = new Set();
-  const seenDisplayedCommands = new Set();
-
-  for (const question of shuffle(available)) {
-    const displayedCommand = question.answerCommand || question.command;
-    if (seenCommandIds.has(question.commandId) || seenDisplayedCommands.has(displayedCommand)) continue;
-    uniqueByCommand.push(question);
-    seenCommandIds.add(question.commandId);
-    seenDisplayedCommands.add(displayedCommand);
-    if (uniqueByCommand.length === PAIRS_PER_ROUND) break;
-  }
-
-  // If the current difficulty lacks five unique commands, supplement it with earlier levels.
-  if (uniqueByCommand.length < PAIRS_PER_ROUND) {
-    const supplemental = shuffle(questionBank.filter(question =>
+    const refreshedEarlierStages = shuffledQuestionBank.filter(question =>
       allowedLabels.includes(question.difficulty) &&
-      !seenCommandIds.has(question.commandId) &&
-      !seenDisplayedCommands.has(question.answerCommand || question.command)
-    ));
-    for (const question of supplemental) {
-      uniqueByCommand.push(question);
-      seenCommandIds.add(question.commandId);
-      seenDisplayedCommands.add(question.answerCommand || question.command);
-      if (uniqueByCommand.length === PAIRS_PER_ROUND) break;
-    }
+      question.difficulty !== stage.label
+    );
+
+    selected = buildRoundFromPool([
+      ...refreshedCurrentStage,
+      ...refreshedEarlierStages
+    ]);
   }
 
-  activeRound = uniqueByCommand;
-  activeRound.forEach(question => usedIds.add(question.id));
+  activeRound = selected;
+  activeRound.forEach(question => usedQuestionIds.add(question.id));
   elements.difficultyLabel.textContent = stage.label;
 }
 
@@ -459,7 +466,8 @@ function resetGameState() {
   selectedGameSeconds = Number(elements.durationSelect.value) * 60;
   timeRemaining = selectedGameSeconds;
   roundNumber = 0;
-  usedIdsByDifficulty.clear();
+  usedQuestionIds.clear();
+  shuffledQuestionBank = shuffle(questionBank);
   updateStatistics();
   updateTimer();
 }
