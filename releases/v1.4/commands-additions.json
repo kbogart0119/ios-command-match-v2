@@ -1,0 +1,209 @@
+[
+  {
+    "id": "CMD070",
+    "command": "show ip nat translations",
+    "purpose": "Displays active NAT translation entries that map inside and outside local and global IPv4 addresses.",
+    "syntax": "show ip nat translations [verbose]",
+    "difficulty": "Developing",
+    "category": "NAT",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD071",
+    "command": "show ip nat statistics",
+    "purpose": "Displays NAT configuration statistics, interface roles, translation counts, and configured mapping rules.",
+    "syntax": "show ip nat statistics",
+    "difficulty": "Developing",
+    "category": "NAT",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD072",
+    "command": "ipv6 unicast-routing",
+    "purpose": "Enables the device to forward IPv6 unicast packets between Layer 3 interfaces.",
+    "syntax": "ipv6 unicast-routing",
+    "difficulty": "Developing",
+    "category": "IPv6 Routing",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD073",
+    "command": "show ipv6 neighbors",
+    "purpose": "Displays IPv6 Neighbor Discovery cache entries that associate IPv6 addresses with Layer 2 addresses and interfaces.",
+    "syntax": "show ipv6 neighbors [interface-id]",
+    "difficulty": "Developing",
+    "category": "IPv6",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD074",
+    "command": "ip dhcp excluded-address <low-address> [high-address]",
+    "purpose": "Reserves one IPv4 address or a range of addresses so the IOS DHCP server does not lease them to clients.",
+    "syntax": "ip dhcp excluded-address <low-address> [high-address]",
+    "difficulty": "Developing",
+    "category": "DHCP",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD075",
+    "command": "ip dhcp pool <pool-name>",
+    "purpose": "Creates or enters an IOS DHCP pool used to define addressing parameters for clients.",
+    "syntax": "ip dhcp pool <pool-name>",
+    "difficulty": "Developing",
+    "category": "DHCP",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD076",
+    "command": "network <network-address> <subnet-mask>",
+    "purpose": "Defines the IPv4 subnet from which an IOS DHCP pool leases client addresses.",
+    "syntax": "network <network-address> <subnet-mask>",
+    "difficulty": "Developing",
+    "category": "DHCP",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD077",
+    "command": "default-router <gateway-address>",
+    "purpose": "Specifies the default-gateway address supplied to DHCP clients in a pool.",
+    "syntax": "default-router <gateway-address> [additional-addresses]",
+    "difficulty": "Developing",
+    "category": "DHCP",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD078",
+    "command": "show ip dhcp binding",
+    "purpose": "Displays IPv4 addresses leased by the IOS DHCP server and the associated client identifiers and lease information.",
+    "syntax": "show ip dhcp binding [address]",
+    "difficulty": "Developing",
+    "category": "DHCP",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD079",
+    "command": "ip access-list standard <acl-name>",
+    "purpose": "Creates or enters named standard IPv4 ACL configuration mode.",
+    "syntax": "ip access-list standard <acl-name>",
+    "difficulty": "Intermediate",
+    "category": "Access Control Lists",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD080",
+    "command": "ip access-list extended <acl-name>",
+    "purpose": "Creates or enters named extended IPv4 ACL configuration mode.",
+    "syntax": "ip access-list extended <acl-name>",
+    "difficulty": "Intermediate",
+    "category": "Access Control Lists",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD081",
+    "command": "permit|deny <protocol> <source> <source-wildcard> <destination> <destination-wildcard> [operator port]",
+    "purpose": "Creates an extended IPv4 ACL entry that can match protocol, source, destination, and optional transport-layer port information.",
+    "syntax": "{permit | deny} <protocol> <source> <source-wildcard> <destination> <destination-wildcard> [eq <port>]",
+    "difficulty": "Intermediate",
+    "category": "Access Control Lists",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD082",
+    "command": "show ip interface",
+    "purpose": "Displays detailed IPv4 interface information, including ACL application, address state, and packet-processing settings.",
+    "syntax": "show ip interface [interface-id]",
+    "difficulty": "Developing",
+    "category": "IPv4",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD083",
+    "command": "username <name> secret <password>",
+    "purpose": "Creates a local username with a securely stored secret for device authentication.",
+    "syntax": "username <name> secret <password>",
+    "difficulty": "Developing",
+    "category": "Device Security",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD084",
+    "command": "ip domain-name <domain-name>",
+    "purpose": "Configures the device domain name used with the hostname when generating RSA keys for SSH.",
+    "syntax": "ip domain-name <domain-name>",
+    "difficulty": "Developing",
+    "category": "SSH",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD085",
+    "command": "crypto key generate rsa",
+    "purpose": "Generates an RSA key pair used by the IOS SSH server.",
+    "syntax": "crypto key generate rsa [modulus <bits>]",
+    "difficulty": "Developing",
+    "category": "SSH",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD086",
+    "command": "login local",
+    "purpose": "Requires line authentication against the device's local username database.",
+    "syntax": "login local",
+    "difficulty": "Developing",
+    "category": "Device Security",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD087",
+    "command": "transport input ssh",
+    "purpose": "Restricts inbound access on a line to the SSH protocol.",
+    "syntax": "transport input ssh",
+    "difficulty": "Developing",
+    "category": "SSH",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD088",
+    "command": "enable secret <password>",
+    "purpose": "Configures an encrypted secret required to enter privileged EXEC mode.",
+    "syntax": "enable secret <password>",
+    "difficulty": "Foundational",
+    "category": "Device Security",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD089",
+    "command": "service password-encryption",
+    "purpose": "Obscures plaintext passwords in the configuration using Cisco IOS type 7 encryption.",
+    "syntax": "service password-encryption",
+    "difficulty": "Foundational",
+    "category": "Device Security",
+    "examWeight": 4
+  },
+  {
+    "id": "CMD090",
+    "command": "spanning-tree guard root",
+    "purpose": "Prevents an interface from becoming a root port when superior BPDUs are received, protecting the intended STP root placement.",
+    "syntax": "spanning-tree guard root",
+    "difficulty": "Intermediate",
+    "category": "Spanning Tree",
+    "examWeight": 4
+  },
+  {
+    "id": "CMD091",
+    "command": "spanning-tree guard loop",
+    "purpose": "Places an STP port into a loop-inconsistent state if expected BPDUs stop arriving, reducing the risk of a Layer 2 loop.",
+    "syntax": "spanning-tree guard loop",
+    "difficulty": "Intermediate",
+    "category": "Spanning Tree",
+    "examWeight": 4
+  },
+  {
+    "id": "CMD092",
+    "command": "spanning-tree bpdufilter enable",
+    "purpose": "Suppresses the sending and processing of BPDUs on a specific interface.",
+    "syntax": "spanning-tree bpdufilter enable",
+    "difficulty": "Intermediate",
+    "category": "Spanning Tree",
+    "examWeight": 4
+  }
+]

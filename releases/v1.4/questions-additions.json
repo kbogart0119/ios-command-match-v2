@@ -1,0 +1,1152 @@
+[
+  {
+    "id": 446,
+    "commandId": "CMD070",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "Users can browse the Internet through PAT, but one internal host is reported to be using an unexpected public address.",
+    "objective": "Inspect the active address mappings to identify the inside-local and inside-global values currently in use.",
+    "explanation": "The NAT translation table lists the local and global addresses associated with each active mapping.",
+    "answerCommand": "show ip nat translations"
+  },
+  {
+    "id": 447,
+    "commandId": "CMD070",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Verification",
+    "scenario": "A static NAT entry was configured for an internal web server.",
+    "objective": "Confirm that the expected inside-local to inside-global mapping appears on the router.",
+    "explanation": "Active and static address mappings are visible in the NAT translation table.",
+    "answerCommand": "show ip nat translations"
+  },
+  {
+    "id": 448,
+    "commandId": "CMD070",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "PAT is configured, but a specific application session cannot be correlated with its internal source host.",
+    "objective": "View translations that include protocol and port information for current flows.",
+    "explanation": "The translation display associates inside and outside addresses and, for PAT, transport-layer port values.",
+    "answerCommand": "show ip nat translations"
+  },
+  {
+    "id": 449,
+    "commandId": "CMD070",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Application",
+    "scenario": "A change record requires evidence of the mappings present before a NAT maintenance window begins.",
+    "objective": "Capture the router's current translation entries.",
+    "explanation": "The NAT translation table provides the active mappings needed for a before-and-after comparison.",
+    "answerCommand": "show ip nat translations"
+  },
+  {
+    "id": 450,
+    "commandId": "CMD070",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Verification",
+    "scenario": "Multiple inside clients share one public address, and you must prove that separate sessions are being maintained.",
+    "objective": "Display the current PAT entries and their unique port mappings.",
+    "explanation": "PAT translations distinguish simultaneous sessions by protocol and port numbers.",
+    "answerCommand": "show ip nat translations"
+  },
+  {
+    "id": 451,
+    "commandId": "CMD071",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Verification",
+    "scenario": "A router was configured for PAT, and you need a summary of how many translations are active.",
+    "objective": "Display NAT counters and the current number of active mappings.",
+    "explanation": "NAT statistics summarize active, peak, and expired translations.",
+    "answerCommand": "show ip nat statistics"
+  },
+  {
+    "id": 452,
+    "commandId": "CMD071",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "No translations are being created after a new NAT configuration was applied.",
+    "objective": "Verify which interfaces are identified as inside and outside.",
+    "explanation": "The NAT statistics output lists the interfaces assigned to each side of the translation boundary.",
+    "answerCommand": "show ip nat statistics"
+  },
+  {
+    "id": 453,
+    "commandId": "CMD071",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "A technician suspects that the wrong ACL is referenced by the dynamic NAT rule.",
+    "objective": "Review the configured dynamic mapping information without examining the entire running configuration.",
+    "explanation": "NAT statistics include configured mapping rules and the ACL or pool references they use.",
+    "answerCommand": "show ip nat statistics"
+  },
+  {
+    "id": 454,
+    "commandId": "CMD071",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Application",
+    "scenario": "You need a concise operational summary of NAT before clearing any translations.",
+    "objective": "Record current hit, miss, and translation-count information.",
+    "explanation": "The statistics display provides counters that show how NAT has been operating.",
+    "answerCommand": "show ip nat statistics"
+  },
+  {
+    "id": 455,
+    "commandId": "CMD071",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Verification",
+    "scenario": "An outside interface was recently changed, and the team wants to confirm that NAT now references the correct boundary interfaces.",
+    "objective": "Display the NAT role assignments and mapping summary.",
+    "explanation": "NAT statistics identify inside and outside interfaces along with configured translation rules.",
+    "answerCommand": "show ip nat statistics"
+  },
+  {
+    "id": 456,
+    "commandId": "CMD072",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Configuration",
+    "scenario": "A router has valid IPv6 addresses on two interfaces, but hosts on the two attached networks cannot communicate through it.",
+    "objective": "Enable IPv6 packet forwarding globally.",
+    "explanation": "Interface addressing alone does not cause an IOS router to forward IPv6 unicast traffic; global IPv6 routing must be enabled.",
+    "answerCommand": "ipv6 unicast-routing"
+  },
+  {
+    "id": 457,
+    "commandId": "CMD072",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "Neighbor Discovery works on each local link, yet the router does not route packets between IPv6 subnets.",
+    "objective": "Activate the global function required for Layer 3 IPv6 forwarding.",
+    "explanation": "The global IPv6 unicast-routing command enables forwarding between interfaces.",
+    "answerCommand": "ipv6 unicast-routing"
+  },
+  {
+    "id": 458,
+    "commandId": "CMD072",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Application",
+    "scenario": "A newly installed router will provide default-gateway service for several IPv6 VLANs.",
+    "objective": "Turn on the device's IPv6 routing capability before adding the remaining interface configuration.",
+    "explanation": "IPv6 forwarding is disabled until the global routing function is enabled.",
+    "answerCommand": "ipv6 unicast-routing"
+  },
+  {
+    "id": 459,
+    "commandId": "CMD072",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Verification",
+    "scenario": "A configuration review shows IPv6 interface addresses and static routes but no global forwarding command.",
+    "objective": "Add the missing setting needed for the router to act as an IPv6 router.",
+    "explanation": "IPv6 routes and addresses cannot provide transit service unless unicast routing is globally enabled.",
+    "answerCommand": "ipv6 unicast-routing"
+  },
+  {
+    "id": 460,
+    "commandId": "CMD072",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "An IPv6 ping to the local gateway succeeds, but every destination beyond that gateway fails despite valid routes.",
+    "objective": "Correct the global configuration omission that prevents transit forwarding.",
+    "explanation": "Enabling IPv6 unicast routing allows the device to forward packets according to its IPv6 routing table.",
+    "answerCommand": "ipv6 unicast-routing"
+  },
+  {
+    "id": 461,
+    "commandId": "CMD073",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "An IPv6 host can reach its gateway intermittently, and a stale Layer 2 mapping is suspected.",
+    "objective": "Inspect the router's IPv6-to-MAC address associations.",
+    "explanation": "The IPv6 neighbor cache contains addresses learned through Neighbor Discovery and their Layer 2 mappings.",
+    "answerCommand": "show ipv6 neighbors"
+  },
+  {
+    "id": 462,
+    "commandId": "CMD073",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Verification",
+    "scenario": "A server has just communicated with the router using IPv6.",
+    "objective": "Confirm that the server appears in the local Neighbor Discovery cache.",
+    "explanation": "Recently resolved IPv6 neighbors should appear in the neighbor table.",
+    "answerCommand": "show ipv6 neighbors"
+  },
+  {
+    "id": 463,
+    "commandId": "CMD073",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "Two endpoints are reported to be using the same IPv6 address on a LAN.",
+    "objective": "Compare the link-layer addresses associated with the affected IPv6 entry.",
+    "explanation": "Neighbor cache information helps identify unexpected or changing IPv6-to-MAC mappings.",
+    "answerCommand": "show ipv6 neighbors"
+  },
+  {
+    "id": 464,
+    "commandId": "CMD073",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Application",
+    "scenario": "You need to determine which interface reaches a particular directly connected IPv6 device.",
+    "objective": "Display the neighbor entry and its associated outgoing interface.",
+    "explanation": "The IPv6 neighbor table includes the interface on which each neighbor was learned.",
+    "answerCommand": "show ipv6 neighbors"
+  },
+  {
+    "id": 465,
+    "commandId": "CMD073",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Verification",
+    "scenario": "A troubleshooting procedure requires checking whether a neighbor entry is reachable, stale, or incomplete.",
+    "objective": "Review the current Neighbor Discovery state for local IPv6 peers.",
+    "explanation": "The neighbor display includes the state of each cached IPv6 neighbor.",
+    "answerCommand": "show ipv6 neighbors"
+  },
+  {
+    "id": 466,
+    "commandId": "CMD074",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Configuration",
+    "scenario": "The router will lease addresses from 192.168.10.0/24, but .1 through .20 are reserved for gateways, servers, and printers.",
+    "objective": "Prevent the IOS DHCP server from assigning the reserved range.",
+    "explanation": "Excluded addresses are removed from the set of addresses the local DHCP server may lease.",
+    "answerCommand": "ip dhcp excluded-address 192.168.10.1 192.168.10.20"
+  },
+  {
+    "id": 467,
+    "commandId": "CMD074",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Application",
+    "scenario": "Address 10.20.30.254 is statically assigned to a management appliance within a DHCP-served subnet.",
+    "objective": "Reserve that single address so clients cannot receive it.",
+    "explanation": "A single address can be excluded by specifying only the low-address value.",
+    "answerCommand": "ip dhcp excluded-address 10.20.30.254"
+  },
+  {
+    "id": 468,
+    "commandId": "CMD074",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "Clients occasionally receive addresses that conflict with statically configured network devices.",
+    "objective": "Reserve the block from 172.16.50.1 through 172.16.50.15 from DHCP allocation.",
+    "explanation": "Excluding the static range prevents the IOS DHCP service from leasing those addresses.",
+    "answerCommand": "ip dhcp excluded-address 172.16.50.1 172.16.50.15"
+  },
+  {
+    "id": 469,
+    "commandId": "CMD074",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Verification",
+    "scenario": "A branch design reserves the first ten usable addresses in subnet 192.168.40.0/24.",
+    "objective": "Add the global DHCP configuration that protects those addresses from allocation.",
+    "explanation": "The excluded-address range is configured globally and applies before pool leasing occurs.",
+    "answerCommand": "ip dhcp excluded-address 192.168.40.1 192.168.40.10"
+  },
+  {
+    "id": 470,
+    "commandId": "CMD074",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Configuration",
+    "scenario": "A voice subnet uses 10.5.5.1 as its gateway and 10.5.5.2 through 10.5.5.9 for fixed infrastructure.",
+    "objective": "Exclude the entire reserved range with one command.",
+    "explanation": "A low and high address define a contiguous block that the DHCP server must not lease.",
+    "answerCommand": "ip dhcp excluded-address 10.5.5.1 10.5.5.9"
+  },
+  {
+    "id": 471,
+    "commandId": "CMD075",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Configuration",
+    "scenario": "A router must begin providing addresses to the SALES subnet, and no DHCP pool exists yet.",
+    "objective": "Create a pool named SALES and enter its configuration mode.",
+    "explanation": "The pool command creates the named DHCP scope and enters DHCP pool configuration mode.",
+    "answerCommand": "ip dhcp pool SALES"
+  },
+  {
+    "id": 472,
+    "commandId": "CMD075",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Application",
+    "scenario": "You are preparing to define the subnet, gateway, and DNS settings supplied to branch clients.",
+    "objective": "Create a DHCP pool named BRANCH-USERS.",
+    "explanation": "Pool-specific options are entered after creating or selecting the named DHCP pool.",
+    "answerCommand": "ip dhcp pool BRANCH-USERS"
+  },
+  {
+    "id": 473,
+    "commandId": "CMD075",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "The intended network and default-router commands were accidentally entered in global configuration mode.",
+    "objective": "Enter the DHCP pool named DATA before applying those parameters.",
+    "explanation": "The network and default-router settings belong within DHCP pool configuration mode.",
+    "answerCommand": "ip dhcp pool DATA"
+  },
+  {
+    "id": 474,
+    "commandId": "CMD075",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Verification",
+    "scenario": "A new wireless client subnet requires its own independent set of DHCP options.",
+    "objective": "Create a separate pool called GUEST-WIFI.",
+    "explanation": "A distinct named pool keeps addressing and option settings separate from other subnets.",
+    "answerCommand": "ip dhcp pool GUEST-WIFI"
+  },
+  {
+    "id": 475,
+    "commandId": "CMD075",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Configuration",
+    "scenario": "The router already serves one subnet and must now support a second scope for VLAN 30.",
+    "objective": "Create and enter the new pool named VLAN30.",
+    "explanation": "Each served subnet is normally represented by its own IOS DHCP pool.",
+    "answerCommand": "ip dhcp pool VLAN30"
+  },
+  {
+    "id": 476,
+    "commandId": "CMD076",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Configuration",
+    "scenario": "Within DHCP pool SALES, clients must receive addresses from 192.168.10.0/24.",
+    "objective": "Define the subnet used for address allocation.",
+    "explanation": "The DHCP pool network statement identifies the subnet and mask from which leases are drawn.",
+    "answerCommand": "network 192.168.10.0 255.255.255.0"
+  },
+  {
+    "id": 477,
+    "commandId": "CMD076",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Application",
+    "scenario": "A branch pool should lease addresses from 10.20.0.0/16.",
+    "objective": "Specify the client address range by defining the pool's network.",
+    "explanation": "The network command in DHCP pool mode establishes the eligible subnet.",
+    "answerCommand": "network 10.20.0.0 255.255.0.0"
+  },
+  {
+    "id": 478,
+    "commandId": "CMD076",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "A DHCP pool exists, but clients receive no offers because no allocatable subnet has been defined.",
+    "objective": "Configure the pool for 172.16.50.0/24.",
+    "explanation": "Without a pool network statement, the server has no subnet from which to allocate addresses.",
+    "answerCommand": "network 172.16.50.0 255.255.255.0"
+  },
+  {
+    "id": 479,
+    "commandId": "CMD076",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Verification",
+    "scenario": "The engineering VLAN uses subnet 192.168.64.0/26.",
+    "objective": "Enter the matching network and mask in the DHCP pool.",
+    "explanation": "A /26 prefix corresponds to mask 255.255.255.192.",
+    "answerCommand": "network 192.168.64.0 255.255.255.192"
+  },
+  {
+    "id": 480,
+    "commandId": "CMD076",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Configuration",
+    "scenario": "A small point-of-sale subnet uses 10.10.10.128/27.",
+    "objective": "Define that exact subnet inside its DHCP pool.",
+    "explanation": "The pool network must use the subnet address and the /27 mask 255.255.255.224.",
+    "answerCommand": "network 10.10.10.128 255.255.255.224"
+  },
+  {
+    "id": 481,
+    "commandId": "CMD077",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Configuration",
+    "scenario": "DHCP clients in VLAN 20 must use 192.168.20.1 as their default gateway.",
+    "objective": "Add the gateway option to the VLAN 20 DHCP pool.",
+    "explanation": "The default-router setting supplies the IPv4 gateway address to clients.",
+    "answerCommand": "default-router 192.168.20.1"
+  },
+  {
+    "id": 482,
+    "commandId": "CMD077",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "Clients receive correct addresses and masks but cannot reach remote networks because no gateway is installed.",
+    "objective": "Configure the pool to provide 10.30.0.1 as the gateway.",
+    "explanation": "The DHCP default-router option tells clients where to send off-subnet traffic.",
+    "answerCommand": "default-router 10.30.0.1"
+  },
+  {
+    "id": 483,
+    "commandId": "CMD077",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Application",
+    "scenario": "A branch user subnet has router interface address 172.16.8.254.",
+    "objective": "Ensure leased clients learn that address as their gateway.",
+    "explanation": "The router interface serving the subnet is commonly supplied through the default-router option.",
+    "answerCommand": "default-router 172.16.8.254"
+  },
+  {
+    "id": 484,
+    "commandId": "CMD077",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Verification",
+    "scenario": "A new pool was created for 192.168.50.0/24, but the required gateway option is missing.",
+    "objective": "Configure 192.168.50.1 as the client default gateway.",
+    "explanation": "The pool must explicitly provide the default-router value.",
+    "answerCommand": "default-router 192.168.50.1"
+  },
+  {
+    "id": 485,
+    "commandId": "CMD077",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Configuration",
+    "scenario": "Clients should prefer 10.1.1.1 while retaining 10.1.1.2 as an alternate gateway supplied by DHCP.",
+    "objective": "Configure both gateway addresses in preference order.",
+    "explanation": "IOS allows multiple default-router addresses to be listed, with the first supplied as the preferred option.",
+    "answerCommand": "default-router 10.1.1.1 10.1.1.2"
+  },
+  {
+    "id": 486,
+    "commandId": "CMD078",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Verification",
+    "scenario": "A user reports receiving an address from the router, and you need to confirm the lease.",
+    "objective": "Display the IOS DHCP server's current client-to-address assignments.",
+    "explanation": "The DHCP binding table lists leased addresses and client identifiers.",
+    "answerCommand": "show ip dhcp binding"
+  },
+  {
+    "id": 487,
+    "commandId": "CMD078",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "A printer repeatedly receives a different address than expected.",
+    "objective": "Check the current binding associated with that client.",
+    "explanation": "The binding display reveals the address, client identifier, and lease information recorded by the server.",
+    "answerCommand": "show ip dhcp binding"
+  },
+  {
+    "id": 488,
+    "commandId": "CMD078",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Application",
+    "scenario": "Before replacing a branch router, you must record all active DHCP leases.",
+    "objective": "Capture the current server binding table.",
+    "explanation": "The DHCP binding table provides the active lease inventory needed for migration planning.",
+    "answerCommand": "show ip dhcp binding"
+  },
+  {
+    "id": 489,
+    "commandId": "CMD078",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Verification",
+    "scenario": "A pool appears to be nearly exhausted, and the team wants to know which addresses are already assigned.",
+    "objective": "List the addresses currently bound to clients.",
+    "explanation": "Active bindings show which pool addresses are in use.",
+    "answerCommand": "show ip dhcp binding"
+  },
+  {
+    "id": 490,
+    "commandId": "CMD078",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "A client claims it was assigned 192.168.10.55, but the switchport records suggest another device may be using it.",
+    "objective": "Verify which client identifier the DHCP server associates with that address.",
+    "explanation": "The binding table correlates leased IPv4 addresses with client identifiers or hardware information.",
+    "answerCommand": "show ip dhcp binding 192.168.10.55"
+  },
+  {
+    "id": 491,
+    "commandId": "CMD079",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Configuration",
+    "scenario": "A policy named MGMT-SOURCES must permit or deny traffic solely by source IPv4 address.",
+    "objective": "Create the appropriate named ACL and enter its configuration mode.",
+    "explanation": "A named standard ACL is used when entries match only the packet's source IPv4 address.",
+    "answerCommand": "ip access-list standard MGMT-SOURCES"
+  },
+  {
+    "id": 492,
+    "commandId": "CMD079",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Application",
+    "scenario": "Remote VTY access should be limited using a reusable ACL called ADMIN-HOSTS that matches management source addresses.",
+    "objective": "Create the named standard ACL container.",
+    "explanation": "Standard ACLs are appropriate when only source addresses need to be evaluated.",
+    "answerCommand": "ip access-list standard ADMIN-HOSTS"
+  },
+  {
+    "id": 493,
+    "commandId": "CMD079",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "An engineer attempted to add source-only entries to a nonexistent ACL named BRANCHES.",
+    "objective": "Create and enter the correct named ACL mode before adding permit statements.",
+    "explanation": "The named standard ACL command creates the list and provides the submode where entries are entered.",
+    "answerCommand": "ip access-list standard BRANCHES"
+  },
+  {
+    "id": 494,
+    "commandId": "CMD079",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Verification",
+    "scenario": "The design calls for a descriptive ACL name rather than a number to identify approved monitoring stations.",
+    "objective": "Create a source-based ACL named MONITORING.",
+    "explanation": "A named standard ACL provides a readable identifier while matching source IPv4 addresses.",
+    "answerCommand": "ip access-list standard MONITORING"
+  },
+  {
+    "id": 495,
+    "commandId": "CMD079",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Configuration",
+    "scenario": "Only source networks need to be filtered before traffic reaches a shared destination, and the policy is called TRUSTED-SITES.",
+    "objective": "Enter the ACL configuration mode that supports source-only rules.",
+    "explanation": "The standard form is the correct named ACL type when destination and port information are unnecessary.",
+    "answerCommand": "ip access-list standard TRUSTED-SITES"
+  },
+  {
+    "id": 496,
+    "commandId": "CMD080",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Configuration",
+    "scenario": "A policy named WEB-FILTER must distinguish HTTP traffic from other protocols and consider both source and destination.",
+    "objective": "Create the named ACL type capable of those matches.",
+    "explanation": "Extended ACLs can evaluate protocol, source, destination, and transport-layer ports.",
+    "answerCommand": "ip access-list extended WEB-FILTER"
+  },
+  {
+    "id": 497,
+    "commandId": "CMD080",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Application",
+    "scenario": "The security team needs a readable ACL named SERVER-ACCESS that will control selected TCP services.",
+    "objective": "Create and enter the appropriate named ACL configuration mode.",
+    "explanation": "A named extended ACL supports TCP port matching and descriptive naming.",
+    "answerCommand": "ip access-list extended SERVER-ACCESS"
+  },
+  {
+    "id": 498,
+    "commandId": "CMD080",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "A source-only ACL was created, but the policy must also differentiate destination networks.",
+    "objective": "Create a named extended ACL called INTERVLAN-POLICY.",
+    "explanation": "Extended ACLs are required when destination information must be matched.",
+    "answerCommand": "ip access-list extended INTERVLAN-POLICY"
+  },
+  {
+    "id": 499,
+    "commandId": "CMD080",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Verification",
+    "scenario": "A design document specifies a named list called DNS-CONTROL that filters UDP and TCP port 53.",
+    "objective": "Create the ACL container that supports protocol and port criteria.",
+    "explanation": "The extended ACL form permits protocol and service-port matching.",
+    "answerCommand": "ip access-list extended DNS-CONTROL"
+  },
+  {
+    "id": 500,
+    "commandId": "CMD080",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Configuration",
+    "scenario": "Traffic to a database server must be filtered by source subnet, destination host, and TCP port under policy DB-POLICY.",
+    "objective": "Enter the correct named ACL mode.",
+    "explanation": "Only an extended ACL can express all three required matching dimensions.",
+    "answerCommand": "ip access-list extended DB-POLICY"
+  },
+  {
+    "id": 501,
+    "commandId": "CMD081",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Configuration",
+    "scenario": "Hosts in 192.168.10.0/24 must be allowed to reach web server 10.1.1.10 using HTTPS.",
+    "objective": "Add the required extended ACL entry.",
+    "explanation": "The entry must match TCP, the source subnet, the destination host, and destination port 443.",
+    "answerCommand": "permit tcp 192.168.10.0 0.0.0.255 host 10.1.1.10 eq 443"
+  },
+  {
+    "id": 502,
+    "commandId": "CMD081",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Configuration",
+    "scenario": "All clients must be prevented from sending Telnet traffic to server 172.16.1.20.",
+    "objective": "Add a rule that blocks TCP destination port 23 for that host.",
+    "explanation": "An extended ACL can deny a specific TCP service while identifying the destination host.",
+    "answerCommand": "deny tcp any host 172.16.1.20 eq 23"
+  },
+  {
+    "id": 503,
+    "commandId": "CMD081",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Application",
+    "scenario": "Subnet 10.10.10.0/24 must be permitted to send ICMP traffic to subnet 10.20.20.0/24.",
+    "objective": "Create the corresponding extended ACL entry.",
+    "explanation": "The rule identifies ICMP and both the source and destination IPv4 subnets.",
+    "answerCommand": "permit icmp 10.10.10.0 0.0.0.255 10.20.20.0 0.0.0.255"
+  },
+  {
+    "id": 504,
+    "commandId": "CMD081",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "DNS queries from 192.168.50.0/24 to server 192.0.2.53 are being blocked by an existing policy.",
+    "objective": "Add a rule permitting UDP-based DNS queries to that server.",
+    "explanation": "Most client DNS queries use UDP destination port 53, which an extended ACL can match.",
+    "answerCommand": "permit udp 192.168.50.0 0.0.0.255 host 192.0.2.53 eq 53"
+  },
+  {
+    "id": 505,
+    "commandId": "CMD081",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Verification",
+    "scenario": "A final explicit rule is required to allow all remaining IPv4 traffic after several specific deny statements.",
+    "objective": "Add the broad permit entry at the end of the extended ACL.",
+    "explanation": "The any keywords match all source and destination IPv4 addresses for the IP protocol family.",
+    "answerCommand": "permit ip any any"
+  },
+  {
+    "id": 506,
+    "commandId": "CMD082",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Verification",
+    "scenario": "You need to determine whether an ACL is applied inbound or outbound on GigabitEthernet0/1.",
+    "objective": "Display detailed IPv4 information for that interface.",
+    "explanation": "The detailed IP interface output identifies inbound and outbound access lists.",
+    "answerCommand": "show ip interface GigabitEthernet0/1"
+  },
+  {
+    "id": 507,
+    "commandId": "CMD082",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "An interface is physically up but does not appear to be processing IPv4 traffic correctly.",
+    "objective": "Review its IPv4 address, line state, and packet-processing settings.",
+    "explanation": "The detailed IP interface display combines protocol state with IPv4-specific configuration and status.",
+    "answerCommand": "show ip interface GigabitEthernet0/1"
+  },
+  {
+    "id": 508,
+    "commandId": "CMD082",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Application",
+    "scenario": "A security audit requires confirmation of all ACLs attached to routed interfaces.",
+    "objective": "Display detailed IPv4 interface information across the device.",
+    "explanation": "The output lists access-group assignments for each IPv4 interface.",
+    "answerCommand": "show ip interface"
+  },
+  {
+    "id": 509,
+    "commandId": "CMD082",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Verification",
+    "scenario": "A technician must confirm whether proxy ARP and ICMP redirects are enabled on an interface.",
+    "objective": "Inspect the interface's detailed IPv4 behavior.",
+    "explanation": "The IP interface display includes multiple IPv4 forwarding and control-plane settings.",
+    "answerCommand": "show ip interface GigabitEthernet0/2"
+  },
+  {
+    "id": 510,
+    "commandId": "CMD082",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "Traffic is unexpectedly filtered after an ACL change, and the running configuration is lengthy.",
+    "objective": "Quickly identify which ACLs are attached to the affected Layer 3 interface and in which direction.",
+    "explanation": "The detailed interface output directly reports inbound and outbound ACL associations.",
+    "answerCommand": "show ip interface GigabitEthernet0/3"
+  },
+  {
+    "id": 511,
+    "commandId": "CMD083",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Configuration",
+    "scenario": "A device must authenticate SSH user netadmin against its local database using a securely stored credential.",
+    "objective": "Create the required local account with secret CcnaLab!23.",
+    "explanation": "A local username with a secret supports login local authentication without storing the credential as plaintext.",
+    "answerCommand": "username netadmin secret CcnaLab!23"
+  },
+  {
+    "id": 512,
+    "commandId": "CMD083",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Application",
+    "scenario": "A backup administrator named operator needs a local account on the router.",
+    "objective": "Create the account with secret Branch#55.",
+    "explanation": "The username secret command adds the account to the local database and stores a protected secret.",
+    "answerCommand": "username operator secret Branch#55"
+  },
+  {
+    "id": 513,
+    "commandId": "CMD083",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "VTY lines use login local, but every SSH login fails because no local user exists.",
+    "objective": "Create user admin with secret SecurePass9.",
+    "explanation": "login local requires a matching username and secret in the local user database.",
+    "answerCommand": "username admin secret SecurePass9"
+  },
+  {
+    "id": 514,
+    "commandId": "CMD083",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Verification",
+    "scenario": "A console access policy requires an emergency local account called recovery.",
+    "objective": "Create the account with securely stored secret Restore!7.",
+    "explanation": "Using secret rather than password provides stronger storage for the local credential.",
+    "answerCommand": "username recovery secret Restore!7"
+  },
+  {
+    "id": 515,
+    "commandId": "CMD083",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Configuration",
+    "scenario": "The automation account iosbot must authenticate locally before SSH access is enabled.",
+    "objective": "Add iosbot with secret AutoNet#2026.",
+    "explanation": "A local username record supplies the credentials used by login local.",
+    "answerCommand": "username iosbot secret AutoNet#2026"
+  },
+  {
+    "id": 516,
+    "commandId": "CMD084",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Configuration",
+    "scenario": "The router hostname is R1, and RSA key generation requires a fully qualified device identity using example.com.",
+    "objective": "Configure the missing domain component.",
+    "explanation": "IOS combines the hostname and domain name when creating the identity associated with RSA keys.",
+    "answerCommand": "ip domain-name example.com"
+  },
+  {
+    "id": 517,
+    "commandId": "CMD084",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "The device refuses to generate RSA keys because no domain name has been configured.",
+    "objective": "Set the domain to branch.example.net.",
+    "explanation": "A hostname and domain name are prerequisites for conventional IOS RSA key generation.",
+    "answerCommand": "ip domain-name branch.example.net"
+  },
+  {
+    "id": 518,
+    "commandId": "CMD084",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Application",
+    "scenario": "An SSH deployment standard specifies domain name corp.local on every router.",
+    "objective": "Apply the global domain-name setting.",
+    "explanation": "The global IP domain name contributes to the device's fully qualified name and SSH key setup.",
+    "answerCommand": "ip domain-name corp.local"
+  },
+  {
+    "id": 519,
+    "commandId": "CMD084",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Verification",
+    "scenario": "A newly configured switch has hostname SW1 but still lacks the domain portion required by the SSH procedure.",
+    "objective": "Configure training.lab as the domain.",
+    "explanation": "The domain name must be set before generating the RSA key pair.",
+    "answerCommand": "ip domain-name training.lab"
+  },
+  {
+    "id": 520,
+    "commandId": "CMD084",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Configuration",
+    "scenario": "A replacement router must use the organization's internal domain network.example before SSH keys are created.",
+    "objective": "Set the device domain accordingly.",
+    "explanation": "The configured domain name is used with the hostname during RSA key generation.",
+    "answerCommand": "ip domain-name network.example"
+  },
+  {
+    "id": 521,
+    "commandId": "CMD085",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Configuration",
+    "scenario": "A router already has a hostname and domain name, and it must now support SSH.",
+    "objective": "Create the cryptographic key pair required by the SSH server.",
+    "explanation": "IOS SSH requires an RSA key pair for server identity and encryption operations.",
+    "answerCommand": "crypto key generate rsa"
+  },
+  {
+    "id": 522,
+    "commandId": "CMD085",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "VTY lines allow SSH and local accounts exist, but the device has no RSA keys.",
+    "objective": "Generate the missing key material.",
+    "explanation": "Without RSA keys, the IOS SSH server cannot become operational.",
+    "answerCommand": "crypto key generate rsa"
+  },
+  {
+    "id": 523,
+    "commandId": "CMD085",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Configuration",
+    "scenario": "Security policy requires a 2048-bit RSA key for management access.",
+    "objective": "Generate a key pair with the required modulus.",
+    "explanation": "The modulus option controls the RSA key size.",
+    "answerCommand": "crypto key generate rsa modulus 2048"
+  },
+  {
+    "id": 524,
+    "commandId": "CMD085",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Application",
+    "scenario": "A switch is being prepared for encrypted remote administration after Telnet was disabled.",
+    "objective": "Create the RSA keys needed for SSH.",
+    "explanation": "SSH depends on locally generated RSA keys.",
+    "answerCommand": "crypto key generate rsa"
+  },
+  {
+    "id": 525,
+    "commandId": "CMD085",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Verification",
+    "scenario": "The hostname and domain name are configured, and the next step in the SSH checklist is to establish the server's public/private key pair.",
+    "objective": "Run the appropriate global cryptographic command.",
+    "explanation": "Generating RSA keys completes a core prerequisite for IOS SSH operation.",
+    "answerCommand": "crypto key generate rsa modulus 2048"
+  },
+  {
+    "id": 526,
+    "commandId": "CMD086",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Configuration",
+    "scenario": "VTY users must authenticate with usernames stored on the router rather than a single line password.",
+    "objective": "Configure the lines to consult the local user database.",
+    "explanation": "login local changes line authentication to use locally configured usernames and secrets.",
+    "answerCommand": "login local"
+  },
+  {
+    "id": 527,
+    "commandId": "CMD086",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "A valid local username exists, but SSH sessions still prompt only for the shared VTY password.",
+    "objective": "Change the line authentication method to use the local account database.",
+    "explanation": "The presence of local users does not affect line login until login local is configured.",
+    "answerCommand": "login local"
+  },
+  {
+    "id": 528,
+    "commandId": "CMD086",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Application",
+    "scenario": "Console access must require individual locally configured credentials.",
+    "objective": "Enable local-database authentication under the console line.",
+    "explanation": "The line-level login local command validates credentials against local username entries.",
+    "answerCommand": "login local"
+  },
+  {
+    "id": 529,
+    "commandId": "CMD086",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Verification",
+    "scenario": "An SSH configuration review finds RSA keys and a username, but the VTY lines do not reference that account.",
+    "objective": "Apply the missing VTY authentication command.",
+    "explanation": "login local connects VTY authentication to the local username database.",
+    "answerCommand": "login local"
+  },
+  {
+    "id": 530,
+    "commandId": "CMD086",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Configuration",
+    "scenario": "Each administrator should log in with a unique local identity so activity is not tied to a shared line password.",
+    "objective": "Configure the management lines to use those accounts.",
+    "explanation": "Local login enables per-user authentication through the device's local database.",
+    "answerCommand": "login local"
+  },
+  {
+    "id": 531,
+    "commandId": "CMD087",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Configuration",
+    "scenario": "Remote management must be encrypted, and Telnet access must be rejected on the VTY lines.",
+    "objective": "Allow only SSH as an inbound transport.",
+    "explanation": "Restricting the VTY transport to SSH prevents inbound Telnet sessions.",
+    "answerCommand": "transport input ssh"
+  },
+  {
+    "id": 532,
+    "commandId": "CMD087",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "SSH works, but a security scan shows that the router still accepts Telnet connections.",
+    "objective": "Modify the VTY transport setting to remove Telnet.",
+    "explanation": "The transport input setting determines which remote-access protocols the VTY lines accept.",
+    "answerCommand": "transport input ssh"
+  },
+  {
+    "id": 533,
+    "commandId": "CMD087",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Application",
+    "scenario": "A device-hardening checklist requires encrypted remote CLI access only.",
+    "objective": "Configure the VTY lines with the permitted protocol.",
+    "explanation": "SSH provides encrypted remote administration, unlike Telnet.",
+    "answerCommand": "transport input ssh"
+  },
+  {
+    "id": 534,
+    "commandId": "CMD087",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Verification",
+    "scenario": "The router has RSA keys and local authentication, but the final policy step is to prevent all non-SSH inbound VTY sessions.",
+    "objective": "Apply the appropriate line-level restriction.",
+    "explanation": "transport input ssh limits inbound VTY access to SSH.",
+    "answerCommand": "transport input ssh"
+  },
+  {
+    "id": 535,
+    "commandId": "CMD087",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Configuration",
+    "scenario": "An audit states that no cleartext management protocol may reach the CLI from the network.",
+    "objective": "Enforce SSH-only access on the remote terminal lines.",
+    "explanation": "Limiting VTY transport to SSH blocks Telnet while retaining encrypted CLI access.",
+    "answerCommand": "transport input ssh"
+  },
+  {
+    "id": 536,
+    "commandId": "CMD088",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Configuration",
+    "scenario": "Privileged EXEC mode must be protected with secret C1scoSecure!.",
+    "objective": "Configure the protected privilege-level credential.",
+    "explanation": "The enable secret command stores the privileged EXEC credential in a non-plaintext form.",
+    "answerCommand": "enable secret C1scoSecure!"
+  },
+  {
+    "id": 537,
+    "commandId": "CMD088",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Application",
+    "scenario": "A new router currently allows users to enter privileged mode without a configured secret.",
+    "objective": "Set an enable secret of BranchAdmin9.",
+    "explanation": "An enable secret protects access to privileged EXEC mode.",
+    "answerCommand": "enable secret BranchAdmin9"
+  },
+  {
+    "id": 538,
+    "commandId": "CMD088",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "The running configuration contains an old enable password and policy requires the more secure alternative.",
+    "objective": "Configure NewPriv#44 using the preferred command.",
+    "explanation": "enable secret takes precedence over enable password and provides stronger credential storage.",
+    "answerCommand": "enable secret NewPriv#44"
+  },
+  {
+    "id": 539,
+    "commandId": "CMD088",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Verification",
+    "scenario": "A baseline configuration requires a privileged-mode secret before the device is deployed.",
+    "objective": "Add the secret NetOps2026!.",
+    "explanation": "The global enable secret command establishes the credential required for privilege escalation.",
+    "answerCommand": "enable secret NetOps2026!"
+  },
+  {
+    "id": 540,
+    "commandId": "CMD088",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Configuration",
+    "scenario": "Administrators authenticate on the console but should face a second credential before changing configuration.",
+    "objective": "Configure PrivMode#8 as the privileged EXEC secret.",
+    "explanation": "The enable secret protects the transition from user EXEC to privileged EXEC mode.",
+    "answerCommand": "enable secret PrivMode#8"
+  },
+  {
+    "id": 541,
+    "commandId": "CMD089",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Configuration",
+    "scenario": "Several line passwords appear in readable form in the running configuration.",
+    "objective": "Enable the IOS service that obscures compatible plaintext passwords.",
+    "explanation": "service password-encryption applies type 7 obfuscation to supported plaintext password fields.",
+    "answerCommand": "service password-encryption"
+  },
+  {
+    "id": 542,
+    "commandId": "CMD089",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Application",
+    "scenario": "A basic hardening checklist states that console and VTY passwords must not be plainly readable during casual configuration viewing.",
+    "objective": "Apply the global password-obfuscation service.",
+    "explanation": "The service converts supported plaintext password entries to an encoded representation.",
+    "answerCommand": "service password-encryption"
+  },
+  {
+    "id": 543,
+    "commandId": "CMD089",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "After setting line passwords, an audit finds that they remain visible in show running-config output.",
+    "objective": "Enable the missing global service.",
+    "explanation": "Line passwords are not automatically obscured unless the password-encryption service is enabled.",
+    "answerCommand": "service password-encryption"
+  },
+  {
+    "id": 544,
+    "commandId": "CMD089",
+    "difficulty": "Foundational",
+    "cognitiveLevel": "Verification",
+    "scenario": "A classroom router must demonstrate the difference between unencrypted line passwords and IOS type 7 encoding.",
+    "objective": "Turn on the feature that converts existing compatible passwords.",
+    "explanation": "Enabling the service also obfuscates supported passwords already present in the configuration.",
+    "answerCommand": "service password-encryption"
+  },
+  {
+    "id": 545,
+    "commandId": "CMD089",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Application",
+    "scenario": "The organization understands that type 7 is reversible but still requires protection against casual shoulder-surfing of configuration output.",
+    "objective": "Enable the appropriate IOS service.",
+    "explanation": "service password-encryption provides obfuscation rather than strong cryptographic password protection.",
+    "answerCommand": "service password-encryption"
+  },
+  {
+    "id": 546,
+    "commandId": "CMD090",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Configuration",
+    "scenario": "An access-facing port must never allow a downstream switch to become the STP root by advertising a superior bridge ID.",
+    "objective": "Enable the interface protection that preserves the intended root location.",
+    "explanation": "Root Guard places the port into a root-inconsistent state when superior BPDUs are received.",
+    "answerCommand": "spanning-tree guard root"
+  },
+  {
+    "id": 547,
+    "commandId": "CMD090",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "A port connected toward an untrusted switch becomes root-inconsistent after superior BPDUs arrive.",
+    "objective": "Identify the interface feature responsible for this protective state.",
+    "explanation": "Root Guard blocks the port rather than allowing the neighboring switch to change the root topology.",
+    "answerCommand": "spanning-tree guard root"
+  },
+  {
+    "id": 548,
+    "commandId": "CMD090",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Application",
+    "scenario": "The distribution layer must remain the root, and designated ports toward access switches should reject attempts to take over that role.",
+    "objective": "Apply the appropriate STP guard on those designated ports.",
+    "explanation": "Root Guard is used where a port should remain designated and must not become a root port.",
+    "answerCommand": "spanning-tree guard root"
+  },
+  {
+    "id": 549,
+    "commandId": "CMD090",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Verification",
+    "scenario": "A design review calls for protection against unexpected superior BPDUs without permanently error-disabling the interface.",
+    "objective": "Configure the STP feature that creates a root-inconsistent condition.",
+    "explanation": "Root Guard protects root placement and automatically recovers when superior BPDUs stop.",
+    "answerCommand": "spanning-tree guard root"
+  },
+  {
+    "id": 550,
+    "commandId": "CMD090",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Configuration",
+    "scenario": "A service-provider handoff must not influence the enterprise's internal root-bridge election.",
+    "objective": "Enable the guard feature that blocks superior BPDUs from changing the root path.",
+    "explanation": "Root Guard enforces the intended STP boundary by preventing that interface from becoming a root port.",
+    "answerCommand": "spanning-tree guard root"
+  },
+  {
+    "id": 551,
+    "commandId": "CMD091",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Configuration",
+    "scenario": "A nondesignated STP link is expected to receive BPDUs continuously, and loss of those BPDUs could cause an unsafe transition to forwarding.",
+    "objective": "Enable the interface protection designed for this failure condition.",
+    "explanation": "Loop Guard places the port in a loop-inconsistent state when expected BPDUs stop arriving.",
+    "answerCommand": "spanning-tree guard loop"
+  },
+  {
+    "id": 552,
+    "commandId": "CMD091",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "A blocked redundant port moved to loop-inconsistent after control messages ceased on a unidirectional link.",
+    "objective": "Identify the configured protection feature.",
+    "explanation": "Loop Guard prevents an alternate or root port from forwarding merely because BPDUs are no longer received.",
+    "answerCommand": "spanning-tree guard loop"
+  },
+  {
+    "id": 553,
+    "commandId": "CMD091",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Application",
+    "scenario": "A fiber link could fail in only one direction, suppressing inbound BPDUs while outbound transmission continues.",
+    "objective": "Protect the STP port against accidental forwarding caused by that condition.",
+    "explanation": "Loop Guard addresses failures in which an STP port stops receiving expected BPDUs.",
+    "answerCommand": "spanning-tree guard loop"
+  },
+  {
+    "id": 554,
+    "commandId": "CMD091",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Verification",
+    "scenario": "The design requires a port to remain blocked if its expected BPDU stream disappears.",
+    "objective": "Apply the relevant STP guard command.",
+    "explanation": "Loop Guard retains a protective inconsistent state until BPDUs resume.",
+    "answerCommand": "spanning-tree guard loop"
+  },
+  {
+    "id": 555,
+    "commandId": "CMD091",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Configuration",
+    "scenario": "A redundant interswitch link must be protected from a unidirectional failure that could create a Layer 2 loop.",
+    "objective": "Enable the interface-level loop-prevention guard.",
+    "explanation": "Loop Guard prevents a non-designated port from incorrectly transitioning to forwarding after BPDU loss.",
+    "answerCommand": "spanning-tree guard loop"
+  },
+  {
+    "id": 556,
+    "commandId": "CMD092",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Configuration",
+    "scenario": "A lab requires one interface to stop sending and processing STP BPDUs entirely.",
+    "objective": "Enable interface-level BPDU filtering.",
+    "explanation": "The interface form of BPDU Filter suppresses BPDU transmission and reception on that port.",
+    "answerCommand": "spanning-tree bpdufilter enable"
+  },
+  {
+    "id": 557,
+    "commandId": "CMD092",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "A port connected to another switch is forwarding without participating in STP, creating a serious loop risk.",
+    "objective": "Identify the interface setting that may be suppressing BPDUs.",
+    "explanation": "Interface-level BPDU Filter prevents normal STP BPDU exchange and can be dangerous on switch-to-switch links.",
+    "answerCommand": "spanning-tree bpdufilter enable"
+  },
+  {
+    "id": 558,
+    "commandId": "CMD092",
+    "difficulty": "Developing",
+    "cognitiveLevel": "Application",
+    "scenario": "An isolated test port must be configured so that STP control frames are neither sent nor acted upon.",
+    "objective": "Apply the required interface command.",
+    "explanation": "BPDU Filter disables BPDU handling on the selected interface.",
+    "answerCommand": "spanning-tree bpdufilter enable"
+  },
+  {
+    "id": 559,
+    "commandId": "CMD092",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Verification",
+    "scenario": "A configuration audit finds a port that should behave as though STP control traffic is absent.",
+    "objective": "Select the command that creates this per-interface behavior.",
+    "explanation": "The interface-level BPDU Filter command suppresses both outgoing and incoming BPDUs.",
+    "answerCommand": "spanning-tree bpdufilter enable"
+  },
+  {
+    "id": 560,
+    "commandId": "CMD092",
+    "difficulty": "Intermediate",
+    "cognitiveLevel": "Troubleshooting",
+    "scenario": "A technician confused BPDU Guard with a feature that silently suppresses STP messages instead of error-disabling the port.",
+    "objective": "Identify the command that performs BPDU suppression.",
+    "explanation": "BPDU Filter suppresses BPDUs, whereas BPDU Guard reacts to received BPDUs by placing the port into an error-disabled state.",
+    "answerCommand": "spanning-tree bpdufilter enable"
+  }
+]
