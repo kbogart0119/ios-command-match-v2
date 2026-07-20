@@ -1,0 +1,623 @@
+[
+  {
+    "id": "CMD001",
+    "command": "show ip interface brief",
+    "purpose": "Displays a concise summary of interfaces, IPv4 addresses, and line/protocol state.",
+    "syntax": "show ip interface brief",
+    "difficulty": "Foundational",
+    "category": "Interfaces",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD002",
+    "command": "show interfaces",
+    "purpose": "Displays detailed operational statistics for one or more interfaces.",
+    "syntax": "show interfaces [interface-id]",
+    "difficulty": "Foundational",
+    "category": "Interfaces",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD003",
+    "command": "show running-config",
+    "purpose": "Displays the active configuration currently stored in RAM.",
+    "syntax": "show running-config",
+    "difficulty": "Foundational",
+    "category": "Configuration Management",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD004",
+    "command": "show arp",
+    "purpose": "Displays the IPv4-to-MAC address mappings known by the device.",
+    "syntax": "show arp",
+    "difficulty": "Foundational",
+    "category": "IPv4",
+    "examWeight": 4
+  },
+  {
+    "id": "CMD005",
+    "command": "show ip route",
+    "purpose": "Displays the IPv4 routing table and how destination prefixes are reached.",
+    "syntax": "show ip route [prefix [mask]]",
+    "difficulty": "Foundational",
+    "category": "Routing",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD006",
+    "command": "ping",
+    "purpose": "Tests basic IP reachability and provides round-trip success information.",
+    "syntax": "ping <destination>",
+    "difficulty": "Foundational",
+    "category": "Routing",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD007",
+    "command": "traceroute",
+    "purpose": "Discovers the Layer 3 path toward a destination by identifying successive hops.",
+    "syntax": "traceroute <destination>",
+    "difficulty": "Developing",
+    "category": "Routing",
+    "examWeight": 4
+  },
+  {
+    "id": "CMD008",
+    "command": "show ip ospf neighbor",
+    "purpose": "Displays OSPF adjacencies and their current states.",
+    "syntax": "show ip ospf neighbor",
+    "difficulty": "Developing",
+    "category": "OSPF",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD009",
+    "command": "show ip ospf",
+    "purpose": "Displays local OSPF process information, including process ID, router ID, areas, and timers.",
+    "syntax": "show ip ospf",
+    "difficulty": "Developing",
+    "category": "OSPF",
+    "examWeight": 4
+  },
+  {
+    "id": "CMD010",
+    "command": "router-id x.x.x.x",
+    "purpose": "Manually assigns the identifier used by an OSPF routing process.",
+    "syntax": "router-id <ipv4-address>",
+    "difficulty": "Developing",
+    "category": "OSPF",
+    "examWeight": 4
+  },
+  {
+    "id": "CMD011",
+    "command": "ip ospf cost <cost-value>",
+    "purpose": "Manually assigns the OSPF metric associated with an interface.",
+    "syntax": "ip ospf cost <cost-value>",
+    "difficulty": "Intermediate",
+    "category": "OSPF",
+    "examWeight": 4
+  },
+  {
+    "id": "CMD012",
+    "command": "show vlan brief",
+    "purpose": "Displays VLANs and the access ports assigned to each VLAN.",
+    "syntax": "show vlan brief",
+    "difficulty": "Foundational",
+    "category": "VLANs",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD013",
+    "command": "show interfaces trunk",
+    "purpose": "Displays interfaces currently operating as trunks and their VLAN forwarding information.",
+    "syntax": "show interfaces trunk",
+    "difficulty": "Developing",
+    "category": "Trunking",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD014",
+    "command": "switchport mode dynamic desirable",
+    "purpose": "Actively negotiates with the neighboring switchport to form a trunk.",
+    "syntax": "switchport mode dynamic desirable",
+    "difficulty": "Intermediate",
+    "category": "Trunking",
+    "examWeight": 3
+  },
+  {
+    "id": "CMD015",
+    "command": "switchport mode dynamic auto",
+    "purpose": "Passively waits for the neighboring switchport to initiate trunk negotiation.",
+    "syntax": "switchport mode dynamic auto",
+    "difficulty": "Intermediate",
+    "category": "Trunking",
+    "examWeight": 3
+  },
+  {
+    "id": "CMD016",
+    "command": "switchport mode access",
+    "purpose": "Forces a switchport to operate as a static Layer 2 access port.",
+    "syntax": "switchport mode access",
+    "difficulty": "Foundational",
+    "category": "VLANs",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD017",
+    "command": "switchport access vlan <vlan-id>",
+    "purpose": "Assigns an access port to a specified VLAN.",
+    "syntax": "switchport access vlan <vlan-id>",
+    "difficulty": "Foundational",
+    "category": "VLANs",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD018",
+    "command": "show spanning-tree",
+    "purpose": "Displays STP roles, states, root information, and path costs.",
+    "syntax": "show spanning-tree [vlan <vlan-id>]",
+    "difficulty": "Developing",
+    "category": "Spanning Tree",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD019",
+    "command": "spanning-tree vlan <vlan-id> priority <priority-value>",
+    "purpose": "Changes a switch's bridge priority for a specified VLAN.",
+    "syntax": "spanning-tree vlan <vlan-id> priority <priority-value>",
+    "difficulty": "Intermediate",
+    "category": "Spanning Tree",
+    "examWeight": 4
+  },
+  {
+    "id": "CMD020",
+    "command": "show etherchannel summary",
+    "purpose": "Displays port-channel groups, protocols, and member-port status.",
+    "syntax": "show etherchannel summary",
+    "difficulty": "Developing",
+    "category": "EtherChannel",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD021",
+    "command": "show cdp neighbors",
+    "purpose": "Displays a concise list of directly connected Cisco devices.",
+    "syntax": "show cdp neighbors",
+    "difficulty": "Foundational",
+    "category": "Neighbor Discovery",
+    "examWeight": 4
+  },
+  {
+    "id": "CMD022",
+    "command": "show cdp neighbors detail",
+    "purpose": "Displays expanded information learned about directly connected Cisco devices.",
+    "syntax": "show cdp neighbors detail",
+    "difficulty": "Developing",
+    "category": "Neighbor Discovery",
+    "examWeight": 4
+  },
+  {
+    "id": "CMD023",
+    "command": "copy running-config startup-config",
+    "purpose": "Saves the active configuration so it is retained after a reload.",
+    "syntax": "copy running-config startup-config",
+    "difficulty": "Foundational",
+    "category": "Configuration Management",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD024",
+    "command": "show mac address-table",
+    "purpose": "Displays MAC addresses learned by the switch and the interfaces or VLANs associated with them.",
+    "syntax": "show mac address-table [dynamic | static] [address mac-address] [interface interface-id] [vlan vlan-id]",
+    "difficulty": "Foundational",
+    "category": "Layer 2 Switching",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD025",
+    "command": "show interfaces switchport",
+    "purpose": "Displays Layer 2 administrative and operational switchport characteristics.",
+    "syntax": "show interfaces [interface-id] switchport",
+    "difficulty": "Developing",
+    "category": "VLANs and Trunking",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD026",
+    "command": "show interfaces status",
+    "purpose": "Displays a concise table of switch port state, VLAN, duplex, speed, and media type.",
+    "syntax": "show interfaces status",
+    "difficulty": "Foundational",
+    "category": "Interfaces",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD027",
+    "command": "show spanning-tree summary",
+    "purpose": "Displays a concise overview of Spanning Tree operation and feature status on the switch.",
+    "syntax": "show spanning-tree summary",
+    "difficulty": "Developing",
+    "category": "Spanning Tree",
+    "examWeight": 4
+  },
+  {
+    "id": "CMD028",
+    "command": "show spanning-tree interface <interface-id> detail",
+    "purpose": "Displays detailed Spanning Tree information and transition counters for a specific interface.",
+    "syntax": "show spanning-tree interface <interface-id> detail",
+    "difficulty": "Intermediate",
+    "category": "Spanning Tree",
+    "examWeight": 4
+  },
+  {
+    "id": "CMD029",
+    "command": "switchport mode trunk",
+    "purpose": "Statically configures a switchport to operate as a Layer 2 trunk.",
+    "syntax": "switchport mode trunk",
+    "difficulty": "Foundational",
+    "category": "VLANs and Trunking",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD030",
+    "command": "switchport trunk allowed vlan <vlan-list>",
+    "purpose": "Specifies which VLANs are permitted to traverse a trunk interface.",
+    "syntax": "switchport trunk allowed vlan <vlan-list>",
+    "difficulty": "Developing",
+    "category": "VLANs and Trunking",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD031",
+    "command": "switchport trunk native vlan <vlan-id>",
+    "purpose": "Changes the native VLAN used for untagged traffic on an 802.1Q trunk.",
+    "syntax": "switchport trunk native vlan <vlan-id>",
+    "difficulty": "Developing",
+    "category": "VLANs and Trunking",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD032",
+    "command": "switchport nonegotiate",
+    "purpose": "Disables DTP frame transmission on an interface.",
+    "syntax": "switchport nonegotiate",
+    "difficulty": "Intermediate",
+    "category": "VLANs and Trunking",
+    "examWeight": 4
+  },
+  {
+    "id": "CMD033",
+    "command": "switchport voice vlan <vlan-id>",
+    "purpose": "Assigns a voice VLAN to a switchport for attached IP phone traffic.",
+    "syntax": "switchport voice vlan <vlan-id>",
+    "difficulty": "Developing",
+    "category": "VLANs and Trunking",
+    "examWeight": 4
+  },
+  {
+    "id": "CMD034",
+    "command": "switchport port-security",
+    "purpose": "Enables switchport port security on an interface.",
+    "syntax": "switchport port-security",
+    "difficulty": "Developing",
+    "category": "Layer 2 Security",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD035",
+    "command": "switchport port-security maximum <maximum>",
+    "purpose": "Sets the maximum number of secure MAC addresses permitted on a switchport.",
+    "syntax": "switchport port-security maximum <maximum>",
+    "difficulty": "Developing",
+    "category": "Layer 2 Security",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD036",
+    "command": "switchport port-security violation shutdown",
+    "purpose": "Configures a port-security violation to place the interface into an error-disabled state.",
+    "syntax": "switchport port-security violation shutdown",
+    "difficulty": "Intermediate",
+    "category": "Layer 2 Security",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD037",
+    "command": "switchport port-security violation restrict",
+    "purpose": "Configures a port-security violation to drop offending frames while counting and reporting violations.",
+    "syntax": "switchport port-security violation restrict",
+    "difficulty": "Intermediate",
+    "category": "Layer 2 Security",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD038",
+    "command": "switchport port-security mac-address sticky",
+    "purpose": "Dynamically learns secure MAC addresses and adds sticky entries to the running configuration.",
+    "syntax": "switchport port-security mac-address sticky",
+    "difficulty": "Intermediate",
+    "category": "Layer 2 Security",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD039",
+    "command": "show port-security",
+    "purpose": "Displays a switch-wide summary of port-security status and violation counts.",
+    "syntax": "show port-security",
+    "difficulty": "Developing",
+    "category": "Layer 2 Security",
+    "examWeight": 4
+  },
+  {
+    "id": "CMD040",
+    "command": "show port-security interface <interface-id>",
+    "purpose": "Displays detailed port-security settings, learned addresses, and violation information for one interface.",
+    "syntax": "show port-security interface <interface-id>",
+    "difficulty": "Developing",
+    "category": "Layer 2 Security",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD041",
+    "command": "channel-group <group-number> mode active",
+    "purpose": "Adds an interface to an EtherChannel and actively initiates LACP negotiation.",
+    "syntax": "channel-group <group-number> mode active",
+    "difficulty": "Intermediate",
+    "category": "EtherChannel",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD042",
+    "command": "channel-group <group-number> mode passive",
+    "purpose": "Adds an interface to an EtherChannel and responds to LACP negotiation without initiating it.",
+    "syntax": "channel-group <group-number> mode passive",
+    "difficulty": "Intermediate",
+    "category": "EtherChannel",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD043",
+    "command": "channel-group <group-number> mode desirable",
+    "purpose": "Adds an interface to an EtherChannel and actively initiates PAgP negotiation.",
+    "syntax": "channel-group <group-number> mode desirable",
+    "difficulty": "Intermediate",
+    "category": "EtherChannel",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD044",
+    "command": "channel-group <group-number> mode auto",
+    "purpose": "Adds an interface to an EtherChannel and responds to PAgP negotiation without initiating it.",
+    "syntax": "channel-group <group-number> mode auto",
+    "difficulty": "Intermediate",
+    "category": "EtherChannel",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD045",
+    "command": "shutdown",
+    "purpose": "Administratively disables an interface.",
+    "syntax": "shutdown",
+    "difficulty": "Foundational",
+    "category": "Interfaces",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD046",
+    "command": "no shutdown",
+    "purpose": "Administratively enables an interface.",
+    "syntax": "no shutdown",
+    "difficulty": "Foundational",
+    "category": "Interfaces",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD047",
+    "command": "show lldp neighbors",
+    "purpose": "Displays a concise list of directly connected devices discovered through LLDP.",
+    "syntax": "show lldp neighbors",
+    "difficulty": "Foundational",
+    "category": "Neighbor Discovery",
+    "examWeight": 4
+  },
+  {
+    "id": "CMD048",
+    "command": "show lldp neighbors detail",
+    "purpose": "Displays detailed LLDP information learned from directly connected neighboring devices.",
+    "syntax": "show lldp neighbors detail",
+    "difficulty": "Developing",
+    "category": "Neighbor Discovery",
+    "examWeight": 4
+  },
+  {
+    "id": "CMD049",
+    "command": "ip address <ipv4-address> <subnet-mask>",
+    "purpose": "Assigns an IPv4 address and subnet mask to a Layer 3 interface.",
+    "syntax": "ip address <ipv4-address> <subnet-mask>",
+    "difficulty": "Foundational",
+    "category": "IPv4",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD050",
+    "command": "ipv6 address <ipv6-address>/<prefix-length>",
+    "purpose": "Assigns an IPv6 address and prefix length to an interface.",
+    "syntax": "ipv6 address <ipv6-address>/<prefix-length>",
+    "difficulty": "Developing",
+    "category": "IPv6",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD051",
+    "command": "show ipv6 interface brief",
+    "purpose": "Displays a concise summary of interfaces, IPv6 addresses, and operational state.",
+    "syntax": "show ipv6 interface brief",
+    "difficulty": "Developing",
+    "category": "IPv6",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD052",
+    "command": "show ipv6 route",
+    "purpose": "Displays the IPv6 routing table and installed paths to destination prefixes.",
+    "syntax": "show ipv6 route [prefix/prefix-length]",
+    "difficulty": "Developing",
+    "category": "IPv6 Routing",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD053",
+    "command": "ip route <prefix> <mask> <next-hop>",
+    "purpose": "Creates an IPv4 static route to a destination network.",
+    "syntax": "ip route <prefix> <mask> <next-hop | exit-interface> [administrative-distance]",
+    "difficulty": "Developing",
+    "category": "Static Routing",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD054",
+    "command": "ipv6 route <prefix>/<prefix-length> <next-hop>",
+    "purpose": "Creates an IPv6 static route to a destination prefix.",
+    "syntax": "ipv6 route <prefix>/<prefix-length> <next-hop | exit-interface> [administrative-distance]",
+    "difficulty": "Intermediate",
+    "category": "IPv6 Routing",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD055",
+    "command": "router ospf <process-id>",
+    "purpose": "Creates or enters an OSPFv2 routing process.",
+    "syntax": "router ospf <process-id>",
+    "difficulty": "Developing",
+    "category": "OSPF",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD056",
+    "command": "network <network-address> <wildcard-mask> area <area-id>",
+    "purpose": "Selects interfaces for OSPFv2 participation and assigns them to an area.",
+    "syntax": "network <network-address> <wildcard-mask> area <area-id>",
+    "difficulty": "Intermediate",
+    "category": "OSPF",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD057",
+    "command": "ip ospf <process-id> area <area-id>",
+    "purpose": "Enables OSPFv2 directly on an interface and assigns it to an area.",
+    "syntax": "ip ospf <process-id> area <area-id>",
+    "difficulty": "Intermediate",
+    "category": "OSPF",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD058",
+    "command": "passive-interface <interface-id>",
+    "purpose": "Suppresses routing-protocol neighbor messages on an interface while still advertising its network.",
+    "syntax": "passive-interface <interface-id>",
+    "difficulty": "Intermediate",
+    "category": "OSPF",
+    "examWeight": 4
+  },
+  {
+    "id": "CMD059",
+    "command": "show ip protocols",
+    "purpose": "Displays active IPv4 routing protocols, parameters, passive interfaces, and advertised networks.",
+    "syntax": "show ip protocols",
+    "difficulty": "Developing",
+    "category": "Routing",
+    "examWeight": 4
+  },
+  {
+    "id": "CMD060",
+    "command": "show ip ospf interface brief",
+    "purpose": "Displays a concise summary of interfaces participating in OSPF, including process, area, cost, and state.",
+    "syntax": "show ip ospf interface brief",
+    "difficulty": "Developing",
+    "category": "OSPF",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD061",
+    "command": "spanning-tree portfast",
+    "purpose": "Allows an edge access port to transition rapidly to the forwarding state.",
+    "syntax": "spanning-tree portfast",
+    "difficulty": "Developing",
+    "category": "Spanning Tree",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD062",
+    "command": "spanning-tree bpduguard enable",
+    "purpose": "Error-disables an edge port if the port receives a spanning-tree BPDU.",
+    "syntax": "spanning-tree bpduguard enable",
+    "difficulty": "Intermediate",
+    "category": "Layer 2 Security",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD063",
+    "command": "ip helper-address <server-address>",
+    "purpose": "Relays selected UDP broadcasts, including DHCPv4 messages, to a remote server.",
+    "syntax": "ip helper-address <server-address>",
+    "difficulty": "Developing",
+    "category": "DHCP",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD064",
+    "command": "access-list <number> permit|deny <source> <wildcard-mask>",
+    "purpose": "Creates a numbered standard IPv4 access-control entry based on source address.",
+    "syntax": "access-list <1-99 | 1300-1999> {permit | deny} <source> <wildcard-mask>",
+    "difficulty": "Intermediate",
+    "category": "Access Control Lists",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD065",
+    "command": "ip access-group <acl> in|out",
+    "purpose": "Applies an IPv4 access control list to an interface in the inbound or outbound direction.",
+    "syntax": "ip access-group <acl-number | acl-name> {in | out}",
+    "difficulty": "Intermediate",
+    "category": "Access Control Lists",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD066",
+    "command": "show access-lists",
+    "purpose": "Displays configured access control lists and match counters.",
+    "syntax": "show access-lists [acl-number | acl-name]",
+    "difficulty": "Developing",
+    "category": "Access Control Lists",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD067",
+    "command": "ip nat inside",
+    "purpose": "Identifies an interface as being on the inside of a NAT boundary.",
+    "syntax": "ip nat inside",
+    "difficulty": "Developing",
+    "category": "NAT",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD068",
+    "command": "ip nat outside",
+    "purpose": "Identifies an interface as being on the outside of a NAT boundary.",
+    "syntax": "ip nat outside",
+    "difficulty": "Developing",
+    "category": "NAT",
+    "examWeight": 5
+  },
+  {
+    "id": "CMD069",
+    "command": "ip nat inside source list <acl> interface <interface-id> overload",
+    "purpose": "Configures PAT so multiple inside local addresses share the address of an outside interface.",
+    "syntax": "ip nat inside source list <acl> interface <interface-id> overload",
+    "difficulty": "Intermediate",
+    "category": "NAT",
+    "examWeight": 5
+  }
+]
